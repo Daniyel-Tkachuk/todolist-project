@@ -1,15 +1,20 @@
 import React, {FC, JSX} from 'react';
-import {TaskType} from "../App";
+import {FilterType, TaskType} from "../App";
 
 type TodolistProps = {
    title: string
    tasks: TaskType[]
    removeTask: (taskId: number) => void
+   changeFilter: (filterValue: FilterType) => void
 }
 
 export const Todolist: FC<TodolistProps> = (props) => {
 
-   const {title, tasks, removeTask} = props;
+   const {title, tasks, removeTask, changeFilter} = props;
+
+   const onChangeFilterHandler = (filterValue: FilterType) => {
+      changeFilter(filterValue);
+   }
 
    const listItems: JSX.Element[] = tasks.map(t => {
       const onClickRemoveTaskHandler = () => removeTask(t.id);
@@ -22,7 +27,7 @@ export const Todolist: FC<TodolistProps> = (props) => {
       );
    })
 
-   let tasksList: JSX.Element[] | JSX.Element = tasks.length
+   let tasksList: JSX.Element = tasks.length
       ? <ul>{listItems}</ul>
       : <span>Your tasksList is empty</span>
 
@@ -36,9 +41,9 @@ export const Todolist: FC<TodolistProps> = (props) => {
          </div>
          {tasksList}
          <div>
-            <button>All</button>
-            <button>Active</button>
-            <button>Completed</button>
+            <button onClick={() => onChangeFilterHandler("all")}>All</button>
+            <button onClick={() => onChangeFilterHandler("active")}>Active</button>
+            <button onClick={() => onChangeFilterHandler("completed")}>Completed</button>
          </div>
       </div>
    );
