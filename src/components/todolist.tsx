@@ -12,11 +12,12 @@ export const Todolist: FC<TodolistProps> = (props) => {
    const {title, tasks, removeTask} = props;
 
    const listItems: JSX.Element[] = tasks.map(t => {
+      const onClickRemoveTaskHandler = () => removeTask(t.id);
       return (
          <li key={t.id}>
             <input type="checkbox" checked={t.isDone}/>
             <span>{t.taskTitle}</span>
-            <button onClick={() => removeTask(t.id)}>X</button>
+            <button onClick={onClickRemoveTaskHandler}>X</button>
          </li>
       );
    })
