@@ -1,14 +1,30 @@
-import React, {FC} from 'react';
+import React, {FC, JSX} from 'react';
 import {TaskType} from "../App";
 
 type TodolistProps = {
    title: string
    tasks: TaskType[]
+   removeTask: (taskId: number) => void
 }
 
 export const Todolist: FC<TodolistProps> = (props) => {
 
-   const {title, tasks} = props;
+   const {title, tasks, removeTask} = props;
+
+   const listItems: JSX.Element[] = tasks.map(t => {
+      return (
+         <li key={t.id}>
+            <input type="checkbox" checked={t.isDone}/>
+            <span>{t.taskTitle}</span>
+            <button onClick={() => removeTask(t.id)}>X</button>
+         </li>
+      );
+   })
+
+   let tasksList: JSX.Element[] | JSX.Element = tasks.length
+      ? <ul>{listItems}</ul>
+      : <span>Your tasksList is empty</span>
+
 
    return (
       <div className="todolist">
@@ -17,20 +33,7 @@ export const Todolist: FC<TodolistProps> = (props) => {
             <input/>
             <button>+</button>
          </div>
-         <ul>
-            <li>
-               <input type="checkbox" checked={tasks[0].isDone}/>
-               <span>{tasks[0].taskTitle}</span>
-            </li>
-            <li>
-               <input type="checkbox" checked={tasks[1].isDone}/>
-               <span>{tasks[1].taskTitle}</span>
-            </li>
-            <li>
-               <input type="checkbox" checked={tasks[2].isDone}/>
-               <span>{tasks[2].taskTitle}</span>
-            </li>
-         </ul>
+         {tasksList}
          <div>
             <button>All</button>
             <button>Active</button>
