@@ -1,23 +1,35 @@
-import React, {FC, JSX} from 'react';
+import React, {ChangeEvent, FC, JSX, useState} from 'react';
 import {FilterType, TaskType} from "../App";
 
 type TodolistProps = {
    title: string
    tasks: TaskType[]
-   removeTask: (taskId: number) => void
+   removeTask: (taskId: string) => void
    changeFilter: (filterValue: FilterType) => void
+   addTask: (taskTitle: string) => void
 }
 
 export const Todolist: FC<TodolistProps> = (props) => {
 
-   const {title, tasks, removeTask, changeFilter} = props;
+   const {title, tasks, removeTask, changeFilter, addTask} = props;
 
-   const onChangeFilterHandler = (filterValue: FilterType) => {
-      changeFilter(filterValue);
-   }
+   const [taskTitle, setTaskTitle] = useState<string>("");
+
+   const onChangeFilterHandler = (filterValue: FilterType) => changeFilter(filterValue);
+
+   const onChangeTaskTitle = (e: ChangeEvent<HTMLInputElement>) => {
+      setTaskTitle(e.currentTarget.value)
+      console.log(e.currentTarget.value);
+   };
+
+   const onClickAddTaskHandler = () => {
+      addTask(taskTitle)
+      setTaskTitle("");
+   };
 
    const listItems: JSX.Element[] = tasks.map(t => {
       const onClickRemoveTaskHandler = () => removeTask(t.id);
+
       return (
          <li key={t.id}>
             <input type="checkbox" checked={t.isDone}/>
@@ -36,8 +48,8 @@ export const Todolist: FC<TodolistProps> = (props) => {
       <div className="todolist">
          <h3>{title}</h3>
          <div>
-            <input/>
-            <button>+</button>
+            <input type="text" value={taskTitle} onChange={onChangeTaskTitle}/>
+            <button onClick={onClickAddTaskHandler}>+</button>
          </div>
          {tasksList}
          <div>
