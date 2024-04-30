@@ -33,8 +33,7 @@ function App() {
    }
 
    const addTask = (taskTitle: string) => {
-      const newTask = {id: crypto.randomUUID(), taskTitle: taskTitle, isDone: false};
-      setTasks([newTask, ...tasks])
+      setTasks([...tasks, {id: crypto.randomUUID(), taskTitle, isDone: false}])
    }
 
    const getFilteredTasks = (allTasks: TaskType[], filterValue: FilterType): TaskType[] => {
