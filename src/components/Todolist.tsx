@@ -1,11 +1,17 @@
 import React, {ChangeEvent, FC, JSX, KeyboardEvent, useState} from 'react';
-import {FilterType, TaskType} from "../App";
+import {FilterValuesType} from "../App";
+
+export type TaskType = {
+   id: string
+   taskTitle: string
+   isDone: boolean
+}
 
 type TodolistProps = {
    title: string
    tasks: TaskType[]
    removeTask: (taskId: string) => void
-   changeFilter: (filterValue: FilterType) => void
+   changeFilter: (filterValue: FilterValuesType) => void
    addTask: (taskTitle: string) => void
 }
 
@@ -15,7 +21,8 @@ export const Todolist: FC<TodolistProps> = (props) => {
 
    const [taskTitle, setTaskTitle] = useState<string>("");
 
-   const onChangeFilterHandler = (filterValue: FilterType) => changeFilter(filterValue);
+
+   const onChangeFilterHandler = (filterValue: FilterValuesType) => changeFilter(filterValue);
 
    const onChangeTaskTitleHandler = (e: ChangeEvent<HTMLInputElement>) => {
       setTaskTitle(e.currentTarget.value);

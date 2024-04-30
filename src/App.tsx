@@ -1,65 +1,51 @@
 import React, {useState} from 'react';
 import './App.css';
-import {Todolist} from "./components/todolist";
+import {TaskType, Todolist} from "./components/Todolist";
 
-export type TaskType = {
-   id: string
-   taskTitle: string
-   isDone: boolean
-}
-
-export type FilterType = "all" | "active" | "completed";
+export type FilterValuesType = "all" | "active" | "completed";
 
 function App() {
 
-   const todolistTitle = "today";
-
-   const [tasks, setTasks] = useState<TaskType[]>([
+   let [tasks, setTasks] = useState<TaskType[]>([
       {id: crypto.randomUUID(), taskTitle: "HTML&CSS", isDone: true},
       {id: crypto.randomUUID(), taskTitle: "JS", isDone: true},
-      {id: crypto.randomUUID(), taskTitle: "React", isDone: false},
-      {id: crypto.randomUUID(), taskTitle: "Vue", isDone: false},
+      {id: crypto.randomUUID(), taskTitle: "ReactJS", isDone: false},
+      {id: crypto.randomUUID(), taskTitle: "Rest API", isDone: false},
+      {id: crypto.randomUUID(), taskTitle: "GraphQL", isDone: false},
    ]);
 
-   const [filter, setFilter] = useState<FilterType>("all");
-
-
-   const removeTask = (taskId: string) => {
-      setTasks(tasks.filter(t => t.id !== taskId));
+   function removeTask(id: string) {
+      let filteredTasks = tasks.filter(t => t.id != id);
+      setTasks(filteredTasks);
    }
 
-   const changeFilter = (filterValue: FilterType) => {
-      setFilter(filterValue);
+   function addTask(taskTitle: string) {
+      setTasks([{id: crypto.randomUUID(), taskTitle, isDone: false}, ...tasks]);
    }
 
-   const addTask = (taskTitle: string) => {
-      setTasks([...tasks, {id: crypto.randomUUID(), taskTitle, isDone: false}])
+   let [filter, setFilter] = useState<FilterValuesType>("all");
+
+   let tasksForTodolist = tasks;
+
+   if (filter === "active") {
+      tasksForTodolist = tasks.filter(t => !t.isDone);
+   }
+   if (filter === "completed") {
+      tasksForTodolist = tasks.filter(t => t.isDone);
    }
 
-   const getFilteredTasks = (allTasks: TaskType[], filterValue: FilterType): TaskType[] => {
-      switch (filterValue) {
-         case "active": {
-            return allTasks.filter(t => !t.isDone)
-         }
-         case "completed": {
-            return allTasks.filter(t => t.isDone)
-         }
-         default: {
-            return allTasks;
-         }
-      }
+   function changeFilter(value: FilterValuesType) {
+      setFilter(value);
    }
 
-   const filteredTasks: TaskType[] = getFilteredTasks(tasks, filter);
 
    return (
       <div className="App">
-         <Todolist title={todolistTitle}
-                   tasks={filteredTasks}
+         <Todolist title="What to learn"
+                   tasks={tasksForTodolist}
                    removeTask={removeTask}
                    changeFilter={changeFilter}
-                   addTask={addTask}
-         />
+                   addTask={addTask}/>
       </div>
    );
 }
