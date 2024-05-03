@@ -19,7 +19,11 @@ type TodolistProps = {
 
 export const Todolist: FC<TodolistProps> = (props) => {
 
-   const {title, tasks, removeTask, changeFilter, addTask} = props;
+   const {
+      title, tasks, removeTask,
+      changeFilter, addTask, changeTaskTitle,
+      changeTaskStatus
+   } = props;
 
    const [taskTitle, setTaskTitle] = useState<string>("");
 
@@ -39,11 +43,21 @@ export const Todolist: FC<TodolistProps> = (props) => {
       e.key === "Enter" && onClickAddTaskHandler();
    };
 
+   /*const onChangeStatusHandler = (e: ChangeEvent<HTMLInputElement>, taskId: string) => {
+      changeTaskStatus(taskId, e.currentTarget.checked);
+   }*/
+
    const listItems: JSX.Element[] = tasks.map(t => {
       const onClickRemoveTaskHandler = () => removeTask(t.id);
+      const onChangeStatusHandler = (e: ChangeEvent<HTMLInputElement>) => {
+         changeTaskStatus(t.id, e.currentTarget.checked);
+      }
       return (
          <li key={t.id}>
-            <input type="checkbox" checked={t.isDone}/>
+            <input type="checkbox"
+                   checked={t.isDone}
+                   onChange={onChangeStatusHandler}
+            />
             <span>{t.taskTitle}</span>
             <button onClick={onClickRemoveTaskHandler}>X</button>
          </li>
