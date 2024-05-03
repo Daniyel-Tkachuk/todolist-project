@@ -13,6 +13,8 @@ type TodolistProps = {
    removeTask: (taskId: string) => void
    changeFilter: (filterValue: FilterValuesType) => void
    addTask: (taskTitle: string) => void
+   changeTaskTitle: (taskId: string, taskTitle: string) => void
+   changeTaskStatus: (taskId: string, isDone: boolean) => void
 }
 
 export const Todolist: FC<TodolistProps> = (props) => {
