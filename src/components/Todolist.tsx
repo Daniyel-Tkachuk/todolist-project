@@ -33,17 +33,17 @@ export const Todolist: FC<TodolistProps> = (props) => {
    const onChangeFilterHandler = (filterValue: FilterValuesType) => changeFilter(filterValue);
 
    const onChangeTaskTitleHandler = (e: ChangeEvent<HTMLInputElement>) => {
-      setTaskTitle(e.currentTarget.value);
-      inputError && setInputError(false);
-   };
-
-   const onClickAddTaskHandler = () => {
-      const trimmedTitle = taskTitle.trim();
-      if (trimmedTitle) {
-         addTask(trimmedTitle);
+      const trimmedTitle = e.currentTarget.value.trim();
+      if (trimmedTitle || e.currentTarget.value.length === 0) {
+         setTaskTitle(e.currentTarget.value);
+         inputError && setInputError(false);
       } else {
          setInputError(true);
       }
+   };
+
+   const onClickAddTaskHandler = () => {
+      addTask(taskTitle);
       setTaskTitle("");
    };
 
@@ -78,9 +78,12 @@ export const Todolist: FC<TodolistProps> = (props) => {
 
    let isAddBtnDisabled = !taskTitle || taskTitle.length >= 15;
 
-   const userMassage = taskTitle.length < 15
-      ? <span>Enter new title</span>
-      : <span style={{color: "red"}}>Your title is too long</span>;
+   const userMessage = inputError
+      ? <span style={{color: "red"}}>Your title is too empty</span>
+      : taskTitle.length < 15
+         ? <span>Enter new title</span>
+         : <span style={{color: "red"}}>Your title is too long</span>
+
 
    return (
       <div className="todolist">
@@ -94,7 +97,7 @@ export const Todolist: FC<TodolistProps> = (props) => {
             />
             <button disabled={isAddBtnDisabled} onClick={onClickAddTaskHandler}>+</button>
             <div style={{fontSize: "12px"}}>
-               {userMassage}
+               {userMessage}
             </div>
          </div>
          {tasksList}
