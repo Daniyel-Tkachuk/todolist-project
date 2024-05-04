@@ -10,6 +10,7 @@ export type TaskType = {
 type TodolistProps = {
    title: string
    tasks: TaskType[]
+   filter: FilterValuesType
    removeTask: (taskId: string) => void
    changeFilter: (filterValue: FilterValuesType) => void
    addTask: (taskTitle: string) => void
@@ -20,22 +21,29 @@ type TodolistProps = {
 export const Todolist: FC<TodolistProps> = (props) => {
 
    const {
-      title, tasks, removeTask,
-      changeFilter, addTask, changeTaskTitle,
-      changeTaskStatus
+      title, tasks, filter,
+      removeTask, changeFilter, addTask,
+      changeTaskTitle, changeTaskStatus
    } = props;
 
    const [taskTitle, setTaskTitle] = useState<string>("");
+   const [inputError, setInputError] = useState<boolean>(false);
 
 
    const onChangeFilterHandler = (filterValue: FilterValuesType) => changeFilter(filterValue);
 
    const onChangeTaskTitleHandler = (e: ChangeEvent<HTMLInputElement>) => {
       setTaskTitle(e.currentTarget.value);
+      inputError && setInputError(false);
    };
 
    const onClickAddTaskHandler = () => {
-      addTask(taskTitle);
+      const trimmedTitle = taskTitle.trim();
+      if (trimmedTitle) {
+         addTask(trimmedTitle);
+      } else {
+         setInputError(true);
+      }
       setTaskTitle("");
    };
 
@@ -58,7 +66,7 @@ export const Todolist: FC<TodolistProps> = (props) => {
                    checked={t.isDone}
                    onChange={onChangeStatusHandler}
             />
-            <span>{t.taskTitle}</span>
+            <span className={t.isDone ? "task-done" : "task"}>{t.taskTitle}</span>
             <button onClick={onClickRemoveTaskHandler}>X</button>
          </li>
       );
@@ -79,6 +87,7 @@ export const Todolist: FC<TodolistProps> = (props) => {
          <h3>{title}</h3>
          <div>
             <input type="text"
+                   className={`input ${inputError ? "input-error" : ""}`}
                    value={taskTitle}
                    onChange={onChangeTaskTitleHandler}
                    onKeyDown={onClickEnter}
@@ -90,9 +99,9 @@ export const Todolist: FC<TodolistProps> = (props) => {
          </div>
          {tasksList}
          <div>
-            <button onClick={() => onChangeFilterHandler("all")}>All</button>
-            <button onClick={() => onChangeFilterHandler("active")}>Active</button>
-            <button onClick={() => onChangeFilterHandler("completed")}>Completed</button>
+            <button className={filter === 'all' ? "active-filter" : ""} onClick={() => onChangeFilterHandler("all")}>All</button>
+            <button className={filter === 'active' ? "active-filter" : ""} onClick={() => onChangeFilterHandler("active")}>Active</button>
+            <button className={filter === 'completed' ? "active-filter" : ""} onClick={() => onChangeFilterHandler("completed")}>Completed</button>
          </div>
       </div>
    );

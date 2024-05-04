@@ -14,4 +14,23 @@
   background-color: #eae8b8;
 }
 
+.task {
+  font-weight: 600;
+}
 
+.task-done {
+  text-decoration: line-through;
+  opacity: .3;
+}
+
+.active-filter {
+  background-color: #e7bf3f;
+}
+
+.input {
+  outline: none;
+}
+
+.input-error {
+  border: 2px solid red;
+}
