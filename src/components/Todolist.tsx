@@ -1,10 +1,13 @@
 import React, {ChangeEvent, FC, JSX, KeyboardEvent, useState} from 'react';
 import {FilterValuesType} from "../App";
 
-export type TaskType = {
+type TaskType = {
    id: string
-   taskTitle: string
+   title: string
    isDone: boolean
+}
+export type TasksStateType = {
+   [key: string]: TaskType[]
 }
 
 type TodolistProps = {
@@ -12,7 +15,7 @@ type TodolistProps = {
    title: string
    tasks: TaskType[]
    filter: FilterValuesType
-   removeTask: (taskId: string) => void
+   removeTask: (todoId: string, taskId: string) => void
    changeFilter: (todoId: string, filterValue: FilterValuesType) => void
    addTask: (taskTitle: string) => void
    changeTaskTitle: (taskId: string, taskTitle: string) => void
@@ -26,6 +29,7 @@ export const Todolist: FC<TodolistProps> = (props) => {
       removeTask, changeFilter, addTask,
       changeTaskTitle, changeTaskStatus
    } = props;
+
 
    const [taskTitle, setTaskTitle] = useState<string>("");
    const [inputError, setInputError] = useState<boolean>(false);
@@ -57,7 +61,7 @@ export const Todolist: FC<TodolistProps> = (props) => {
    }*/
 
    const listItems: JSX.Element[] = tasks.map(t => {
-      const onClickRemoveTaskHandler = () => removeTask(t.id);
+      const onClickRemoveTaskHandler = () => removeTask(todoId, t.id);
       const onChangeStatusHandler = (e: ChangeEvent<HTMLInputElement>) => {
          changeTaskStatus(t.id, e.currentTarget.checked);
       }
@@ -67,7 +71,7 @@ export const Todolist: FC<TodolistProps> = (props) => {
                    checked={t.isDone}
                    onChange={onChangeStatusHandler}
             />
-            <span className={t.isDone ? "task-done" : "task"}>{t.taskTitle}</span>
+            <span className={t.isDone ? "task-done" : "task"}>{t.title}</span>
             <button onClick={onClickRemoveTaskHandler}>X</button>
          </li>
       );
