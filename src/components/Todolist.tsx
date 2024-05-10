@@ -29,7 +29,6 @@ export const Todolist: FC<TodolistProps> = (props) => {
    const [taskTitle, setTaskTitle] = useState<string>("");
    const [inputError, setInputError] = useState<boolean>(false);
 
-
    const onChangeFilterHandler = (filterValue: FilterValuesType) => changeFilter(filterValue);
 
    const onChangeTaskTitleHandler = (e: ChangeEvent<HTMLInputElement>) => {
