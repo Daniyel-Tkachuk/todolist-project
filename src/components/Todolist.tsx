@@ -15,11 +15,12 @@ type TodolistProps = {
    title: string
    tasks: TaskType[]
    filter: FilterValuesType
+   removeTodolist: (todoId: string) => void
    removeTask: (todoId: string, taskId: string) => void
    changeFilter: (todoId: string, filterValue: FilterValuesType) => void
-   addTask: (taskTitle: string) => void
-   changeTaskTitle: (taskId: string, taskTitle: string) => void
-   changeTaskStatus: (taskId: string, isDone: boolean) => void
+   addTask: (todoId: string, taskTitle: string) => void
+   changeTaskTitle: (todoId: string, taskId: string, taskTitle: string) => void
+   changeTaskStatus: (todoId: string, taskId: string, isDone: boolean) => void
 }
 
 export const Todolist: FC<TodolistProps> = (props) => {
@@ -27,7 +28,7 @@ export const Todolist: FC<TodolistProps> = (props) => {
    const {
       todoId, title, tasks, filter,
       removeTask, changeFilter, addTask,
-      changeTaskTitle, changeTaskStatus
+      changeTaskTitle, changeTaskStatus, removeTodolist
    } = props;
 
 
@@ -47,8 +48,12 @@ export const Todolist: FC<TodolistProps> = (props) => {
       }
    };
 
+   const removeTodolistHandler = () => {
+      removeTodolist(todoId);
+   }
+
    const onClickAddTaskHandler = () => {
-      addTask(taskTitle);
+      addTask(todoId, taskTitle);
       setTaskTitle("");
    };
 
@@ -63,7 +68,7 @@ export const Todolist: FC<TodolistProps> = (props) => {
    const listItems: JSX.Element[] = tasks.map(t => {
       const onClickRemoveTaskHandler = () => removeTask(todoId, t.id);
       const onChangeStatusHandler = (e: ChangeEvent<HTMLInputElement>) => {
-         changeTaskStatus(t.id, e.currentTarget.checked);
+         changeTaskStatus(todoId, t.id, e.currentTarget.checked);
       }
       return (
          <li key={t.id}>
@@ -92,7 +97,11 @@ export const Todolist: FC<TodolistProps> = (props) => {
 
    return (
       <div className="todolist">
-         <h3>{title}</h3>
+         <h3>
+            {title}
+            <button onClick={removeTodolistHandler}>X</button>
+         </h3>
+
          <div>
             <input type="text"
                    className={`input ${inputError ? "input-error" : ""}`}
