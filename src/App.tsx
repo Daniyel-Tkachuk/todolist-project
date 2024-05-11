@@ -55,7 +55,7 @@ function App() {
       setTodolists(todolists.filter(tl => tl.id !== todoId));
 
       delete tasks[todoId];
-      // setTasks({...tasks});
+      setTasks({...tasks});
    }
 
    return (
