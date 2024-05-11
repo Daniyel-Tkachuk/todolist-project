@@ -30,6 +30,9 @@ function App() {
       ],
    });
 
+   console.log(todolists)
+   console.log(tasks)
+
    const removeTask = (todoId: string, taskId: string) => {
       setTasks({...tasks, [todoId]: tasks[todoId].filter(t => t.id !== taskId)});
    };
