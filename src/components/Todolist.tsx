@@ -38,7 +38,6 @@ export const Todolist: FC<TodolistProps> = (props) => {
    const onChangeFilterHandler = (filterValue: FilterValuesType) => changeFilter(todoId, filterValue);
 
    const onChangeTaskTitleHandler = (e: ChangeEvent<HTMLInputElement>) => {
-      debugger
       const trimmedTitle = e.currentTarget.value.trim();
       if (trimmedTitle || e.currentTarget.value.length === 0) {
          setTaskTitle(e.currentTarget.value);
@@ -71,12 +70,12 @@ export const Todolist: FC<TodolistProps> = (props) => {
          changeTaskStatus(todoId, t.id, e.currentTarget.checked);
       }
       return (
-         <li key={t.id}>
+         <li key={t.id} className="task">
             <input type="checkbox"
                    checked={t.isDone}
                    onChange={onChangeStatusHandler}
             />
-            <span className={t.isDone ? "task-done" : "task"}>{t.title}</span>
+            <span>{t.title}</span>
             <button onClick={onClickRemoveTaskHandler}>X</button>
          </li>
       );
@@ -97,19 +96,23 @@ export const Todolist: FC<TodolistProps> = (props) => {
 
    return (
       <div className="todolist">
-         <h3>
+         <h1 className="todolistTitle">
             {title}
-            <button onClick={removeTodolistHandler}>X</button>
-         </h3>
+            {/*<button onClick={removeTodolistHandler}>X</button>*/}
+         </h1>
 
-         <div>
-            <input type="text"
-                   className={`input ${inputError ? "input-error" : ""}`}
-                   value={taskTitle}
-                   onChange={onChangeTaskTitleHandler}
-                   onKeyDown={onClickEnter}
-            />
-            <button disabled={isAddBtnDisabled} onClick={onClickAddTaskHandler}>+</button>
+         <div className="inputWrapper">
+            <div className="inputContainer">
+               <input type="text"
+                      placeholder="Add a new task..."
+                      className={`todoInput ${inputError ? "input-error" : ""}`}
+                      value={taskTitle}
+                      onChange={onChangeTaskTitleHandler}
+                      onKeyDown={onClickEnter}
+               />
+               <button className="addButton" disabled={isAddBtnDisabled} onClick={onClickAddTaskHandler}>+</button>
+            </div>
+
             <div style={{fontSize: "12px"}}>
                {userMessage}
             </div>

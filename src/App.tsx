@@ -12,7 +12,7 @@ function App() {
 
    const [todolists, setTodolists] = useState<TodolistsType[]>([
       {id: todolistID1, title: 'What to learn', filter: 'all'},
-      {id: todolistID2, title: 'What to buy', filter: 'completed'},
+      // {id: todolistID2, title: 'What to buy', filter: 'completed'},
    ]);
    const [tasks, setTasks] = useState<TasksStateType>({
       [todolistID1]: [
@@ -63,32 +63,34 @@ function App() {
 
    return (
       <div className="App">
-         {
-            todolists.map(tl => {
+         <div className="container">
+            {
+               todolists.map(tl => {
 
-               let tasksForTodolist = tasks[tl.id];
+                  let tasksForTodolist = tasks[tl.id];
 
-               if (tl.filter === "active") {
-                  tasksForTodolist = tasksForTodolist.filter(t => !t.isDone)
-               }
-               if (tl.filter === "completed") {
-                  tasksForTodolist = tasksForTodolist.filter(t => t.isDone)
-               }
+                  if (tl.filter === "active") {
+                     tasksForTodolist = tasksForTodolist.filter(t => !t.isDone)
+                  }
+                  if (tl.filter === "completed") {
+                     tasksForTodolist = tasksForTodolist.filter(t => t.isDone)
+                  }
 
-               return <Todolist key={tl.id}
-                                todoId={tl.id}
-                                title={tl.title}
-                                tasks={tasksForTodolist}
-                                filter={tl.filter}
-                                removeTodolist={removeTodolist}
-                                removeTask={removeTask}
-                                changeFilter={changeFilter}
-                                addTask={addTask}
-                                changeTaskTitle={changeTaskTitle}
-                                changeTaskStatus={changeTaskStatus}
-               />
-            })
-         }
+                  return <Todolist key={tl.id}
+                                   todoId={tl.id}
+                                   title={tl.title}
+                                   tasks={tasksForTodolist}
+                                   filter={tl.filter}
+                                   removeTodolist={removeTodolist}
+                                   removeTask={removeTask}
+                                   changeFilter={changeFilter}
+                                   addTask={addTask}
+                                   changeTaskTitle={changeTaskTitle}
+                                   changeTaskStatus={changeTaskStatus}
+                  />
+               })
+            }
+         </div>
       </div>
    );
 }
