@@ -2,11 +2,11 @@ import React, {ChangeEvent, FC, KeyboardEvent, useState} from 'react';
 
 
 type Props = {
-   addTask: (newTaskTitle: string) => void
+   onClick: (title: string) => void
 }
 
 export const AddItemForm: FC<Props> = (props) => {
-   const {addTask} = props;
+   const {onClick} = props;
 
    const [taskTitle, setTaskTitle] = useState<string>("");
    const [error, setError] = useState<string>("");
@@ -19,7 +19,7 @@ export const AddItemForm: FC<Props> = (props) => {
    const onClickHandler = () => {
       const newTitle = taskTitle.trim();
       if (newTitle !== "") {
-         addTask(taskTitle);
+         onClick(taskTitle);
       } else {
          setError("Title is required");
       }

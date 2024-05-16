@@ -1,4 +1,4 @@
-import React, {ChangeEvent, FC, JSX, KeyboardEvent, useState} from 'react';
+import React, {ChangeEvent, FC, JSX} from 'react';
 import {FilterValuesType} from "../App";
 import {AddItemForm} from "../AddItemForm";
 
@@ -39,8 +39,8 @@ export const Todolist: FC<TodolistProps> = (props) => {
       removeTodolist(todoId);
    }
 
-   const addTaskHandler = (newTaskTitle: string) => {
-      addTask(todoId, newTaskTitle)
+   const addTaskHandler = (title: string) => {
+      addTask(todoId, title)
    }
 
    const listItems: JSX.Element[] = tasks.map(t => {
@@ -72,7 +72,7 @@ export const Todolist: FC<TodolistProps> = (props) => {
             <button onClick={removeTodolistHandler}>X</button>
          </h3>
 
-         <AddItemForm addTask={addTaskHandler}/>
+         <AddItemForm onClick={addTaskHandler}/>
          {tasksList}
          <div>
             <button className={filter === 'all' ? "active-filter" : ""}
