@@ -1,6 +1,6 @@
 import React, {ChangeEvent, FC, JSX} from 'react';
 import {FilterValuesType} from "../App";
-import {AddItemForm} from "../AddItemForm";
+import {AddItemForm} from "./AddItemForm";
 
 type TaskType = {
    id: string
