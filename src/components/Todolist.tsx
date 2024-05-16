@@ -65,7 +65,10 @@ export const Todolist: FC<TodolistProps> = (props) => {
                    checked={t.isDone}
                    onChange={onChangeStatusHandler}
             />
-            <EditableSpan title={t.title} isDone={t.isDone} updateTitle={(title: string) => updateTaskTitleHandler(t.id, title)}/>
+            <EditableSpan title={t.title}
+                          isDone={t.isDone}
+                          updateTitle={(title: string) => updateTaskTitleHandler(t.id, title)}
+            />
             <button onClick={onClickRemoveTaskHandler}>X</button>
          </li>
       );

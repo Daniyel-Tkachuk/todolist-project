@@ -1,5 +1,6 @@
 import React, {ChangeEvent, KeyboardEvent, FC, useState} from 'react';
 
+
 type Props = {
    title: string
    isDone?: boolean
@@ -14,8 +15,8 @@ export const EditableSpan: FC<Props> = (props) => {
 
 
    const editHandler = () => {
-      edit && updateTitle(newTitle);
       setEdit(!edit);
+      edit && updateTitle(newTitle);
    }
 
    const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
