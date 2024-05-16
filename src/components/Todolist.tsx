@@ -1,6 +1,7 @@
 import React, {ChangeEvent, FC, JSX} from 'react';
 import {FilterValuesType} from "../App";
 import {AddItemForm} from "./AddItemForm";
+import {EditableSpan} from "./EditableSpan";
 
 type TaskType = {
    id: string
@@ -54,7 +55,7 @@ export const Todolist: FC<TodolistProps> = (props) => {
                    checked={t.isDone}
                    onChange={onChangeStatusHandler}
             />
-            <span className={t.isDone ? "task-done" : "task"}>{t.title}</span>
+            <EditableSpan title={t.title} isDone={t.isDone}/>
             <button onClick={onClickRemoveTaskHandler}>X</button>
          </li>
       );
