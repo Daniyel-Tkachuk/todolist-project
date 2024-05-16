@@ -3,28 +3,27 @@ import React, {ChangeEvent, KeyboardEvent, FC, useState} from 'react';
 type Props = {
    title: string
    isDone?: boolean
+   updateTitle: (title: string) => void
 }
 
 export const EditableSpan: FC<Props> = (props) => {
-   const {title, isDone} = props;
+   const {title, isDone, updateTitle} = props;
 
-   const [text, setText] = useState<string>("");
+   const [newTitle, setTitle] = useState<string>(title);
    const [edit, setEdit] = useState<boolean>(false);
 
-   const onDoubleClickHandler = () => {
-      setEdit(true);
-   };
 
-   const onBlurHandler = () => {
-      setEdit(false);
+   const editHandler = () => {
+      edit && updateTitle(newTitle);
+      setEdit(!edit);
    }
 
    const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-      setText(e.currentTarget.value);
+      setTitle(e.currentTarget.value);
    }
 
    const onClickEnter = (e: KeyboardEvent<HTMLInputElement>) => {
-      e.key === 'Enter' && onBlurHandler();
+      e.key === 'Enter' && editHandler();
    }
 
    const stylesForSpan = isDone ? "task-done" : "task";
@@ -34,13 +33,14 @@ export const EditableSpan: FC<Props> = (props) => {
          {
             edit
                ? <input type="text"
+                        value={newTitle}
                         autoFocus
                         onChange={onChangeHandler}
-                        onBlur={onBlurHandler}
+                        onBlur={editHandler}
                         onKeyDown={onClickEnter}
                />
                : <span className={stylesForSpan}
-                       onDoubleClick={onDoubleClickHandler}
+                       onDoubleClick={editHandler}
                >{title}</span>
          }
       </>
