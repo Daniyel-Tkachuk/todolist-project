@@ -33,9 +33,6 @@ export const Todolist: FC<TodolistProps> = (props) => {
    } = props;
 
 
-   const [taskTitle, setTaskTitle] = useState<string>("");
-   const [inputError, setInputError] = useState<boolean>(false);
-
    const onChangeFilterHandler = (filterValue: FilterValuesType) => changeFilter(todoId, filterValue);
 
    const removeTodolistHandler = () => {
@@ -43,7 +40,7 @@ export const Todolist: FC<TodolistProps> = (props) => {
    }
 
    const addTaskHandler = (newTaskTitle: string) => {
-
+      addTask(todoId, newTaskTitle)
    }
 
    const listItems: JSX.Element[] = tasks.map(t => {
