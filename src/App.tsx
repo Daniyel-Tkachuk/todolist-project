@@ -1,9 +1,9 @@
-import React, {useReducer, useState} from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import {TasksStateType, Todolist} from "./components/Todolist";
 import {v1} from "uuid";
 import {AddItemForm} from "./components/AddItemForm";
-import {tasksReducer} from "./reducer/tasksReducer";
+
 
 export type TodolistsType = { id: string, title: string, filter: FilterValuesType };
 export type FilterValuesType = "all" | "active" | "completed";
