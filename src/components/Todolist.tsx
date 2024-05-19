@@ -3,7 +3,7 @@ import {FilterValuesType} from "../App";
 import {AddItemForm} from "./AddItemForm";
 import {EditableSpan} from "./EditableSpan";
 
-type TaskType = {
+export type TaskType = {
    id: string
    title: string
    isDone: boolean
