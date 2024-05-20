@@ -1,14 +1,18 @@
-export type StateType = {
+import {v1} from "uuid";
+
+
+export type TodolistType = {
    id: string,
    title: string,
    filter: FilterValuesType
 };
 export type FilterValuesType = "all" | "active" | "completed";
 
-export const todolistReducer = (state: StateType[], action: ActionsType): StateType[] => {
+export const todolistReducer = (state: TodolistType[], action: ActionsType): TodolistType[] => {
    switch (action.type) {
-      case "xxx": {
-         return state;
+      case "ADD_TODOLIST": {
+         const newTodolist: TodolistType = {id: v1(), title: action.payload.title, filter: "all"};
+         return [...state, newTodolist]
       }
       default: {
          return state;
@@ -16,5 +20,15 @@ export const todolistReducer = (state: StateType[], action: ActionsType): StateT
    }
 }
 
+type AddTodolistACType = ReturnType<typeof AddTodolistAC>;
+export const AddTodolistAC = (title: string) => {
+   return {
+      type: "ADD_TODOLIST",
+      payload: {
+         title
+      }
+   } as const;
+}
 
-type ActionsType = any;
+
+type ActionsType = AddTodolistACType;
