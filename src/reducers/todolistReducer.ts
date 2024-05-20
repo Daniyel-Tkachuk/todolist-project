@@ -21,6 +21,10 @@ export const todolistReducer = (state: TodolistType[], action: ActionsType): Tod
          const {id, title} = action.payload;
          return state.map(tl => tl.id === id ? {...tl, title} : tl);
       }
+      case "CHANGE_FILTER": {
+         const {id, filter} = action.payload;
+         return state.map(tl => tl.id === id ? {...tl, filter} : tl);
+      }
       default: {
          return state;
       }
@@ -58,5 +62,17 @@ export const updateTodolistAC = (id: string, title: string) => {
    } as const;
 }
 
+type ChangeFilterACType = ReturnType<typeof changeTodolistAC>;
+export const changeTodolistAC = (id: string, filter: FilterValuesType) => {
+   return {
+      type: "CHANGE_FILTER",
+      payload: {
+         id,
+         filter
+      }
+   } as const;
+}
 
-type ActionsType = AddTodolistACType | removeTodolistACType | UpdateTodolistACType;
+
+type ActionsType = AddTodolistACType | removeTodolistACType | UpdateTodolistACType
+   | ChangeFilterACType;
