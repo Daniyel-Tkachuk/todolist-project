@@ -1,4 +1,11 @@
-export const todolistReducer = (state: any, action: ActionsType): any => {
+export type StateType = {
+   id: string,
+   title: string,
+   filter: FilterValuesType
+};
+export type FilterValuesType = "all" | "active" | "completed";
+
+export const todolistReducer = (state: StateType[], action: ActionsType): StateType[] => {
    switch (action.type) {
       case "xxx": {
          return state;
