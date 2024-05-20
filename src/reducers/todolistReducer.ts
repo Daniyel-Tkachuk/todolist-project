@@ -14,21 +14,34 @@ export const todolistReducer = (state: TodolistType[], action: ActionsType): Tod
          const newTodolist: TodolistType = {id: v1(), title: action.payload.title, filter: "all"};
          return [...state, newTodolist]
       }
+      case "REMOVE_TODOLIST": {
+         return state.filter(tl => tl.id !== action.payload.id);
+      }
       default: {
          return state;
       }
    }
 }
 
-type AddTodolistACType = ReturnType<typeof AddTodolistAC>;
-export const AddTodolistAC = (title: string) => {
+type AddTodolistACType = ReturnType<typeof addTodolistAC>;
+export const addTodolistAC = (title: string) => {
    return {
       type: "ADD_TODOLIST",
       payload: {
          title
       }
    } as const;
+};
+
+type removeTodolistACType = ReturnType<typeof removeTodolistAC>;
+export const removeTodolistAC = (id: string) => {
+   return {
+      type: "REMOVE_TODOLIST",
+      payload: {
+         id
+      }
+   } as const;
 }
 
 
-type ActionsType = AddTodolistACType;
+type ActionsType = AddTodolistACType | removeTodolistACType;
