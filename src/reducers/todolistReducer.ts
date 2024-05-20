@@ -17,6 +17,10 @@ export const todolistReducer = (state: TodolistType[], action: ActionsType): Tod
       case "REMOVE_TODOLIST": {
          return state.filter(tl => tl.id !== action.payload.id);
       }
+      case "UPDATE_TODOLIST": {
+         const {id, title} = action.payload;
+         return state.map(tl => tl.id === id ? {...tl, title} : tl);
+      }
       default: {
          return state;
       }
@@ -41,7 +45,18 @@ export const removeTodolistAC = (id: string) => {
          id
       }
    } as const;
+};
+
+type UpdateTodolistACType = ReturnType<typeof updateTodolistAC>;
+export const updateTodolistAC = (id: string, title: string) => {
+   return {
+      type: "UPDATE_TODOLIST",
+      payload: {
+         id,
+         title
+      }
+   } as const;
 }
 
 
-type ActionsType = AddTodolistACType | removeTodolistACType;
+type ActionsType = AddTodolistACType | removeTodolistACType | UpdateTodolistACType;
