@@ -47,7 +47,7 @@ export const Todolist: FC<TodolistProps> = (props) => {
       updateTodolistTitle(todoId, title);
    }
 
-   const listItems: JSX.Element[] = tasks.map(t => {
+   const listItems: JSX.Element[] = tasks && tasks.map(t => {
       const onClickRemoveTaskHandler = () => removeTask(todoId, t.id);
       const onChangeStatusHandler = (e: ChangeEvent<HTMLInputElement>) => {
          changeTaskStatus(todoId, t.id, e.currentTarget.checked);
@@ -67,7 +67,7 @@ export const Todolist: FC<TodolistProps> = (props) => {
       );
    });
 
-   const tasksList: JSX.Element = tasks.length
+   const tasksList: JSX.Element = tasks?.length
       ? <ul>{listItems}</ul>
       : <span>Your tasksList is empty</span>;
 

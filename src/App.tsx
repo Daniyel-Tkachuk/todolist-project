@@ -68,9 +68,7 @@ function App() {
    }
 
    const addTodolist = (title: string) => {
-      const id = v1();
-      todolistsDispatch(addTodolistAC(id, title));
-      tasksDispatch(addTodolistAC(id, title));
+      todolistsDispatch(addTodolistAC(title));
    }
 
    return (
@@ -81,7 +79,7 @@ function App() {
          </div>
          <div className={"todolistsWrapper"}>
             {
-               todolists.map(tl => {
+               todolists && todolists.map(tl => {
 
                   let tasksForTodolist = tasks[tl.id];
 
