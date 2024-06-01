@@ -38,6 +38,7 @@ function App() {
       ],
    });
 
+
    const removeTask = (todoId: string, taskId: string) => {
       tasksDispatch(removeTaskAC(todoId, taskId));
    };
@@ -68,7 +69,9 @@ function App() {
    }
 
    const addTodolist = (title: string) => {
-      todolistsDispatch(addTodolistAC(title));
+      const newTodoId = v1();
+      todolistsDispatch(addTodolistAC(newTodoId, title));
+      tasksDispatch(addTodolistAC(newTodoId, title));
    }
 
    return (

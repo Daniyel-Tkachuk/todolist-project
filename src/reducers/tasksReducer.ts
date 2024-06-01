@@ -1,5 +1,5 @@
 import {v1} from "uuid";
-import {AddTodolistACType, removeTodolistACType} from "./todolistsReducer";
+import {AddTodolistACType, RemoveTodolistACType} from "./todolistsReducer";
 
 export type TaskType = {
    id: string
@@ -49,6 +49,7 @@ export const tasksReducer = (state: StateType, action: ActionsType): StateType =
          }
       }
       case "REMOVE_TODOLIST": {
+         debugger
          const copyState = {...state};
          delete copyState[action.payload.id];
          return copyState;
@@ -106,4 +107,4 @@ export const updateTaskTitleAC = (todoId: string, id: string, title: string) => 
 }
 
 type ActionsType = RemoveTaskACType | AddTaskACType | ChangeTaskStatusACType
-   | updateTaskTitleACType | removeTodolistACType | AddTodolistACType;
+   | updateTaskTitleACType | RemoveTodolistACType | AddTodolistACType;

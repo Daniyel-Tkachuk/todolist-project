@@ -1,5 +1,3 @@
-import {v1} from "uuid";
-
 export type TodolistType = {
    id: string,
    title: string,
@@ -11,7 +9,8 @@ export const todolistsReducer = (state: TodolistType[], action: ActionsType): To
    switch (action.type) {
       case "ADD_TODOLIST": {
          const {id, title} = action.payload;
-         const newTodolist: TodolistType = {id, title, filter: "all"};
+         const newTodoTitle = title ? title : "";
+         const newTodolist: TodolistType = {id, title: newTodoTitle, filter: "all"};
          return [...state, newTodolist]
       }
       case "REMOVE_TODOLIST": {
@@ -32,17 +31,17 @@ export const todolistsReducer = (state: TodolistType[], action: ActionsType): To
 }
 
 export type AddTodolistACType = ReturnType<typeof addTodolistAC>;
-export const addTodolistAC = (title: string) => {
+export const addTodolistAC = (id: string, title?: string) => {
    return {
       type: "ADD_TODOLIST",
       payload: {
-         id: v1(),
+         id,
          title
       }
    } as const;
 };
 
-export type removeTodolistACType = ReturnType<typeof removeTodolistAC>;
+export type RemoveTodolistACType = ReturnType<typeof removeTodolistAC>;
 export const removeTodolistAC = (id: string) => {
    return {
       type: "REMOVE_TODOLIST",
@@ -75,5 +74,5 @@ export const changeFilterAC = (id: string, filter: FilterValuesType) => {
 }
 
 
-type ActionsType = AddTodolistACType | removeTodolistACType | UpdateTodolistTitleACType
+type ActionsType = AddTodolistACType | RemoveTodolistACType | UpdateTodolistTitleACType
    | ChangeFilterACType;
