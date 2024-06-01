@@ -1,16 +1,9 @@
 import React, {ChangeEvent, FC, JSX} from 'react';
-import {FilterValuesType} from "../App";
 import {AddItemForm} from "./AddItemForm";
 import {EditableSpan} from "./EditableSpan";
+import {TaskType} from "../reducers/tasksReducer";
+import {FilterValuesType} from "../reducers/todolistsReducer";
 
-export type TaskType = {
-   id: string
-   title: string
-   isDone: boolean
-}
-export type TasksStateType = {
-   [key: string]: TaskType[]
-}
 
 type TodolistProps = {
    todoId: string
