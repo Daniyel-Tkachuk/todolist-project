@@ -4,6 +4,7 @@ import {EditableSpan} from "./EditableSpan";
 import {TaskType} from "../reducers/tasksReducer";
 import {FilterValuesType} from "../reducers/todolistsReducer";
 import {CheckBox} from "./CheckBox";
+import {Button} from "./Button";
 
 
 type TodolistProps = {
@@ -52,6 +53,8 @@ export const Todolist: FC<TodolistProps> = (props) => {
       changeTaskStatus(todoId, taskId, checked);
    }
 
+   const onClickRemoveTaskHandler = (taskId: string) => removeTask(todoId, taskId);
+
    return (
       <div className="todolist">
          <h3>
@@ -64,8 +67,6 @@ export const Todolist: FC<TodolistProps> = (props) => {
          <ul>
             {
                tasks.length ? tasks.map(t => {
-                  const onClickRemoveTaskHandler = () => removeTask(todoId, t.id);
-
                   return (
                      <li key={t.id}>
                         <CheckBox checkedValue={t.isDone}
@@ -75,7 +76,7 @@ export const Todolist: FC<TodolistProps> = (props) => {
                                       isDone={t.isDone}
                                       updateTitle={(title: string) => updateTaskTitleHandler(t.id, title)}
                         />
-                        <button onClick={onClickRemoveTaskHandler}>X</button>
+                        <Button textBtn="X" onClick={() => onClickRemoveTaskHandler(t.id)}/>
                      </li>
                   )
                }) : <span>Your tasksList is empty</span>
