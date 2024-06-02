@@ -1,8 +1,9 @@
-import React, {ChangeEvent, FC, JSX} from 'react';
+import React, {FC} from 'react';
 import {AddItemForm} from "./AddItemForm";
 import {EditableSpan} from "./EditableSpan";
 import {TaskType} from "../reducers/tasksReducer";
 import {FilterValuesType} from "../reducers/todolistsReducer";
+import {CheckBox} from "./CheckBox";
 
 
 type TodolistProps = {
@@ -47,30 +48,9 @@ export const Todolist: FC<TodolistProps> = (props) => {
       updateTodolistTitle(todoId, title);
    }
 
-   const listItems: JSX.Element[] = tasks && tasks.map(t => {
-      const onClickRemoveTaskHandler = () => removeTask(todoId, t.id);
-      const onChangeStatusHandler = (e: ChangeEvent<HTMLInputElement>) => {
-         changeTaskStatus(todoId, t.id, e.currentTarget.checked);
-      }
-      return (
-         <li key={t.id}>
-            <input type="checkbox"
-                   checked={t.isDone}
-                   onChange={onChangeStatusHandler}
-            />
-            <EditableSpan title={t.title}
-                          isDone={t.isDone}
-                          updateTitle={(title: string) => updateTaskTitleHandler(t.id, title)}
-            />
-            <button onClick={onClickRemoveTaskHandler}>X</button>
-         </li>
-      );
-   });
-
-   const tasksList: JSX.Element = tasks?.length
-      ? <ul>{listItems}</ul>
-      : <span>Your tasksList is empty</span>;
-
+   const onChangeStatusHandler = (taskId: string, checked: boolean) => {
+      changeTaskStatus(todoId, taskId, checked);
+   }
 
    return (
       <div className="todolist">
@@ -80,7 +60,28 @@ export const Todolist: FC<TodolistProps> = (props) => {
          </h3>
 
          <AddItemForm onClick={addTaskHandler}/>
-         {tasksList}
+
+         <ul>
+            {
+               tasks.length ? tasks.map(t => {
+                  const onClickRemoveTaskHandler = () => removeTask(todoId, t.id);
+
+                  return (
+                     <li key={t.id}>
+                        <CheckBox checkedValue={t.isDone}
+                                  onChangeChecked={(checked: boolean) => onChangeStatusHandler(t.id, checked)}
+                        />
+                        <EditableSpan title={t.title}
+                                      isDone={t.isDone}
+                                      updateTitle={(title: string) => updateTaskTitleHandler(t.id, title)}
+                        />
+                        <button onClick={onClickRemoveTaskHandler}>X</button>
+                     </li>
+                  )
+               }) : <span>Your tasksList is empty</span>
+            }
+         </ul>
+
          <div>
             <button className={filter === 'all' ? "active-filter" : ""}
                     onClick={() => onChangeFilterHandler("all")}
