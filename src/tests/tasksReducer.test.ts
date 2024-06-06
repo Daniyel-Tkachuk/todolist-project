@@ -7,7 +7,7 @@ import {
    updateTaskTitleAC
 } from "../reducers/tasksReducer";
 import {v1} from "uuid";
-import {addTodolistAC} from "../reducers/todolistsReducer";
+import {addTodolistAC, removeTodolistAC} from "../reducers/todolistsReducer";
 
 let todolistId1: string;
 let todolistId2: string;
@@ -94,4 +94,13 @@ test("new array should be added when new todolist is added", () => {
    expect(keys.length).toBe(3);
    expect(endState[newKey]).toEqual([]);
    expect(newKey).toBe(newTodoId);
+});
+
+test("property with todolistId should be deleted", () => {
+   const endState = tasksReducer(startState, removeTodolistAC(todolistId2));
+
+   const keys = Object.keys(endState);
+
+   expect(keys.length).toBe(1);
+   expect(endState[todolistId2]).not.toBeDefined();
 });

@@ -1,6 +1,6 @@
 import {v1} from "uuid";
 import {tasksReducer, TasksStateType} from "../reducers/tasksReducer";
-import {addTodolistAC, todolistsReducer, TodolistType} from "../reducers/todolistsReducer";
+import {addTodolistAC, removeTodolistAC, todolistsReducer, TodolistType} from "../reducers/todolistsReducer";
 
 let todolistId1:string;
 let todolistId2:string;
@@ -45,4 +45,15 @@ test("ids should be equals", () => {
    expect(endTodolistsState[0].id).toBe(newTodoId);
    expect(endTodolistsState[0].id).toBe(idFromTasks);
 
+});
+
+test("correct todolist should be deleted and property tasks too", () => {
+   const endTodolistsState = todolistsReducer(startTodolistsState, removeTodolistAC(todolistId2));
+   const endTasksState = tasksReducer(startTasksState, removeTodolistAC(todolistId2));
+
+   const keys = Object.keys(endTasksState);
+
+   expect(endTodolistsState.length).toBe(1);
+   expect(keys.length).toBe(1);
+   expect(endTasksState[todolistId2]).not.toBeDefined();
 });
