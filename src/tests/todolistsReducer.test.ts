@@ -29,11 +29,12 @@ test("correct todolist should be removed", () => {
 
 test("correct todolist should be added", () => {
    const newTitle = "What to read";
+   const newTodoId = v1();
 
-   const endState = todolistsReducer(state, addTodolistAC(newTitle));
+   const endState = todolistsReducer(state, addTodolistAC(newTodoId, newTitle));
 
    expect(endState.length).toBe(3);
-   expect(endState[endState.length - 1].title).toBe("What to read");
+   expect(endState[0].title).toBe("What to read");
 });
 
 test("correct todolist should be changed title", () => {

@@ -42,7 +42,7 @@ test("ids should be equals", () => {
 
    expect(endTodolistsState.length).toBe(3);
    expect(endTasksState[newTodoId]).toEqual([]);
-   expect(endTodolistsState[2].id).toBe(newTodoId);
-   expect(endTodolistsState[2].id).toBe(idFromTasks);
+   expect(endTodolistsState[0].id).toBe(newTodoId);
+   expect(endTodolistsState[0].id).toBe(idFromTasks);
 
 });

@@ -11,7 +11,7 @@ export const todolistsReducer = (state: TodolistType[], action: ActionsType): To
          const {id, title} = action.payload;
          const newTodoTitle = title ? title : "";
          const newTodolist: TodolistType = {id, title: newTodoTitle, filter: "all"};
-         return [...state, newTodolist]
+         return [newTodolist, ...state]
       }
       case "REMOVE_TODOLIST": {
          return state.filter(tl => tl.id !== action.payload.id);
