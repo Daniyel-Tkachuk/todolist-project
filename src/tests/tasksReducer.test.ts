@@ -71,12 +71,9 @@ test("title of specified task should be update", () => {
    const endState = tasksReducer(startState, updateTaskTitleAC(todolistId2, "2", newTitle));
 
    expect(endState).not.toEqual(startState);
+   expect(endState[todolistId2]).not.toEqual(startState[todolistId2]);
    expect(endState[todolistId2].length).toBe(3);
    expect(endState[todolistId2][1].title).toBe(newTitle);
    expect(endState[todolistId2][0].title).toBe("bread");
    expect(endState[todolistId2][2].title).toBe("tea");
-});
-
-test("", () => {
-
 });
