@@ -40,6 +40,8 @@ test("ids should be equals", () => {
 
    const idFromTasks = Object.keys(endTasksState).at(-1);
 
+   expect(endTodolistsState.length).toBe(3);
+   expect(endTasksState[newTodoId]).toEqual([]);
    expect(endTodolistsState[2].id).toBe(newTodoId);
    expect(endTodolistsState[2].id).toBe(idFromTasks);
 
