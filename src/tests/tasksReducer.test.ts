@@ -2,7 +2,7 @@ import {
    addTaskAC,
    changeTaskStatusAC,
    removeTaskAC,
-   StateType,
+   TasksStateType,
    tasksReducer,
    updateTaskTitleAC
 } from "../reducers/tasksReducer";
@@ -12,7 +12,8 @@ import {addTodolistAC} from "../reducers/todolistsReducer";
 let todolistId1: string;
 let todolistId2: string;
 
-let startState: StateType;
+let startState: TasksStateType;
+
 
 beforeEach(()  => {
    todolistId1 = v1();
@@ -80,9 +81,9 @@ test("title of specified task should be update", () => {
 });
 
 test("new array should be added when new todolist is added", () => {
-   const titleForNewTodolist = "todolistTest";
+   const newTodoId = v1();
 
-   const endState = tasksReducer(startState, addTodolistAC(titleForNewTodolist));
+   const endState = tasksReducer(startState, addTodolistAC(newTodoId));
 
    const keys = Object.keys(endState);
    const newKey = keys.find(k => k !== todolistId1 && k !== todolistId2);
@@ -92,4 +93,5 @@ test("new array should be added when new todolist is added", () => {
 
    expect(keys.length).toBe(3);
    expect(endState[newKey]).toEqual([]);
+   expect(newKey).toBe(newTodoId);
 });
