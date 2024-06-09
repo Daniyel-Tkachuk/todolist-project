@@ -64,12 +64,13 @@ function App() {
    };
 
    const removeTodolist = (todoId: string) => {
-      todolistsDispatch(removeTodolistAC(todoId));
-      tasksDispatch(removeTodolistAC(todoId));
+      const action = removeTodolistAC(todoId);
+      todolistsDispatch(action);
+      tasksDispatch(action);
    }
 
    const addTodolist = (title: string) => {
-      let action = addTodolistAC(title);
+      const action = addTodolistAC(title);
       todolistsDispatch(action);
       tasksDispatch(action);
    }
