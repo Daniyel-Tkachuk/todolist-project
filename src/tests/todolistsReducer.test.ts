@@ -32,9 +32,8 @@ test("correct todolist should be removed", () => {
 
 test("correct todolist should be added", () => {
    const newTitle = "What to read";
-   const newTodoId = v1();
 
-   const endState = todolistsReducer(state, addTodolistAC(newTodoId, newTitle));
+   const endState = todolistsReducer(state, addTodolistAC(newTitle));
 
    expect(endState.length).toBe(3);
    expect(endState[0].title).toBe("What to read");

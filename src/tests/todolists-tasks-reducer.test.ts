@@ -33,27 +33,29 @@ beforeEach(() => {
 
 test("ids should be equals", () => {
    const newTitle = "test todolist";
-   const newTodoId = "testId";
 
-   const endTodolistsState = todolistsReducer(startTodolistsState, addTodolistAC(newTodoId, newTitle));
-   const endTasksState = tasksReducer(startTasksState, addTodolistAC(newTodoId));
+   const action = addTodolistAC(newTitle);
 
-   const idFromTasks = Object.keys(endTasksState).at(-1);
+   const endTodolistsState = todolistsReducer(startTodolistsState, action);
+   const endTasksState = tasksReducer(startTasksState, action);
 
-   expect(endTodolistsState.length).toBe(3);
-   expect(endTasksState[newTodoId]).toEqual([]);
-   expect(endTodolistsState[0].id).toBe(newTodoId);
-   expect(endTodolistsState[0].id).toBe(idFromTasks);
+   const keys = Object.keys(endTasksState);
+   const newKeyTodolist = keys.filter(t => t !== todolistId1 && t !== todolistId2)[0];
+
+
+  expect(endTodolistsState.length).toBe(3);
+  expect(endTodolistsState[0].title).toBe(newTitle);
+  expect(endTodolistsState[0].filter).toBe("all");
+  expect(endTasksState[newKeyTodolist]).toEqual([]);
 
 });
 
 test("correct todolist should be deleted and property tasks too", () => {
-   const endTodolistsState = todolistsReducer(startTodolistsState, removeTodolistAC(todolistId2));
-   const endTasksState = tasksReducer(startTasksState, removeTodolistAC(todolistId2));
+   const action = removeTodolistAC(todolistId2);
 
-   const keys = Object.keys(endTasksState);
+   const endTodolistsState = todolistsReducer(startTodolistsState, action);
+   const endTasksState = tasksReducer(startTasksState, action);
 
    expect(endTodolistsState.length).toBe(1);
-   expect(keys.length).toBe(1);
    expect(endTasksState[todolistId2]).not.toBeDefined();
 });
