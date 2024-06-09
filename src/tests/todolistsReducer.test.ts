@@ -7,12 +7,15 @@ import {
    updateTodolistTitleAC
 } from "../reducers/todolistsReducer";
 
-const todolistId1 = v1();
-const todolistId2 = v1();
+let todolistId1: string;
+let todolistId2: string;
 
 let state: TodolistType[] = [];
 
 beforeEach(() => {
+   todolistId1 = v1();
+   todolistId2 = v1();
+
    state = [
       {id: todolistId1, title: 'What to learn', filter: 'all'},
       {id: todolistId2, title: 'What to buy', filter: 'completed'},
