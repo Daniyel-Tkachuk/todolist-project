@@ -1,101 +1,104 @@
 import React, {FC} from 'react';
 import {AddItemForm} from "./AddItemForm";
 import {EditableSpan} from "./EditableSpan";
-import {TaskType} from "../reducers/tasksReducer";
-import {FilterValuesType} from "../reducers/todolistsReducer";
-import {CheckBox} from "./CheckBox";
-import {Button} from "./Button";
+import {
+   addTaskAC,
+   changeTaskStatusAC,
+   removeTaskAC,
+   TaskType,
+   updateTaskTitleAC
+} from "../reducers/tasksReducer";
+import {
+   changeFilterAC,
+   FilterValuesType,
+   removeTodolistAC,
+   TodolistType,
+   updateTodolistTitleAC
+} from "../reducers/todolistsReducer";
+import {useDispatch, useSelector} from "react-redux";
+import {AppRootStateType} from "../store/store";
+import {Task} from "./Task";
+import {Dispatch} from "redux";
 
 
 type TodolistProps = {
-   todoId: string
-   title: string
-   tasks: TaskType[]
-   filter: FilterValuesType
-   removeTodolist: (todoId: string) => void
-   removeTask: (todoId: string, taskId: string) => void
-   changeFilter: (todoId: string, filterValue: FilterValuesType) => void
-   addTask: (todoId: string, taskTitle: string) => void
-   updateTaskTitle: (todoId: string, taskId: string, taskTitle: string) => void
-   updateTodolistTitle: (todoId: string, title: string) => void
-   changeTaskStatus: (todoId: string, taskId: string, isDone: boolean) => void
+   todolist: TodolistType
 }
 
 export const Todolist: FC<TodolistProps> = (props) => {
-
    const {
-      todoId, title, tasks, filter,
-      removeTask, changeFilter, addTask,
-      updateTaskTitle, changeTaskStatus, removeTodolist,
-      updateTodolistTitle
+      todolist: {id, title, filter}
    } = props;
 
+   const tasks = useSelector<AppRootStateType, TaskType[]>((state) => state.tasks[id]);
+   const dispatch = useDispatch<Dispatch>();
 
-   const onChangeFilterHandler = (filterValue: FilterValuesType) => changeFilter(todoId, filterValue);
+   const changeFilter = (filterValue: FilterValuesType) => dispatch(changeFilterAC(id, filterValue));
 
-   const removeTodolistHandler = () => {
-      removeTodolist(todoId);
+   const removeTodolist = () => dispatch(removeTodolistAC(id));
+
+   const addTask = (title: string) => dispatch(addTaskAC(id, title))
+
+   const updateTaskTitle = (taskId: string, title: string) => {
+      dispatch(updateTaskTitleAC(id, taskId, title))
    }
 
-   const addTaskHandler = (title: string) => {
-      addTask(todoId, title)
+   const updateTodolistTitle = (title: string) => {
+      dispatch(updateTodolistTitleAC(id, title));
    }
 
-   const updateTaskTitleHandler = (taskId: string, title: string) => {
-      updateTaskTitle(todoId, taskId, title);
+   const onChangeStatus = (taskId: string, checked: boolean) => {
+      dispatch(changeTaskStatusAC(id, taskId, checked));
    }
 
-   const updateTodolistTitleHandler = (title: string) => {
-      updateTodolistTitle(todoId, title);
-   }
+   const removeTask = (taskId: string) => dispatch(removeTaskAC(id, taskId));
 
-   const onChangeStatusHandler = (taskId: string, checked: boolean) => {
-      changeTaskStatus(todoId, taskId, checked);
+   let tasksForFiltered = tasks;
+   if (filter === "active") {
+      tasksForFiltered = tasks.filter(t => !t.isDone);
    }
-
-   const onClickRemoveTaskHandler = (taskId: string) => removeTask(todoId, taskId);
+   if (filter === "completed") {
+      tasksForFiltered = tasks.filter(t => t.isDone);
+   }
 
    return (
       <div className="todolist">
          <h3>
-            <EditableSpan title={title} updateTitle={updateTodolistTitleHandler}/>
-            <button onClick={removeTodolistHandler}>X</button>
+            <EditableSpan title={title} updateTitle={updateTodolistTitle}/>
+            <button onClick={removeTodolist}>X</button>
          </h3>
 
-         <AddItemForm onClick={addTaskHandler}/>
+         <AddItemForm onClick={addTask}/>
 
          <ul>
             {
-               tasks.length ? tasks.map(t => {
-                  return (
-                     <li key={t.id}>
-                        <CheckBox checkedValue={t.isDone}
-                                  onChangeChecked={(checked: boolean) => onChangeStatusHandler(t.id, checked)}
+               tasks.length
+                  ? tasksForFiltered.map(t => {
+                     return (
+                        <Task key={t.id} task={t}
+                              onChangeStatus={onChangeStatus}
+                              removeTask={removeTask}
+                              updateTaskTitle={updateTaskTitle}
                         />
-                        <EditableSpan title={t.title}
-                                      isDone={t.isDone}
-                                      updateTitle={(title: string) => updateTaskTitleHandler(t.id, title)}
-                        />
-                        <Button textBtn="X" onClick={() => onClickRemoveTaskHandler(t.id)}/>
-                     </li>
-                  )
-               }) : <span>Your tasksList is empty</span>
+                     )
+                  })
+                  : <span>Your tasksList is empty</span>
             }
          </ul>
 
          <div>
             <button className={filter === 'all' ? "active-filter" : ""}
-                    onClick={() => onChangeFilterHandler("all")}
+                    onClick={() => changeFilter("all")}
             >
                All
             </button>
             <button className={filter === 'active' ? "active-filter" : ""}
-                    onClick={() => onChangeFilterHandler("active")}
+                    onClick={() => changeFilter("active")}
             >
                Active
             </button>
             <button className={filter === 'completed' ? "active-filter" : ""}
-                    onClick={() => onChangeFilterHandler("completed")}
+                    onClick={() => changeFilter("completed")}
             >
                Completed
             </button>

@@ -1,23 +1,21 @@
-import React, {useReducer} from 'react';
+import React, {FC} from 'react';
 import './App.css';
 import {Todolist} from "./components/Todolist";
-import {v1} from "uuid";
 import {AddItemForm} from "./components/AddItemForm";
-import {addTaskAC, changeTaskStatusAC, removeTaskAC, tasksReducer, updateTaskTitleAC} from "./reducers/tasksReducer";
 import {
    addTodolistAC,
-   changeFilterAC, FilterValuesType,
-   removeTodolistAC,
-   todolistsReducer,
-   updateTodolistTitleAC
+   TodolistType,
 } from "./reducers/todolistsReducer";
+import {useDispatch, useSelector} from "react-redux";
+import {AppRootStateType} from "./store/store";
+import {Dispatch} from "redux";
 
 
-function App() {
-   const todolistID1 = v1();
-   const todolistID2 = v1();
+export const App: FC = () => {
+   const todolists = useSelector<AppRootStateType, TodolistType[]>((state) => state.todolists);
+   const dispatch = useDispatch<Dispatch>();
 
-   const [todolists, todolistsDispatch] = useReducer(todolistsReducer, [
+   /*const [todolists, todolistsDispatch] = useReducer(todolistsReducer, [
       {id: todolistID1, title: 'What to learn', filter: 'all'},
       {id: todolistID2, title: 'What to buy', filter: 'completed'},
    ])
@@ -36,43 +34,10 @@ function App() {
          {id: v1(), title: 'TypeScript', isDone: true},
          {id: v1(), title: 'EventLoop', isDone: false},
       ],
-   });
-
-
-   const removeTask = (todoId: string, taskId: string) => {
-      tasksDispatch(removeTaskAC(todoId, taskId));
-   };
-
-   const addTask = (todoId: string, title: string) => {
-      tasksDispatch(addTaskAC(todoId, title));
-   };
-
-   const changeFilter = (todoId: string, filter: FilterValuesType) => {
-      todolistsDispatch(changeFilterAC(todoId, filter))
-   };
-
-   const updateTaskTitle = (todoId: string, taskId: string, title: string) => {
-      tasksDispatch(updateTaskTitleAC(todoId, taskId, title));
-   };
-
-   const updateTodolistTitle = (todoId: string, title: string) => {
-      todolistsDispatch(updateTodolistTitleAC(todoId, title));
-   }
-
-   const changeTaskStatus = (todoId: string, taskId: string, isDone: boolean) => {
-      tasksDispatch(changeTaskStatusAC(todoId, taskId, isDone));
-   };
-
-   const removeTodolist = (todoId: string) => {
-      const action = removeTodolistAC(todoId);
-      todolistsDispatch(action);
-      tasksDispatch(action);
-   }
+   });*/
 
    const addTodolist = (title: string) => {
-      const action = addTodolistAC(title);
-      todolistsDispatch(action);
-      tasksDispatch(action);
+      dispatch(addTodolistAC(title))
    }
 
    return (
@@ -83,35 +48,11 @@ function App() {
          </div>
          <div className={"todolistsWrapper"}>
             {
-               todolists && todolists.map(tl => {
-
-                  let tasksForTodolist = tasks[tl.id];
-
-                  if (tl.filter === "active") {
-                     tasksForTodolist = tasksForTodolist.filter(t => !t.isDone)
-                  }
-                  if (tl.filter === "completed") {
-                     tasksForTodolist = tasksForTodolist.filter(t => t.isDone)
-                  }
-
-                  return <Todolist key={tl.id}
-                                   todoId={tl.id}
-                                   title={tl.title}
-                                   tasks={tasksForTodolist}
-                                   filter={tl.filter}
-                                   removeTodolist={removeTodolist}
-                                   removeTask={removeTask}
-                                   changeFilter={changeFilter}
-                                   addTask={addTask}
-                                   updateTaskTitle={updateTaskTitle}
-                                   updateTodolistTitle={updateTodolistTitle}
-                                   changeTaskStatus={changeTaskStatus}
-                  />
-               })
+               todolists
+               && todolists
+                  .map(tl => <Todolist key={tl.id} todolist={tl}/>)
             }
          </div>
       </div>
    );
 }
-
-export default App;
