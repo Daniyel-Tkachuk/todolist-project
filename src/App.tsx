@@ -69,9 +69,9 @@ function App() {
    }
 
    const addTodolist = (title: string) => {
-      const newTodoId = v1();
-      todolistsDispatch(addTodolistAC(newTodoId, title));
-      tasksDispatch(addTodolistAC(newTodoId, title));
+      let action = addTodolistAC(title);
+      todolistsDispatch(action);
+      tasksDispatch(action);
    }
 
    return (

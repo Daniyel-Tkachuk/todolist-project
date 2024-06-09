@@ -74,5 +74,5 @@ export const changeFilterAC = (id: string, filter: FilterValuesType) => {
 }
 
 
-type ActionsType = AddTodolistACType | RemoveTodolistACType | UpdateTodolistTitleACType
+export type ActionsType = AddTodolistACType | RemoveTodolistACType | UpdateTodolistTitleACType
    | ChangeFilterACType;
