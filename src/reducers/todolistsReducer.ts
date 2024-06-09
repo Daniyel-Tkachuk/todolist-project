@@ -5,7 +5,9 @@ export type TodolistType = {
 };
 export type FilterValuesType = "all" | "active" | "completed";
 
-export const todolistsReducer = (state: TodolistType[], action: ActionsType): TodolistType[] => {
+const initialState: TodolistType[] = [];
+
+export const todolistsReducer = (state = initialState, action: ActionsType): TodolistType[] => {
    switch (action.type) {
       case "ADD_TODOLIST": {
          const {id, title} = action.payload;

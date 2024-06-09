@@ -9,9 +9,11 @@ export type TaskType = {
 
 export type TasksStateType = {
    [key: string]: TaskType[]
-}
+};
 
-export const tasksReducer = (state: TasksStateType, action: ActionsType): TasksStateType => {
+const initialState: TasksStateType = {};
+
+export const tasksReducer = (state = initialState, action: ActionsType): TasksStateType => {
    switch (action.type) {
       case "REMOVE_TASK": {
          const {todoId, id} = action.payload;
