@@ -6,7 +6,7 @@ import {
    changeTaskStatusAC,
    removeTaskAC,
    TaskType,
-   updateTaskTitleAC
+   updateTaskTitleAC,
 } from "../reducers/tasksReducer";
 import {
    changeFilterAC,
@@ -19,6 +19,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "../store/store";
 import {Task} from "./Task";
 import {Dispatch} from "redux";
+import {Button} from "./Button";
 
 
 type TodolistProps = {
@@ -33,7 +34,7 @@ export const Todolist: FC<TodolistProps> = (props) => {
    const tasks = useSelector<AppRootStateType, TaskType[]>((state) => state.tasks[id]);
    const dispatch = useDispatch<Dispatch>();
 
-   const changeFilter = (filterValue: FilterValuesType) => dispatch(changeFilterAC(id, filterValue));
+   const onChangeFilter = (filterValue: FilterValuesType) => dispatch(changeFilterAC(id, filterValue));
 
    const removeTodolist = () => dispatch(removeTodolistAC(id));
 
@@ -65,7 +66,7 @@ export const Todolist: FC<TodolistProps> = (props) => {
       <div className="todolist">
          <h3>
             <EditableSpan title={title} updateTitle={updateTodolistTitle}/>
-            <button onClick={removeTodolist}>X</button>
+            <Button textBtn="x" onClick={removeTodolist}/>
          </h3>
 
          <AddItemForm onClick={addTask}/>
@@ -87,21 +88,18 @@ export const Todolist: FC<TodolistProps> = (props) => {
          </ul>
 
          <div>
-            <button className={filter === 'all' ? "active-filter" : ""}
-                    onClick={() => changeFilter("all")}
-            >
-               All
-            </button>
-            <button className={filter === 'active' ? "active-filter" : ""}
-                    onClick={() => changeFilter("active")}
-            >
-               Active
-            </button>
-            <button className={filter === 'completed' ? "active-filter" : ""}
-                    onClick={() => changeFilter("completed")}
-            >
-               Completed
-            </button>
+            <Button textBtn="all"
+                    className={filter === 'all' ? "active-filter" : ""}
+                    onClick={() => onChangeFilter("all")}
+            />
+            <Button textBtn="active"
+                    className={filter === 'active' ? "active-filter" : ""}
+                    onClick={() => onChangeFilter("active")}
+            />
+            <Button textBtn="complited"
+                    className={filter === 'completed' ? "active-filter" : ""}
+                    onClick={() => onChangeFilter("completed")}
+            />
          </div>
       </div>
    );
