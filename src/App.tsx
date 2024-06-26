@@ -36,24 +36,3 @@ export const App: FC = () => {
    );
 }
 
-// old state
-/*const [todolists, todolistsDispatch] = useReducer(todolistsReducer, [
-     {id: todolistID1, title: 'What to learn', filter: 'all'},
-     {id: todolistID2, title: 'What to buy', filter: 'completed'},
-  ])
-
-  const [tasks, tasksDispatch] = useReducer(tasksReducer, {
-     [todolistID1]: [
-        {id: v1(), title: 'HTML&CSS', isDone: true},
-        {id: v1(), title: 'JS', isDone: true},
-        {id: v1(), title: 'ReactJS', isDone: false},
-        {id: v1(), title: 'Vue', isDone: false},
-        {id: v1(), title: 'Angular', isDone: false},
-     ],
-     [todolistID2]: [
-        {id: v1(), title: 'Rest API', isDone: true},
-        {id: v1(), title: 'GraphQL', isDone: false},
-        {id: v1(), title: 'TypeScript', isDone: true},
-        {id: v1(), title: 'EventLoop', isDone: false},
-     ],
-  });*/
