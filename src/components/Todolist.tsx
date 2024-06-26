@@ -1,4 +1,4 @@
-import React, {FC, useCallback} from 'react';
+import React, {FC, memo, useCallback} from 'react';
 import {AddItemForm} from "./AddItemForm";
 import {EditableSpan} from "./EditableSpan";
 import {
@@ -26,15 +26,19 @@ type TodolistProps = {
    todolist: TodolistType
 }
 
-export const Todolist: FC<TodolistProps> = (props) => {
+export const Todolist: FC<TodolistProps> = memo((props) => {
    const {
       todolist: {id, title, filter}
    } = props;
 
+   console.log("Todolist")
+
    const tasks = useSelector<AppRootStateType, TaskType[]>((state) => state.tasks[id]);
    const dispatch = useDispatch<Dispatch>();
 
-   const onChangeFilter = (filterValue: FilterValuesType) => dispatch(changeFilterAC(id, filterValue));
+   const onChangeFilter = useCallback((filterValue: FilterValuesType) => {
+      dispatch(changeFilterAC(id, filterValue));
+   }, [id, dispatch]);
 
    const removeTodolist = () => dispatch(removeTodolistAC(id));
 
@@ -103,4 +107,4 @@ export const Todolist: FC<TodolistProps> = (props) => {
          </div>
       </div>
    );
-};
+});

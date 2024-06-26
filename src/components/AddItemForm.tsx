@@ -8,8 +8,6 @@ type Props = {
 export const AddItemForm: FC<Props> = memo((props) => {
    const {addItem} = props;
 
-   console.log("AddItemForm")
-
    const [taskTitle, setTaskTitle] = useState<string>("");
    const [error, setError] = useState<string>("");
 

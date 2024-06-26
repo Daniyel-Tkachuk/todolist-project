@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, memo} from 'react';
 
 type Props = {
    textBtn: string
@@ -6,7 +6,7 @@ type Props = {
    onClick: () => void
 }
 
-export const Button: FC<Props> = (props) => {
+export const Button: FC<Props> = memo((props) => {
    const {textBtn, className, onClick} = props;
 
    const onClickHandler = () => {
@@ -16,4 +16,4 @@ export const Button: FC<Props> = (props) => {
    return (
       <button className={className} onClick={onClickHandler}>{textBtn}</button>
    );
-};
+});
