@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, useCallback} from 'react';
 import {AddItemForm} from "./AddItemForm";
 import {EditableSpan} from "./EditableSpan";
 import {
@@ -38,7 +38,7 @@ export const Todolist: FC<TodolistProps> = (props) => {
 
    const removeTodolist = () => dispatch(removeTodolistAC(id));
 
-   const addTask = (title: string) => dispatch(addTaskAC(id, title))
+   const addTask = useCallback((title: string) => dispatch(addTaskAC(id, title)), [dispatch]);
 
    const updateTaskTitle = (taskId: string, title: string) => {
       dispatch(updateTaskTitleAC(id, taskId, title))

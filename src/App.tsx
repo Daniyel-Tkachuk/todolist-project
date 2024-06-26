@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, useCallback} from 'react';
 import './App.css';
 import {Todolist} from "./components/Todolist";
 import {AddItemForm} from "./components/AddItemForm";
@@ -15,9 +15,9 @@ export const App: FC = () => {
    const todolists = useSelector<AppRootStateType, TodolistType[]>((state) => state.todolists);
    const dispatch = useDispatch<Dispatch>();
 
-   const addTodolist = (title: string) => {
+   const addTodolist = useCallback((title: string) => {
       dispatch(addTodolistAC(title))
-   }
+   }, [dispatch]);
 
    return (
       <div className="App">
