@@ -40,23 +40,23 @@ export const Todolist: FC<TodolistProps> = memo((props) => {
       dispatch(changeFilterAC(id, filterValue));
    }, [id, dispatch]);
 
-   const removeTodolist = () => dispatch(removeTodolistAC(id));
+   const removeTodolist = useCallback(() => dispatch(removeTodolistAC(id)), [dispatch]);
 
    const addTask = useCallback((title: string) => dispatch(addTaskAC(id, title)), [dispatch]);
 
-   const updateTaskTitle = (taskId: string, title: string) => {
+   const updateTaskTitle = useCallback((taskId: string, title: string) => {
       dispatch(updateTaskTitleAC(id, taskId, title))
-   }
+   }, [dispatch]);
 
    const updateTodolistTitle = (title: string) => {
       dispatch(updateTodolistTitleAC(id, title));
    }
 
-   const onChangeStatus = (taskId: string, checked: boolean) => {
+   const onChangeStatus = useCallback((taskId: string, checked: boolean) => {
       dispatch(changeTaskStatusAC(id, taskId, checked));
-   }
+   }, [dispatch]);
 
-   const removeTask = (taskId: string) => dispatch(removeTaskAC(id, taskId));
+   const removeTask = useCallback((taskId: string) => dispatch(removeTaskAC(id, taskId)), [dispatch]);
 
    let tasksForFiltered = tasks;
    if (filter === "active") {

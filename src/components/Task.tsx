@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, memo} from 'react';
 import {TaskType} from "../reducers/tasksReducer";
 import {CheckBox} from "./CheckBox";
 import {EditableSpan} from "./EditableSpan";
@@ -11,7 +11,7 @@ type Props = {
    updateTaskTitle: (taskId: string, title: string) => void
 }
 
-export const Task: FC<Props> = (props) => {
+export const Task: FC<Props> = memo((props) => {
    const {
       task: {id, title, isDone},
       onChangeStatus,
@@ -31,4 +31,4 @@ export const Task: FC<Props> = (props) => {
          <Button textBtn="X" onClick={() => removeTask(id)}/>
       </li>
    );
-};
+});
