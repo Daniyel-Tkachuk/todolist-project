@@ -69,7 +69,7 @@ export const Todolist: FC<TodolistProps> = (props) => {
             <Button textBtn="x" onClick={removeTodolist}/>
          </h3>
 
-         <AddItemForm onClick={addTask}/>
+         <AddItemForm addItem={addTask}/>
 
          <ul>
             {

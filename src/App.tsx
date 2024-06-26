@@ -23,7 +23,7 @@ export const App: FC = () => {
       <div className="App">
          <div>
             <span>Add new todolist</span>
-            <AddItemForm onClick={addTodolist}/>
+            <AddItemForm addItem={addTodolist}/>
          </div>
          <div className={"todolistsWrapper"}>
             {

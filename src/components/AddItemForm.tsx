@@ -1,12 +1,14 @@
-import React, {ChangeEvent, FC, KeyboardEvent, useState} from 'react';
+import React, {ChangeEvent, FC, KeyboardEvent, memo, useState} from 'react';
 
 
 type Props = {
-   onClick: (title: string) => void
+   addItem: (title: string) => void
 }
 
-export const AddItemForm: FC<Props> = (props) => {
-   const {onClick} = props;
+export const AddItemForm: FC<Props> = memo((props) => {
+   const {addItem} = props;
+
+   console.log("AddItemForm")
 
    const [taskTitle, setTaskTitle] = useState<string>("");
    const [error, setError] = useState<string>("");
@@ -19,7 +21,7 @@ export const AddItemForm: FC<Props> = (props) => {
    const onClickHandler = () => {
       const newTitle = taskTitle.trim();
       if (newTitle !== "") {
-         onClick(taskTitle);
+         addItem(taskTitle);
       } else {
          setError("Title is required");
       }
@@ -42,4 +44,4 @@ export const AddItemForm: FC<Props> = (props) => {
          {error && <div className={"errorMessage"}>{error}</div>}
       </div>
    );
-};
+});
