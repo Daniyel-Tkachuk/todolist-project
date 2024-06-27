@@ -9,6 +9,7 @@ type Props = {
 export const Button: FC<Props> = memo((props) => {
    const {textBtn, className, onClick} = props;
    console.log("Button")
+
    const onClickHandler = () => {
       onClick();
    }

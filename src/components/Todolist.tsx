@@ -36,17 +36,13 @@ export const Todolist: FC<TodolistProps> = memo((props) => {
    const tasks = useSelector<AppRootStateType, TaskType[]>((state) => state.tasks[id]);
    const dispatch = useDispatch<Dispatch>();
 
-   const onChangeFilter = useCallback((filterValue: FilterValuesType) => {
-      dispatch(changeFilterAC(id, filterValue));
-   }, [id, dispatch]);
+   const removeTodolist = useCallback(() => dispatch(removeTodolistAC(id)), [id, dispatch]);
 
-   const removeTodolist = useCallback(() => dispatch(removeTodolistAC(id)), [dispatch]);
-
-   const addTask = useCallback((title: string) => dispatch(addTaskAC(id, title)), [dispatch]);
+   const addTask = useCallback((title: string) => dispatch(addTaskAC(id, title)), [id, dispatch]);
 
    const updateTaskTitle = useCallback((taskId: string, title: string) => {
       dispatch(updateTaskTitleAC(id, taskId, title))
-   }, [dispatch]);
+   }, [id]);
 
    const updateTodolistTitle = (title: string) => {
       dispatch(updateTodolistTitleAC(id, title));
@@ -54,9 +50,13 @@ export const Todolist: FC<TodolistProps> = memo((props) => {
 
    const onChangeStatus = useCallback((taskId: string, checked: boolean) => {
       dispatch(changeTaskStatusAC(id, taskId, checked));
-   }, [dispatch]);
+   }, [id, dispatch]);
 
    const removeTask = useCallback((taskId: string) => dispatch(removeTaskAC(id, taskId)), [dispatch]);
+
+   const changeFilterAll = useCallback(() => dispatch(changeFilterAC(id, 'all')), [id, dispatch]);
+   const changeFilterActive = useCallback(() => dispatch(changeFilterAC(id, 'active')) , [id, dispatch]);
+   const changeFilterCompleted = useCallback(() => dispatch(changeFilterAC(id, 'completed')), [id, dispatch]);
 
    let tasksForFiltered = tasks;
    if (filter === "active") {
@@ -94,15 +94,15 @@ export const Todolist: FC<TodolistProps> = memo((props) => {
          <div>
             <Button textBtn="all"
                     className={filter === 'all' ? "active-filter" : ""}
-                    onClick={() => onChangeFilter("all")}
+                    onClick={changeFilterAll}
             />
             <Button textBtn="active"
                     className={filter === 'active' ? "active-filter" : ""}
-                    onClick={() => onChangeFilter("active")}
+                    onClick={changeFilterActive}
             />
             <Button textBtn="complited"
                     className={filter === 'completed' ? "active-filter" : ""}
-                    onClick={() => onChangeFilter("completed")}
+                    onClick={changeFilterCompleted}
             />
          </div>
       </div>
