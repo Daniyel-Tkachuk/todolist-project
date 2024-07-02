@@ -49,7 +49,7 @@ export const Todolist: FC<TodolistProps> = memo((props) => {
       dispatch(changeTaskStatusAC(id, taskId, checked));
    }, [id, changeTaskStatusAC]);
 
-   const removeTask = useCallback((taskId: string) => dispatch(removeTaskAC(id, taskId)), [dispatch]);
+   const removeTask = useCallback((taskId: string) => dispatch(removeTaskAC(id, taskId)), [id, removeTaskAC]);
 
    const changeFilterAll = useCallback(() => dispatch(changeFilterAC(id, 'all')), [id, changeFilterAC]);
    const changeFilterActive = useCallback(() => dispatch(changeFilterAC(id, 'active')) , [id, changeFilterAC]);

@@ -18,22 +18,30 @@ export const Task: FC<Props> = memo((props) => {
       removeTask,
       updateTaskTitle
    } = props;
+   console.log("Task")
 
-   const updateTaskTitleHandler = useCallback((title: string) => {
-      updateTaskTitle(id, title);
-   }, [id])
+   const removeTaskHandler = () => {
+      removeTask(id);
+   };
+
+   const onChangeCheckedHandler = (checked: boolean) => {
+      onChangeStatus(id, checked)
+   }
+
+   const updateTaskTitleHandler = (title: string) => {
+      updateTaskTitle(id, title)
+   };
 
    return (
       <li>
          <CheckBox isDone={isDone}
-                   onChangeChecked={(checked: boolean) => onChangeStatus(id, checked)}
+                   onChangeChecked={onChangeCheckedHandler}
          />
          <EditableSpan title={title}
                        isDone={isDone}
                        updateTitle={updateTaskTitleHandler}
          />
-         <Button name="X" onClick={() =>
-            removeTask(id)} />
+         <Button name="X" onClick={removeTaskHandler} />
       </li>
    );
 });
