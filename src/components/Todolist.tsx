@@ -10,7 +10,6 @@ import {
 } from "../reducers/tasksReducer";
 import {
    changeFilterAC,
-   FilterValuesType,
    removeTodolistAC,
    TodolistType,
    updateTodolistTitleAC
@@ -70,7 +69,7 @@ export const Todolist: FC<TodolistProps> = memo((props) => {
       <div className="todolist">
          <h3>
             <EditableSpan title={title} updateTitle={updateTodolistTitle}/>
-            <Button textBtn="x" onClick={removeTodolist}/>
+            <Button name="x" onClick={removeTodolist}/>
          </h3>
 
          <AddItemForm addItem={addTask}/>
@@ -92,16 +91,16 @@ export const Todolist: FC<TodolistProps> = memo((props) => {
          </ul>
 
          <div>
-            <Button textBtn="all"
-                    className={filter === 'all' ? "active-filter" : ""}
+            <Button name="all"
+                    className={filter === "all" ? "active" : ""}
                     onClick={changeFilterAll}
             />
-            <Button textBtn="active"
-                    className={filter === 'active' ? "active-filter" : ""}
+            <Button name="active"
+                    className={filter === "active" ? "active" : ""}
                     onClick={changeFilterActive}
             />
-            <Button textBtn="complited"
-                    className={filter === 'completed' ? "active-filter" : ""}
+            <Button name="completed"
+                    className={filter === "completed" ? "active" : ""}
                     onClick={changeFilterCompleted}
             />
          </div>

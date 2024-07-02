@@ -1,20 +1,22 @@
 import React, {FC, memo} from 'react';
 
 type Props = {
-   textBtn: string
+   name: string
    className?: string
    onClick: () => void
 }
 
 export const Button: FC<Props> = memo((props) => {
-   const {textBtn, className, onClick} = props;
+   const {name, className, onClick} = props;
    console.log("Button")
 
    const onClickHandler = () => {
       onClick();
    }
 
+   const styles = `button ${className}`
+
    return (
-      <button className={className} onClick={onClickHandler}>{textBtn}</button>
+      <button className={styles} onClick={onClickHandler}>{name}</button>
    );
 });

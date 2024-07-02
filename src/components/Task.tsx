@@ -1,4 +1,4 @@
-import React, {FC, memo, useCallback} from 'react';
+import React, {FC, memo} from 'react';
 import {TaskType} from "../reducers/tasksReducer";
 import {CheckBox} from "./CheckBox";
 import {EditableSpan} from "./EditableSpan";
@@ -28,7 +28,7 @@ export const Task: FC<Props> = memo((props) => {
                        isDone={isDone}
                        updateTitle={(title: string) => updateTaskTitle(id, title)}
          />
-         <Button textBtn="X" onClick={() =>
+         <Button name="X" onClick={() =>
             removeTask(id)} />
       </li>
    );
