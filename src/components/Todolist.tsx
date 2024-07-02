@@ -30,32 +30,30 @@ export const Todolist: FC<TodolistProps> = memo((props) => {
       todolist: {id, title, filter}
    } = props;
 
-   console.log("Todolist")
-
    const tasks = useSelector<AppRootStateType, TaskType[]>((state) => state.tasks[id]);
    const dispatch = useDispatch<Dispatch>();
 
-   const removeTodolist = useCallback(() => dispatch(removeTodolistAC(id)), [id, dispatch]);
+   const removeTodolist = useCallback(() => dispatch(removeTodolistAC(id)), [id, removeTodolistAC]);
 
-   const addTask = useCallback((title: string) => dispatch(addTaskAC(id, title)), [id, dispatch]);
+   const addTask = useCallback((title: string) => dispatch(addTaskAC(id, title)), [id, addTaskAC]);
 
    const updateTaskTitle = useCallback((taskId: string, title: string) => {
       dispatch(updateTaskTitleAC(id, taskId, title))
-   }, [id]);
+   }, [id, updateTaskTitleAC]);
 
-   const updateTodolistTitle = (title: string) => {
+   const updateTodolistTitle = useCallback((title: string) => {
       dispatch(updateTodolistTitleAC(id, title));
-   }
+   }, [id, updateTodolistTitleAC]);
 
    const onChangeStatus = useCallback((taskId: string, checked: boolean) => {
       dispatch(changeTaskStatusAC(id, taskId, checked));
-   }, [id, dispatch]);
+   }, [id, changeTaskStatusAC]);
 
    const removeTask = useCallback((taskId: string) => dispatch(removeTaskAC(id, taskId)), [dispatch]);
 
-   const changeFilterAll = useCallback(() => dispatch(changeFilterAC(id, 'all')), [id, dispatch]);
-   const changeFilterActive = useCallback(() => dispatch(changeFilterAC(id, 'active')) , [id, dispatch]);
-   const changeFilterCompleted = useCallback(() => dispatch(changeFilterAC(id, 'completed')), [id, dispatch]);
+   const changeFilterAll = useCallback(() => dispatch(changeFilterAC(id, 'all')), [id, changeFilterAC]);
+   const changeFilterActive = useCallback(() => dispatch(changeFilterAC(id, 'active')) , [id, changeFilterAC]);
+   const changeFilterCompleted = useCallback(() => dispatch(changeFilterAC(id, 'completed')), [id, changeFilterAC]);
 
    let tasksForFiltered = tasks;
    if (filter === "active") {

@@ -1,4 +1,4 @@
-import React, {FC, memo} from 'react';
+import React, {FC, memo, useCallback} from 'react';
 import {TaskType} from "../reducers/tasksReducer";
 import {CheckBox} from "./CheckBox";
 import {EditableSpan} from "./EditableSpan";
@@ -19,14 +19,18 @@ export const Task: FC<Props> = memo((props) => {
       updateTaskTitle
    } = props;
 
+   const updateTaskTitleHandler = useCallback((title: string) => {
+      updateTaskTitle(id, title);
+   }, [id])
+
    return (
       <li>
-         <CheckBox checkedValue={isDone}
+         <CheckBox isDone={isDone}
                    onChangeChecked={(checked: boolean) => onChangeStatus(id, checked)}
          />
          <EditableSpan title={title}
                        isDone={isDone}
-                       updateTitle={(title: string) => updateTaskTitle(id, title)}
+                       updateTitle={updateTaskTitleHandler}
          />
          <Button name="X" onClick={() =>
             removeTask(id)} />

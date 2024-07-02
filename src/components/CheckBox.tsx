@@ -1,18 +1,18 @@
 import React, {ChangeEvent, FC} from 'react';
 
 type Props = {
-   checkedValue: boolean
+   isDone: boolean
    onChangeChecked: (checked: boolean) => void
 }
 
 export const CheckBox: FC<Props> = (props) => {
-   const {checkedValue, onChangeChecked} = props;
+   const {isDone, onChangeChecked} = props;
 
    const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
       onChangeChecked(e.currentTarget.checked);
    }
 
    return (
-      <input type="checkbox" checked={checkedValue} onChange={onChangeHandler}/>
+      <input type="checkbox" checked={isDone} onChange={onChangeHandler}/>
    );
 };

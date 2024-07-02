@@ -1,4 +1,4 @@
-import React, {ChangeEvent, KeyboardEvent, FC, useState} from 'react';
+import React, {ChangeEvent, KeyboardEvent, FC, useState, memo} from 'react';
 
 
 type Props = {
@@ -7,7 +7,7 @@ type Props = {
    updateTitle: (title: string) => void
 }
 
-export const EditableSpan: FC<Props> = (props) => {
+export const EditableSpan: FC<Props> = memo((props) => {
    const {title, isDone, updateTitle} = props;
 
    const [newTitle, setTitle] = useState<string>(title);
@@ -46,4 +46,4 @@ export const EditableSpan: FC<Props> = (props) => {
          }
       </>
    );
-};
+});
