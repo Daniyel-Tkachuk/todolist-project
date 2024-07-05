@@ -30,6 +30,7 @@ export const Todolist: FC<TodolistProps> = memo((props) => {
       todolist: {id, title, filter}
    } = props;
 
+
    const tasks = useSelector<AppRootStateType, TaskType[]>((state) => state.tasks[id]);
    const dispatch = useDispatch<Dispatch>();
 
