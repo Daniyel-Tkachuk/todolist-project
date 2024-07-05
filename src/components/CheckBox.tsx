@@ -8,8 +8,6 @@ type Props = {
 export const CheckBox: FC<Props> = (props) => {
    const {isDone, onChangeChecked} = props;
 
-   console.log("checkbox")
-
    const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
       onChangeChecked(e.currentTarget.checked);
    }

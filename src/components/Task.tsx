@@ -1,4 +1,4 @@
-import React, {FC, memo, useCallback} from 'react';
+import React, {FC, memo} from 'react';
 import {TaskType} from "../reducers/tasksReducer";
 import {CheckBox} from "./CheckBox";
 import {EditableSpan} from "./EditableSpan";
@@ -18,7 +18,6 @@ export const Task: FC<Props> = memo((props) => {
       removeTask,
       updateTaskTitle
    } = props;
-   console.log("Task")
 
    const removeTaskHandler = () => {
       removeTask(id);

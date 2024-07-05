@@ -9,7 +9,7 @@ type Props = {
 
 export const EditableSpan: FC<Props> = memo((props) => {
    const {title, isDone, updateTitle} = props;
-   console.log("EditableSpan")
+
    const [newTitle, setTitle] = useState<string>(title);
    const [edit, setEdit] = useState<boolean>(false);
 
