@@ -57,12 +57,14 @@ export const Todolist: FC<TodolistProps> = memo((props) => {
    const changeFilterCompleted = useCallback(() => dispatch(changeFilterAC(id, 'completed')), [id, changeFilterAC]);
 
    let tasksForFiltered = tasks;
+
    if (filter === "active") {
       tasksForFiltered = tasks.filter(t => !t.isDone);
    }
    if (filter === "completed") {
       tasksForFiltered = tasks.filter(t => t.isDone);
    }
+
 
    return (
       <div className="todolist">
