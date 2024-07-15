@@ -1,7 +1,7 @@
 import type {Meta, StoryObj} from '@storybook/react';
 import {fn, userEvent, within} from '@storybook/test';
-import {AddItemForm} from "../../components/AddItemForm";
-import '../../App.css';
+import {AddItemForm} from "../components/AddItemForm";
+import '../App.css';
 
 const meta = {
    title: 'Todolist/AddItemForm',

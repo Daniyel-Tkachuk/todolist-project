@@ -13,6 +13,10 @@ ul {
   padding: 0;
 }
 
+li {
+    list-style: none;
+}
+
 .todolistsWrapper {
   display: flex;
   gap: 50px;
