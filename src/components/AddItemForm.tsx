@@ -1,11 +1,11 @@
 import React, {ChangeEvent, FC, KeyboardEvent, memo, useState} from 'react';
 
 
-type Props = {
+export type AddItemFormProps = {
    addItem: (title: string) => void
 }
 
-export const AddItemForm: FC<Props> = memo((props) => {
+export const AddItemForm: FC<AddItemFormProps> = memo((props) => {
    const {addItem} = props;
 
    const [taskTitle, setTaskTitle] = useState<string>("");
