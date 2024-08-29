@@ -88,7 +88,7 @@ function App() {
                         <Menu/>
                     </IconButton>
                     <Typography variant="h6">
-                        News
+                        Todolist
                     </Typography>
                     <Button color="inherit">Login</Button>
                 </Toolbar>
