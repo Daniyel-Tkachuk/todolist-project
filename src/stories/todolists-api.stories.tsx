@@ -1,21 +1,14 @@
 import React, {useEffect, useState} from 'react'
-import axios, {AxiosRequestConfig} from "axios";
+import {todolistAPI} from "../api/todolist-api";
 
 export default {
    title: 'API',
 }
 
-const config: AxiosRequestConfig = {
-   withCredentials: true,
-   headers: {
-      "API-KEY": "f2e2917a-3b66-4825-a47c-2a00b418f9e6",
-   }
-}
-
 export const GetTodolists = () => {
    const [state, setState] = useState<any>(null)
    useEffect(() => {
-      axios.get("https://social-network.samuraijs.com/api/1.1/todo-lists", config)
+      todolistAPI.getTodolists()
          .then(res => {
             setState(res.data);
          });
@@ -24,9 +17,11 @@ export const GetTodolists = () => {
 }
 
 export const CreateTodolist = () => {
-   const [state, setState] = useState<any>(null)
+   const [state, setState] = useState<any>(null);
+   const title = "NEW Todolist"
+
    useEffect(() => {
-      axios.post("https://social-network.samuraijs.com/api/1.1/todo-lists", {title: "BLAAAA"}, config)
+      todolistAPI.createTodolist(title)
          .then(res => {
             setState(res.data)
          })
@@ -37,9 +32,9 @@ export const CreateTodolist = () => {
 
 export const DeleteTodolist = () => {
    const [state, setState] = useState<any>(null)
-   const todolistId = "e780be55-2039-4528-a1b3-7891b7a57707";
+   const todolistId = "8624fa02-eadb-4398-87a7-999305bcde34";
    useEffect(() => {
-      axios.delete(`https://social-network.samuraijs.com/api/1.1/todo-lists/${todolistId}`, config)
+      todolistAPI.deleteTodolist(todolistId)
          .then(res => {
             setState(res.data);
          })
@@ -50,10 +45,11 @@ export const DeleteTodolist = () => {
 
 export const UpdateTodolistTitle = () => {
    const [state, setState] = useState<any>(null)
-   const todolistId = "671978c2-b85a-4fc9-a5c5-c65304d9add1";
+   const todolistId = "2c7d5949-0d10-4553-ab20-2fc3f1105d0a";
+   const newTitle = "NEW TITLE";
 
    useEffect(() => {
-      axios.put(`https://social-network.samuraijs.com/api/1.1/todo-lists/${todolistId}`, {title: "ЗАМЕНА"}, config)
+      todolistAPI.updateTodolist(todolistId, newTitle)
          .then(res => {
             setState(res.data);
          })
