@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import {taskAPI} from "../api/task-api";
+import {taskAPI, UpdateTaskModuleType} from "../api/task-api";
 
 export default {
    title: 'Tasks-API',
@@ -12,7 +12,6 @@ export const GetTasks = () => {
    useEffect(() => {
       taskAPI.getTask(todoId)
          .then(res => {
-            console.log(res.data)
             setState(res.data);
          })
    }, []);
@@ -28,7 +27,6 @@ export const CreateTask = () => {
    useEffect(() => {
       taskAPI.createTask(todoId, taskTitle)
          .then(res => {
-            console.log(res);
             setState(res.data);
          })
    }, []);
@@ -39,13 +37,35 @@ export const CreateTask = () => {
 export const DeleteTask = () => {
    const [state, setState] = useState<any>(null);
    const todoId = "cd63f874-f79b-4299-98b3-a0074d640bb6";
-   const taskId = "15397d26-9e8b-4380-bff5-4c9870a16549";
+   const taskId = "e1268fe7-0b33-4d5a-94ad-e3bb227090d2";
 
    useEffect(() => {
       taskAPI.deleteTask(todoId, taskId)
          .then(res => {
-            console.log(res);
             setState(res.data);
+         })
+   }, []);
+
+   return <div>{JSON.stringify(state)}</div>
+}
+
+export const UpdateTask = () => {
+   const [state, setState] = useState<any>(null);
+   const todoId = "cd63f874-f79b-4299-98b3-a0074d640bb6";
+   const taskId = "9436618d-e01d-41ad-9122-a9be7c2e2e99";
+   const updateModal: UpdateTaskModuleType = {
+      title: "Изменил название таски",
+      deadline: "",
+      description: "",
+      priority: 0,
+      startDate: "",
+      status: 2
+   }
+
+   useEffect(() => {
+      taskAPI.updateTask(todoId, taskId, updateModal)
+         .then(res => {
+            setState(res.data.data.item);
          })
    }, []);
 

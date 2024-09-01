@@ -19,8 +19,8 @@ export const taskAPI = {
    deleteTask(todoId: string, taskId: string) {
       return instance.delete<ResponseType>(`todo-lists/${todoId}/tasks/${taskId}`);
    },
-   updateTask() {
-
+   updateTask(todoId: string, taskId: string, modelTask: UpdateTaskModuleType) {
+      return instance.put<ResponseType<{item: TaskType}>>(`todo-lists/${todoId}/tasks/${taskId}`, modelTask);
    }
 }
 
@@ -41,4 +41,13 @@ type GetTaskType = {
    items: TaskType[]
    totalCount: number
    error: null | string
+}
+
+export type UpdateTaskModuleType = {
+   title: string
+   description: string
+   status: number
+   priority: number
+   startDate: string
+   deadline: string
 }
