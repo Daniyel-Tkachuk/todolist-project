@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e42fe5d7-ba4f-4725-b2cc-8b96bae3bbbb" name="Changes" comment="new lesson" />
+    <list default="true" id="e42fe5d7-ba4f-4725-b2cc-8b96bae3bbbb" name="Changes" comment="refactor">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AddItemForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddItemForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Todolist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Todolist.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/todolists-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/todolists-api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/state/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/state/tasks-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/tasks-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/state/todolists-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/todolists-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,10 +45,12 @@
     "git-widget-placeholder": "main",
     "last_opened_file_path": "/Users/denisbindyukov/Desktop/todo14v3",
     "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs.jest.jest_package": "/Users/denisbindyukov/Desktop/todo14v3/node_modules/react-scripts",
+    "nodejs.jest.jest_package": "F:/IT-Incubator/todolist-project/node_modules/react-scripts",
     "nodejs_package_manager_path": "yarn",
     "ts.external.directory.path": "F:\\IT-Incubator\\todolist-project\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
@@ -75,7 +89,8 @@
       <workItem from="1666897080066" duration="27000" />
       <workItem from="1681818788802" duration="1496000" />
       <workItem from="1725639560219" duration="640000" />
-      <workItem from="1725652316208" duration="308000" />
+      <workItem from="1725652316208" duration="885000" />
+      <workItem from="1725696135163" duration="7054000" />
     </task>
     <task id="LOCAL-00001" summary="new lesson">
       <option name="closed" value="true" />
@@ -85,7 +100,23 @@
       <option name="project" value="LOCAL" />
       <updated>1725652567485</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added Api">
+      <option name="closed" value="true" />
+      <created>1725652825216</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1725652825216</updated>
+    </task>
+    <task id="LOCAL-00003" summary="refactor">
+      <option name="closed" value="true" />
+      <created>1725652898878</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1725652898878</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -93,6 +124,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="new lesson" />
-    <option name="LAST_COMMIT_MESSAGE" value="new lesson" />
+    <MESSAGE value="added Api" />
+    <MESSAGE value="refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor" />
   </component>
 </project>
