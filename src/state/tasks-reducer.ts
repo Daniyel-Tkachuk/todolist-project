@@ -159,7 +159,6 @@ export const removeTaskTC = (todolistId: string, taskId: string) => {
    return (dispatch: Dispatch) => {
       todolistsAPI.deleteTask(todolistId, taskId)
          .then(res => {
-            console.log(res)
             dispatch(removeTaskAC(taskId, todolistId));
          })
    }
