@@ -80,8 +80,7 @@ export const tasksReducer = (state: TasksStateType = initialState, action: Actio
       case 'REMOVE-TASK': {
          const stateCopy = {...state}
          const tasks = stateCopy[action.todolistId];
-         const newTasks = tasks.filter(t => t.id !== action.taskId);
-         stateCopy[action.todolistId] = newTasks;
+         stateCopy[action.todolistId] = tasks.filter(t => t.id !== action.taskId);
          return stateCopy;
       }
       case 'ADD-TASK': {
@@ -147,11 +146,21 @@ export const setTasksAC = (todolistId: string, tasks: TaskType[]) => {
    return {type: 'SET-TASKS', tasks, todolistId} as const;
 }
 
-export const fetchTasksTC = (todolistId: string) => {
+export const getTasksTC = (todolistId: string) => {
    return (dispatch: Dispatch) => {
       todolistsAPI.getTasks(todolistId)
          .then(res => {
             dispatch(setTasksAC(todolistId, res.data.items));
+         })
+   }
+}
+
+export const removeTaskTC = (todolistId: string, taskId: string) => {
+   return (dispatch: Dispatch) => {
+      todolistsAPI.deleteTask(todolistId, taskId)
+         .then(res => {
+            console.log(res)
+            dispatch(removeTaskAC(taskId, todolistId));
          })
    }
 }

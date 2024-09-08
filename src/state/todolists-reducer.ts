@@ -102,7 +102,7 @@ export const setTodolistsAC = (todolists: TodolistType[]) => {
 
 // --------- thunks -----------
 
-export const fetchTodolistsTC = () => {
+export const getTodolistsTC = () => {
    return (dispatch: Dispatch) => {
       todolistsAPI.getTodolists()
          .then(res => {
