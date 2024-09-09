@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e42fe5d7-ba4f-4725-b2cc-8b96bae3bbbb" name="Changes" comment="added thunk for create task">
+    <list default="true" id="e42fe5d7-ba4f-4725-b2cc-8b96bae3bbbb" name="Changes" comment="added thunks for todolist-reducer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Todolist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Todolist.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/todolists-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/todolists-api.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/state/tasks-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/tasks-reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/state/todolists-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/todolists-reducer.ts" afterDir="false" />
@@ -87,7 +86,7 @@
       <workItem from="1725652316208" duration="885000" />
       <workItem from="1725696135163" duration="11892000" />
       <workItem from="1725801327040" duration="9626000" />
-      <workItem from="1725897334025" duration="3928000" />
+      <workItem from="1725897334025" duration="6338000" />
     </task>
     <task id="LOCAL-00001" summary="new lesson">
       <option name="closed" value="true" />
@@ -177,7 +176,23 @@
       <option name="project" value="LOCAL" />
       <updated>1725814183640</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="refactor">
+      <option name="closed" value="true" />
+      <created>1725901355720</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1725901355720</updated>
+    </task>
+    <task id="LOCAL-00013" summary="added thunks for todolist-reducer">
+      <option name="closed" value="true" />
+      <created>1725901384120</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1725901384120</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,8 +206,9 @@
     <MESSAGE value="added at reducer(tasks, todos) case SET-TODOLISTS and thunk creator" />
     <MESSAGE value="added fetch tasks thunk" />
     <MESSAGE value="added remove tasks thunk" />
-    <MESSAGE value="refactor" />
     <MESSAGE value="added thunk for create task" />
-    <option name="LAST_COMMIT_MESSAGE" value="added thunk for create task" />
+    <MESSAGE value="refactor" />
+    <MESSAGE value="added thunks for todolist-reducer" />
+    <option name="LAST_COMMIT_MESSAGE" value="added thunks for todolist-reducer" />
   </component>
 </project>

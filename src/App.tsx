@@ -13,7 +13,6 @@ import Paper from '@mui/material/Paper';
 import {Menu} from '@mui/icons-material';
 import {
    changeTodolistFilterAC,
-   changeTodolistTitleAC,
    FilterValuesType, getTodolistsTC,
    TodolistDomainType, addTodolistTC, removeTodolistTC, changeTodolistTitleTC
 } from './state/todolists-reducer'
