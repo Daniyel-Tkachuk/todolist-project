@@ -1,4 +1,4 @@
-import {TasksStateType} from '../App';
+import {TasksStateType} from '../app/App';
 import {AddTodolistAT, RemoveTodolistAT, SetTodolistsAT} from './todolists-reducer';
 import {
    TaskPriorities,
@@ -20,26 +20,21 @@ export const tasksReducer = (state: TasksStateType = initialState, action: Actio
 
          action.todolists.forEach(tl => {
             copyState[tl.id] = [];
-         })
+         });
 
          return copyState;
       }
       case 'SET-TASKS': {
-         return {
-            ...state,
-            [action.todolistId]: action.tasks
-         }
+         return {...state, [action.todolistId]: action.tasks}
       }
       case 'REMOVE-TASK': {
-         const stateCopy = {...state}
-
-         const tasks = stateCopy[action.todolistId];
-         stateCopy[action.todolistId] = tasks.filter(t => t.id !== action.taskId);
-         return stateCopy;
+         return {
+            ...state,
+            [action.todolistId]: state[action.todolistId].filter(t => t.id !== action.taskId)
+         }
       }
       case 'ADD-TASK': {
          const {todoListId} = action.task;
-
          return {
             ...state,
             [todoListId]: [action.task, ...state[todoListId]]
@@ -57,11 +52,11 @@ export const tasksReducer = (state: TasksStateType = initialState, action: Actio
          return copyState;
       }
       case 'UPDATE-TASK': {
-         const tasks = state[action.todolistId];
-
-         state[action.todolistId] = tasks
-            .map(t => t.id === action.taskId ? {...t, ...action.domainModel} : t);
-         return {...state};
+         return {
+            ...state,
+            [action.todolistId]: state[action.todolistId]
+               .map(t => t.id === action.taskId ? {...t, ...action.domainModel} : t)
+         };
       }
       default:
          return state;
