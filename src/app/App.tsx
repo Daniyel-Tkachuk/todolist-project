@@ -10,16 +10,17 @@ import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
+import LinearProgress from '@mui/material/LinearProgress';
 import {Menu} from '@mui/icons-material';
 import {
    changeTodolistFilterAC,
    FilterValuesType, getTodolistsTC,
    TodolistDomainType, addTodolistTC, removeTodolistTC, changeTodolistTitleTC
-} from '../state/todolists-reducer'
+} from '../state/reducers/todolists-reducer'
 import {
    addTaskTC,
    removeTaskTC, updateTaskTC
-} from '../state/tasks-reducer';
+} from '../state/reducers/tasks-reducer';
 import {useAppDispatch, useAppSelector} from '../state/store';
 import {TaskStatuses, TaskType} from '../api/todolists-api'
 
@@ -85,6 +86,7 @@ function App() {
                <Button color="inherit">Login</Button>
             </Toolbar>
          </AppBar>
+         <LinearProgress color="secondary"/>
          <Container fixed>
             <Grid container style={{padding: '20px'}}>
                <AddItemForm addItem={addTodolist}/>

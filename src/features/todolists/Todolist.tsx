@@ -6,9 +6,9 @@ import Button from '@mui/material/Button';
 import {Delete} from '@mui/icons-material';
 import {Task} from './tasks/Task'
 import {TaskStatuses, TaskType} from '../../api/todolists-api'
-import {FilterValuesType} from '../../state/todolists-reducer'
+import {FilterValuesType} from '../../state/reducers/todolists-reducer'
 import {useAppDispatch} from "../../state/store";
-import {getTasksTC} from "../../state/tasks-reducer";
+import {getTasksTC} from "../../state/reducers/tasks-reducer";
 
 type PropsType = {
    id: string
