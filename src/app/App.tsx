@@ -23,6 +23,7 @@ import {
 } from '../state/reducers/tasks-reducer';
 import {useAppDispatch, useAppSelector} from '../state/store';
 import {TaskStatuses, TaskType} from '../api/todolists-api'
+import {RequestStatusType} from "../state/reducers/app-reducer";
 
 
 export type TasksStateType = {
@@ -33,6 +34,7 @@ export type TasksStateType = {
 function App() {
    const todolists = useAppSelector<Array<TodolistDomainType>>(state => state.todolists)
    const tasks = useAppSelector<TasksStateType>(state => state.tasks)
+   const status = useAppSelector<RequestStatusType>(state => state.app.status)
    const dispatch = useAppDispatch();
 
    useEffect(() => {
@@ -86,7 +88,7 @@ function App() {
                <Button color="inherit">Login</Button>
             </Toolbar>
          </AppBar>
-         <LinearProgress color="secondary"/>
+         {status === "loading" && <LinearProgress color="secondary"/>}
          <Container fixed>
             <Grid container style={{padding: '20px'}}>
                <AddItemForm addItem={addTodolist}/>

@@ -4,14 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e42fe5d7-ba4f-4725-b2cc-8b96bae3bbbb" name="Changes" comment="added env variable">
+    <list default="true" id="e42fe5d7-ba4f-4725-b2cc-8b96bae3bbbb" name="Changes" comment="added LinearProgress of material UI and refactor folder">
+      <change afterPath="$PROJECT_DIR$/src/state/reducers/app-reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/state/reducers/tasks-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/reducers/tasks-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/state/reducers/todolists-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/reducers/todolists-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/state/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/store.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -49,11 +60,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\IT-Incubator\todolist-project\src\state\reducers" />
       <recent name="F:\IT-Incubator\todolist-project\src\features\todolists\tasks" />
       <recent name="F:\IT-Incubator\todolist-project\src\features\todolists" />
       <recent name="F:\IT-Incubator\todolist-project\src\app" />
       <recent name="F:\IT-Incubator\todolist-project\src\components\editableSpan" />
-      <recent name="F:\IT-Incubator\todolist-project\src\components\addItemForm" />
     </key>
   </component>
   <component name="RunManager">
@@ -102,7 +113,7 @@
       <workItem from="1726303621837" duration="9000" />
       <workItem from="1726404843194" duration="6810000" />
       <workItem from="1726603603246" duration="37000" />
-      <workItem from="1728046095839" duration="3972000" />
+      <workItem from="1728046095839" duration="6208000" />
     </task>
     <task id="LOCAL-00001" summary="new lesson">
       <option name="closed" value="true" />
@@ -248,7 +259,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728048855127</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="added LinearProgress of material UI and refactor folder">
+      <option name="closed" value="true" />
+      <created>1728050313327</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1728050313327</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,6 +289,7 @@
     <MESSAGE value="added thunks for todolist-reducer" />
     <MESSAGE value="refactor code" />
     <MESSAGE value="added env variable" />
-    <option name="LAST_COMMIT_MESSAGE" value="added env variable" />
+    <MESSAGE value="added LinearProgress of material UI and refactor folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="added LinearProgress of material UI and refactor folder" />
   </component>
 </project>

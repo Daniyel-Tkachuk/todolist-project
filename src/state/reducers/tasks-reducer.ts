@@ -9,6 +9,7 @@ import {
 } from '../../api/todolists-api'
 import {Dispatch} from "redux";
 import {AppRootStateType} from "../store";
+import {setStatusAC} from "./app-reducer";
 
 
 const initialState: TasksStateType = {};
@@ -91,30 +92,37 @@ export const updateTaskAC = (todolistId: string, taskId: string, domainModel: Do
 // --------- thunks -----------
 export const getTasksTC = (todolistId: string) => {
    return (dispatch: Dispatch) => {
+      dispatch(setStatusAC("loading"));
       todolistsAPI.getTasks(todolistId)
          .then(res => {
             dispatch(setTasksAC(todolistId, res.data.items));
+            dispatch(setStatusAC("succeeded"));
          })
    }
 }
 export const removeTaskTC = (todolistId: string, taskId: string) => {
    return (dispatch: Dispatch) => {
+      dispatch(setStatusAC("loading"));
       todolistsAPI.deleteTask(todolistId, taskId)
          .then(res => {
             dispatch(removeTaskAC(taskId, todolistId));
+            dispatch(setStatusAC("succeeded"));
          })
    }
 }
 export const addTaskTC = (todolistId: string, title: string) => {
    return (dispatch: Dispatch) => {
+      dispatch(setStatusAC("loading"));
       todolistsAPI.createTask(todolistId, title)
          .then(res => {
             dispatch(addTaskAC(res.data.data.item));
+            dispatch(setStatusAC("succeeded"));
          })
    }
 }
 export const updateTaskTC = (todolistId: string, taskId: string, domainModel: DomainTaskModelType) => {
    return (dispatch: Dispatch, getState: () => AppRootStateType) => {
+      dispatch(setStatusAC("loading"));
       const task = getState().tasks[todolistId].find(t => t.id === taskId);
 
       if (task) {
@@ -130,6 +138,7 @@ export const updateTaskTC = (todolistId: string, taskId: string, domainModel: Do
          todolistsAPI.updateTask(todolistId, taskId, model)
             .then(res => {
                dispatch(updateTaskAC(todolistId, taskId, domainModel));
+               dispatch(setStatusAC("succeeded"));
             })
 
       }
