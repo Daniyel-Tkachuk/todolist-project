@@ -24,6 +24,7 @@ import {
 import {useAppDispatch, useAppSelector} from '../state/store';
 import {TaskStatuses, TaskType} from '../api/todolists-api'
 import {RequestStatusType} from "../state/reducers/app-reducer";
+import {ErrorSnackbar} from "../components/errorSnackbar/errorSnackbar";
 
 
 export type TasksStateType = {
@@ -88,7 +89,9 @@ function App() {
                <Button color="inherit">Login</Button>
             </Toolbar>
          </AppBar>
+
          {status === "loading" && <LinearProgress color="secondary"/>}
+
          <Container fixed>
             <Grid container style={{padding: '20px'}}>
                <AddItemForm addItem={addTodolist}/>
@@ -118,6 +121,7 @@ function App() {
                   })
                }
             </Grid>
+            <ErrorSnackbar />
          </Container>
       </div>
    );
