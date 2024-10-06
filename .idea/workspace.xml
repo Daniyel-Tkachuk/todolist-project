@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e42fe5d7-ba4f-4725-b2cc-8b96bae3bbbb" name="Changes" comment="added delay animation between requests">
-      <change afterPath="$PROJECT_DIR$/src/components/errorSnackbar/errorSnackbar.tsx" afterDir="false" />
+    <list default="true" id="e42fe5d7-ba4f-4725-b2cc-8b96bae3bbbb" name="Changes" comment="added component ErrorSnackbar">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/errorSnackbar/errorSnackbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/errorSnackbar/errorSnackbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/state/reducers/app-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/reducers/app-reducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +113,7 @@
       <workItem from="1726404843194" duration="6810000" />
       <workItem from="1726603603246" duration="37000" />
       <workItem from="1728046095839" duration="6455000" />
-      <workItem from="1728198071352" duration="1821000" />
+      <workItem from="1728198071352" duration="4839000" />
     </task>
     <task id="LOCAL-00001" summary="new lesson">
       <option name="closed" value="true" />
@@ -274,7 +275,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728052709850</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="added component ErrorSnackbar">
+      <option name="closed" value="true" />
+      <created>1728200354619</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1728200354619</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -298,6 +307,7 @@
     <MESSAGE value="added env variable" />
     <MESSAGE value="added LinearProgress of material UI and refactor folder" />
     <MESSAGE value="added delay animation between requests" />
-    <option name="LAST_COMMIT_MESSAGE" value="added delay animation between requests" />
+    <MESSAGE value="added component ErrorSnackbar" />
+    <option name="LAST_COMMIT_MESSAGE" value="added component ErrorSnackbar" />
   </component>
 </project>

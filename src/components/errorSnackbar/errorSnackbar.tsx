@@ -1,8 +1,12 @@
 import * as React from 'react';
 import Snackbar, {SnackbarCloseReason} from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
+import {useAppDispatch, useAppSelector} from "../../state/store";
+import {setErrorAC} from "../../state/reducers/app-reducer";
 
 export const ErrorSnackbar = () => {
+   const error = useAppSelector<null | string>(state => state.app.error);
+   const dispatch = useAppDispatch();
 
    const handleClose = (
       event?: React.SyntheticEvent | Event,
@@ -11,17 +15,23 @@ export const ErrorSnackbar = () => {
       if (reason === 'clickaway') {
          return;
       }
+
+      dispatch(setErrorAC(null))
    };
 
    return (
-      <Snackbar open={true} autoHideDuration={6000} onClose={handleClose}>
+      <Snackbar open={true}
+                autoHideDuration={6000}
+                onClose={handleClose}
+                anchorOrigin={{horizontal: "right", vertical: "bottom"}}
+      >
          <Alert
             onClose={handleClose}
             severity="error"
             variant="filled"
             sx={{width: '100%'}}
          >
-            This is a success Alert inside a Snackbar!
+            {error}
          </Alert>
       </Snackbar>
    );
