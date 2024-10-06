@@ -20,7 +20,7 @@ export const ErrorSnackbar = () => {
    };
 
    return (
-      <Snackbar open={true}
+      <Snackbar open={!!error}
                 autoHideDuration={6000}
                 onClose={handleClose}
                 anchorOrigin={{horizontal: "right", vertical: "bottom"}}

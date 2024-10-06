@@ -1,6 +1,7 @@
 import {TasksStateType} from '../../app/App';
 import {AddTodolistAT, RemoveTodolistAT, SetTodolistsAT} from './todolists-reducer';
 import {
+   RESULT_CODE,
    TaskPriorities,
    TaskStatuses,
    TaskType,
@@ -9,7 +10,7 @@ import {
 } from '../../api/todolists-api'
 import {Dispatch} from "redux";
 import {AppRootStateType} from "../store";
-import {setStatusAC} from "./app-reducer";
+import {setErrorAC, setStatusAC} from "./app-reducer";
 
 
 const initialState: TasksStateType = {};
@@ -115,8 +116,18 @@ export const addTaskTC = (todolistId: string, title: string) => {
       dispatch(setStatusAC("loading"));
       todolistsAPI.createTask(todolistId, title)
          .then(res => {
-            dispatch(addTaskAC(res.data.data.item));
-            dispatch(setStatusAC("succeeded"));
+            if (res.data.resultCode === RESULT_CODE.SUCCEEDED) {
+               const task = res.data.data.item;
+               dispatch(addTaskAC(task));
+               dispatch(setStatusAC("succeeded"));
+            } else {
+               if (res.data.messages.length) {
+                  dispatch(setErrorAC(res.data.messages[0]));
+               } else {
+                  dispatch(setErrorAC("Some Error 😝"));
+               }
+               dispatch(setStatusAC("failed"));
+            }
          })
    }
 }
@@ -137,10 +148,18 @@ export const updateTaskTC = (todolistId: string, taskId: string, domainModel: Do
          }
          todolistsAPI.updateTask(todolistId, taskId, model)
             .then(res => {
-               dispatch(updateTaskAC(todolistId, taskId, domainModel));
-               dispatch(setStatusAC("succeeded"));
+               if (res.data.resultCode === RESULT_CODE.SUCCEEDED) {
+                  dispatch(updateTaskAC(todolistId, taskId, domainModel));
+                  dispatch(setStatusAC("succeeded"));
+               } else {
+                  if (res.data.messages.length) {
+                     dispatch(setErrorAC(res.data.messages[0]));
+                  } else {
+                     dispatch(setErrorAC("Some Error 😝"));
+                  }
+                  dispatch(setStatusAC("failed"));
+               }
             })
-
       }
    }
 }

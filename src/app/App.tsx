@@ -78,8 +78,8 @@ function App() {
 
    return (
       <div className="App">
+         <ErrorSnackbar />
          <AppBar position="static">
-            <ErrorSnackbar />
             <Toolbar>
                <IconButton edge="start" color="inherit" aria-label="menu">
                   <Menu/>
@@ -107,6 +107,7 @@ function App() {
                            <Todolist
                               id={tl.id}
                               title={tl.title}
+                              entityStatus={tl.entityStatus}
                               tasks={allTodolistTasks}
                               removeTask={removeTask}
                               changeFilter={changeFilter}
