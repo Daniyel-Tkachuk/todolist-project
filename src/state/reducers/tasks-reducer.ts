@@ -1,5 +1,5 @@
 import {TasksStateType} from '../../app/App';
-import {AddTodolistAT, RemoveTodolistAT, SetTodolistsAT} from './todolists-reducer';
+import {AddTodolistAT, RemoveTodolistAT, setEntityStatusAC, SetTodolistsAT} from './todolists-reducer';
 import {
    RESULT_CODE,
    TaskPriorities,
@@ -10,7 +10,7 @@ import {
 } from '../../api/todolists-api'
 import {Dispatch} from "redux";
 import {AppRootStateType} from "../store";
-import {setErrorAC, setStatusAC} from "./app-reducer";
+import {setAppErrorAC, setStatusAC} from "./app-reducer";
 
 
 const initialState: TasksStateType = {};
@@ -109,6 +109,10 @@ export const removeTaskTC = (todolistId: string, taskId: string) => {
             dispatch(removeTaskAC(taskId, todolistId));
             dispatch(setStatusAC("succeeded"));
          })
+         .catch(e => {
+            dispatch(setAppErrorAC(e.message));
+            dispatch(setStatusAC("failed"));
+         })
    }
 }
 export const addTaskTC = (todolistId: string, title: string) => {
@@ -122,12 +126,16 @@ export const addTaskTC = (todolistId: string, title: string) => {
                dispatch(setStatusAC("succeeded"));
             } else {
                if (res.data.messages.length) {
-                  dispatch(setErrorAC(res.data.messages[0]));
+                  dispatch(setAppErrorAC(res.data.messages[0]));
                } else {
-                  dispatch(setErrorAC("Some Error 😝"));
+                  dispatch(setAppErrorAC("Some Error 😝"));
                }
                dispatch(setStatusAC("failed"));
             }
+         })
+         .catch(e => {
+            dispatch(setAppErrorAC(e.message));
+            dispatch(setStatusAC("failed"));
          })
    }
 }
@@ -146,6 +154,7 @@ export const updateTaskTC = (todolistId: string, taskId: string, domainModel: Do
             title: task.title,
             ...domainModel
          }
+
          todolistsAPI.updateTask(todolistId, taskId, model)
             .then(res => {
                if (res.data.resultCode === RESULT_CODE.SUCCEEDED) {
@@ -153,12 +162,16 @@ export const updateTaskTC = (todolistId: string, taskId: string, domainModel: Do
                   dispatch(setStatusAC("succeeded"));
                } else {
                   if (res.data.messages.length) {
-                     dispatch(setErrorAC(res.data.messages[0]));
+                     dispatch(setAppErrorAC(res.data.messages[0]));
                   } else {
-                     dispatch(setErrorAC("Some Error 😝"));
+                     dispatch(setAppErrorAC("Some Error 😝"));
                   }
                   dispatch(setStatusAC("failed"));
                }
+            })
+            .catch(e => {
+               dispatch(setAppErrorAC(e.message));
+               dispatch(setStatusAC("failed"));
             })
       }
    }
