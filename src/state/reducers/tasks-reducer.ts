@@ -1,5 +1,5 @@
 import {TasksStateType} from '../../app/App';
-import {AddTodolistAT, RemoveTodolistAT, setEntityStatusAC, SetTodolistsAT} from './todolists-reducer';
+import {AddTodolistAT, RemoveTodolistAT, SetTodolistsAT} from './todolists-reducer';
 import {
    RESULT_CODE,
    TaskPriorities,
