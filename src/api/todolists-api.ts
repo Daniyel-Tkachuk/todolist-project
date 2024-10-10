@@ -1,5 +1,4 @@
 import axios, {AxiosResponse} from 'axios'
-import {RequestStatusType} from "../state/reducers/app-reducer";
 
 const instance = axios.create({
    baseURL: process.env.REACT_APP_BASE_URL,

@@ -5,17 +5,17 @@ import IconButton from '@mui/material/IconButton';
 import Button from '@mui/material/Button';
 import {Delete} from '@mui/icons-material';
 import {Task} from './tasks/Task'
-import {TaskStatuses, TaskType} from '../../api/todolists-api'
+import {TaskStatuses} from '../../api/todolists-api'
 import {FilterValuesType} from '../../state/reducers/todolists-reducer'
 import {useAppDispatch} from "../../state/store";
-import {getTasksTC} from "../../state/reducers/tasks-reducer";
+import {getTasksTC, TaskDomainType} from "../../state/reducers/tasks-reducer";
 import {RequestStatusType} from "../../state/reducers/app-reducer";
 
 type PropsType = {
    id: string
    title: string
    entityStatus: RequestStatusType
-   tasks: Array<TaskType>
+   tasks: Array<TaskDomainType>
    changeFilter: (value: FilterValuesType, todolistId: string) => void
    addTask: (title: string, todolistId: string) => void
    changeTaskStatus: (id: string, status: TaskStatuses, todolistId: string) => void
@@ -62,7 +62,10 @@ export const Todolist = React.memo(function (props: PropsType) {
    return (
       <div>
          <h3>
-            <EditableSpan value={props.title} onChange={changeTodolistTitle} disabled={props.entityStatus === "loading"}/>
+            <EditableSpan value={props.title}
+                          onChange={changeTodolistTitle}
+                          disabled={props.entityStatus === "loading"}
+            />
             <IconButton onClick={removeTodolist} disabled={props.entityStatus === "loading"}>
                <Delete/>
             </IconButton>

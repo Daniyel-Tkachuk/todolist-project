@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e42fe5d7-ba4f-4725-b2cc-8b96bae3bbbb" name="Changes" comment="added error handling to thunk todolist and disabled EditableSpan.tsx when go request">
+    <list default="true" id="e42fe5d7-ba4f-4725-b2cc-8b96bae3bbbb" name="Changes" comment="added entityStatus for Tasks">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/todolists-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/todolists-api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/todolists/Todolist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/todolists/Todolist.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/todolists/tasks/Task.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/todolists/tasks/Task.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/state/reducers/tasks-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/reducers/tasks-reducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -115,7 +118,7 @@
       <workItem from="1728198071352" duration="10079000" />
       <workItem from="1728281841520" duration="6423000" />
       <workItem from="1728473023316" duration="13335000" />
-      <workItem from="1728552644068" duration="2989000" />
+      <workItem from="1728552644068" duration="5924000" />
     </task>
     <task id="LOCAL-00001" summary="new lesson">
       <option name="closed" value="true" />
@@ -333,7 +336,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728500501573</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="added entityStatus for Tasks">
+      <option name="closed" value="true" />
+      <created>1728559900690</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1728559900690</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -362,6 +373,7 @@
     <MESSAGE value="refactor code" />
     <MESSAGE value="added error handling to thunk tasks" />
     <MESSAGE value="added error handling to thunk todolist and disabled EditableSpan.tsx when go request" />
-    <option name="LAST_COMMIT_MESSAGE" value="added error handling to thunk todolist and disabled EditableSpan.tsx when go request" />
+    <MESSAGE value="added entityStatus for Tasks" />
+    <option name="LAST_COMMIT_MESSAGE" value="added entityStatus for Tasks" />
   </component>
 </project>

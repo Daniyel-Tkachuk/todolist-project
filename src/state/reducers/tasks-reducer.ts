@@ -60,6 +60,14 @@ export const tasksReducer = (state: TasksStateType = initialState, action: Actio
                .map(t => t.id === action.taskId ? {...t, ...action.domainModel} : t)
          };
       }
+      case 'SET-TASK-ENTITY-STATUS': {
+         const {todolistId, taskId, entityStatus} = action.payload;
+         return {
+            ...state,
+            [todolistId]: state[todolistId]
+               .map(t => t.id === taskId ? {...t, entityStatus} : t)
+         }
+      }
       default:
          return state;
    }
@@ -89,6 +97,16 @@ export const updateTaskAC = (todolistId: string, taskId: string, domainModel: Do
       domainModel
    } as const;
 }
+export const setTaskEntityStatusAC = (todolistId: string, taskId: string, entityStatus: RequestStatusType) => {
+   return {
+      type: "SET-TASK-ENTITY-STATUS",
+      payload: {
+         todolistId,
+         taskId,
+         entityStatus
+      }
+   } as const;
+}
 
 // --------- thunks -----------
 export const getTasksTC = (todolistId: string) => {
@@ -110,7 +128,9 @@ export const getTasksTC = (todolistId: string) => {
 }
 export const removeTaskTC = (todolistId: string, taskId: string) => {
    return (dispatch: Dispatch) => {
-      dispatch(setStatusAC("loading"));
+      dispatch(setStatusAC("loading"))
+      dispatch(setTaskEntityStatusAC(todolistId, taskId, "loading"))
+
       todolistsAPI.deleteTask(todolistId, taskId)
          .then(res => {
             if (res.data.resultCode === RESULT_CODE.SUCCEEDED) {
@@ -122,6 +142,7 @@ export const removeTaskTC = (todolistId: string, taskId: string) => {
          })
          .catch(error => {
             handleServerNetworkError(dispatch, error)
+            dispatch(setTaskEntityStatusAC(todolistId, taskId, "idle"))
          })
    }
 }
@@ -131,7 +152,7 @@ export const addTaskTC = (todolistId: string, title: string) => {
       todolistsAPI.createTask(todolistId, title)
          .then(res => {
             if (res.data.resultCode === RESULT_CODE.SUCCEEDED) {
-               const task = res.data.data.item;
+               const task: TaskType = res.data.data.item;
                dispatch(addTaskAC(task));
                dispatch(setStatusAC("succeeded"));
             } else {
@@ -183,6 +204,7 @@ type ActionsType =
    | ReturnType<typeof changeTaskTitleAC>
    | ReturnType<typeof setTasksAC>
    | ReturnType<typeof updateTaskAC>
+   | ReturnType<typeof setTaskEntityStatusAC>
    | AddTodolistAT
    | RemoveTodolistAT
    | SetTodolistsAT;
@@ -192,7 +214,7 @@ export type TasksStateType = {
    [key: string]: Array<TaskDomainType>
 }
 
-type TaskDomainType = TaskType & {
+export type TaskDomainType = TaskType & {
    entityStatus: RequestStatusType
 }
 

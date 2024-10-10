@@ -22,7 +22,7 @@ import {
    removeTaskTC, TasksStateType, updateTaskTC
 } from '../state/reducers/tasks-reducer';
 import {useAppDispatch, useAppSelector} from '../state/store';
-import {TaskStatuses, TaskType} from '../api/todolists-api'
+import {TaskStatuses} from '../api/todolists-api'
 import {RequestStatusType} from "../state/reducers/app-reducer";
 import {ErrorSnackbar} from "../components/errorSnackbar/errorSnackbar";
 
@@ -31,6 +31,7 @@ function App() {
    const tasks = useAppSelector<TasksStateType>(state => state.tasks)
    const status = useAppSelector<RequestStatusType>(state => state.app.status)
    const dispatch = useAppDispatch();
+
 
    useEffect(() => {
       dispatch(getTodolistsTC());
