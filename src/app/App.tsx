@@ -5,7 +5,6 @@ import {AddItemForm} from '../components/addItemForm/AddItemForm';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
@@ -75,21 +74,22 @@ function App() {
       <div className="App">
          <ErrorSnackbar />
          <AppBar position="static">
-            <Toolbar>
+            <Toolbar sx={{display: "flex", justifyContent: "space-between"}}>
                <IconButton edge="start" color="inherit" aria-label="menu">
                   <Menu/>
                </IconButton>
-               <Typography variant="h6">
-                  News
-               </Typography>
-               <Button color="inherit">Login</Button>
+               <div>
+                  <Button color="inherit">Login</Button>
+                  <Button color="inherit">Login</Button>
+                  <Button color="inherit">Login</Button>
+               </div>
             </Toolbar>
          </AppBar>
 
          {status === "loading" && <LinearProgress color="secondary"/>}
 
-         <Container fixed>
-            <Grid container style={{padding: '20px'}}>
+         <Container fixed maxWidth={false}>
+            <Grid container sx={{ m: '30px 0 30px' }}>
                <AddItemForm addItem={addTodolist}/>
             </Grid>
             <Grid container spacing={3}>
