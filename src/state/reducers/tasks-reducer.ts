@@ -1,4 +1,3 @@
-import {TasksStateType} from '../../app/App';
 import {AddTodolistAT, RemoveTodolistAT, SetTodolistsAT} from './todolists-reducer';
 import {
    RESULT_CODE,
@@ -10,7 +9,7 @@ import {
 } from '../../api/todolists-api'
 import {Dispatch} from "redux";
 import {AppRootStateType} from "../store";
-import {setAppErrorAC, setStatusAC} from "./app-reducer";
+import {RequestStatusType, setAppErrorAC, setStatusAC} from "./app-reducer";
 import {handleServerAppError, handleServerNetworkError} from "../../utils/error-utils";
 
 
@@ -28,7 +27,7 @@ export const tasksReducer = (state: TasksStateType = initialState, action: Actio
          return copyState;
       }
       case 'SET-TASKS': {
-         return {...state, [action.todolistId]: action.tasks}
+         return {...state, [action.todolistId]: action.tasks.map(t => ({...t, entityStatus: "idle"}))}
       }
       case 'REMOVE-TASK': {
          return {
@@ -40,7 +39,7 @@ export const tasksReducer = (state: TasksStateType = initialState, action: Actio
          const {todoListId} = action.task;
          return {
             ...state,
-            [todoListId]: [action.task, ...state[todoListId]]
+            [todoListId]: [{...action.task, entityStatus: "idle"}, ...state[todoListId]]
          }
       }
       case 'ADD-TODOLIST': {
@@ -187,6 +186,15 @@ type ActionsType =
    | AddTodolistAT
    | RemoveTodolistAT
    | SetTodolistsAT;
+
+
+export type TasksStateType = {
+   [key: string]: Array<TaskDomainType>
+}
+
+type TaskDomainType = TaskType & {
+   entityStatus: RequestStatusType
+}
 
 type DomainTaskModelType = {
    title?: string

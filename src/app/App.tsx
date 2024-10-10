@@ -19,18 +19,12 @@ import {
 } from '../state/reducers/todolists-reducer'
 import {
    addTaskTC,
-   removeTaskTC, updateTaskTC
+   removeTaskTC, TasksStateType, updateTaskTC
 } from '../state/reducers/tasks-reducer';
 import {useAppDispatch, useAppSelector} from '../state/store';
 import {TaskStatuses, TaskType} from '../api/todolists-api'
 import {RequestStatusType} from "../state/reducers/app-reducer";
 import {ErrorSnackbar} from "../components/errorSnackbar/errorSnackbar";
-
-
-export type TasksStateType = {
-   [key: string]: Array<TaskType>
-}
-
 
 function App() {
    const todolists = useAppSelector<Array<TodolistDomainType>>(state => state.todolists)
