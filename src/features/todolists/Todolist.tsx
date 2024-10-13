@@ -10,6 +10,7 @@ import {FilterValuesType} from '../../state/reducers/todolists-reducer'
 import {useAppDispatch} from "../../state/store";
 import {getTasksTC, TaskDomainType} from "../../state/reducers/tasks-reducer";
 import {RequestStatusType} from "../../state/reducers/app-reducer";
+import {List, ListItem} from "@mui/material";
 
 type PropsType = {
    id: string
@@ -71,16 +72,26 @@ export const Todolist = React.memo(function (props: PropsType) {
             </IconButton>
          </h3>
          <AddItemForm addItem={addTask} disabled={props.entityStatus === "loading"}/>
-         <div>
-            {
-               tasksForTodolist
-               && tasksForTodolist.map(t => <Task key={t.id} task={t} todolistId={props.id}
-                                                  removeTask={props.removeTask}
-                                                  changeTaskTitle={props.changeTaskTitle}
-                                                  changeTaskStatus={props.changeTaskStatus}
-               />)
-            }
-         </div>
+
+         <List>
+            {tasksForTodolist
+               && tasksForTodolist.map(task => {
+                  return (
+                     <ListItem key={task.id} sx={{
+                        p: 0,
+                        justifyContent: 'space-between',
+                        opacity: task.status === TaskStatuses.Completed ? 0.5 : 1
+                     }}>
+                        <Task task={task} todolistId={props.id}
+                              removeTask={props.removeTask}
+                              changeTaskTitle={props.changeTaskTitle}
+                              changeTaskStatus={props.changeTaskStatus}
+                        />
+                     </ListItem>
+                  )
+               })}
+         </List>
+
          <div style={{paddingTop: '10px'}}>
             <Button variant={props.filter === 'all' ? 'outlined' : 'text'}
                     onClick={onAllClickHandler}

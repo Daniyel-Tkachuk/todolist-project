@@ -89,16 +89,16 @@ function App() {
          {status === "loading" && <LinearProgress color="secondary"/>}
 
          <Container fixed maxWidth={false}>
-            <Grid container sx={{ m: '30px 0 30px' }}>
+            <Grid container sx={{ m: '30px 0 50px' }}>
                <AddItemForm addItem={addTodolist}/>
             </Grid>
-            <Grid container spacing={3}>
+            <Grid container spacing={4}>
                {
                   todolists.map(tl => {
                      let allTodolistTasks = tasks[tl.id];
 
                      return <Grid item key={tl.id}>
-                        <Paper style={{padding: '10px'}}>
+                        <Paper sx={{p: '5px 20px 20px 20px'}}>
                            <Todolist
                               id={tl.id}
                               title={tl.title}

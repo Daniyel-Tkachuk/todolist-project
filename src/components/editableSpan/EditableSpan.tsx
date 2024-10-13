@@ -29,3 +29,4 @@ export const EditableSpan = React.memo(function (props: EditableSpanPropsType) {
          : <span onDoubleClick={activateEditMode}>{props.value}</span>
    )
 });
+
