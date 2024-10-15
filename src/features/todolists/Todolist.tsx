@@ -10,7 +10,11 @@ import {FilterValuesType} from '../../state/reducers/todolists-reducer'
 import {useAppDispatch} from "../../state/store";
 import {getTasksTC, TaskDomainType} from "../../state/reducers/tasks-reducer";
 import {RequestStatusType} from "../../state/reducers/app-reducer";
-import {List, ListItem} from "@mui/material";
+
+import {filterButtonsContainerSx, getListItemSx} from "./Todolist.styles";
+import Box from '@mui/material/Box';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
 
 type PropsType = {
    id: string
@@ -73,15 +77,11 @@ export const Todolist = React.memo(function (props: PropsType) {
          </h3>
          <AddItemForm addItem={addTask} disabled={props.entityStatus === "loading"}/>
 
-         <List>
+         <List sx={{mb: '15px'}}>
             {tasksForTodolist
                && tasksForTodolist.map(task => {
                   return (
-                     <ListItem key={task.id} sx={{
-                        p: 0,
-                        justifyContent: 'space-between',
-                        opacity: task.status === TaskStatuses.Completed ? 0.5 : 1
-                     }}>
+                     <ListItem key={task.id} sx={getListItemSx(task.status)}>
                         <Task task={task} todolistId={props.id}
                               removeTask={props.removeTask}
                               changeTaskTitle={props.changeTaskTitle}
@@ -92,7 +92,7 @@ export const Todolist = React.memo(function (props: PropsType) {
                })}
          </List>
 
-         <div style={{paddingTop: '10px'}}>
+         <Box sx={filterButtonsContainerSx}>
             <Button variant={props.filter === 'all' ? 'outlined' : 'text'}
                     onClick={onAllClickHandler}
                     color={'inherit'}>
@@ -108,7 +108,7 @@ export const Todolist = React.memo(function (props: PropsType) {
                     color={'secondary'}>
                Completed
             </Button>
-         </div>
+         </Box>
       </div>
    )
 })
