@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e42fe5d7-ba4f-4725-b2cc-8b96bae3bbbb" name="Changes" comment="refactor">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/editableSpan/EditableSpan.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/editableSpan/EditableSpan.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/todolists/Todolist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/todolists/Todolist.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/todolists/tasks/Task.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/todolists/tasks/Task.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -60,11 +59,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\IT-Incubator\todolist-project\src\components\menuButton" />
       <recent name="F:\IT-Incubator\todolist-project\src\state\reducers" />
       <recent name="F:\IT-Incubator\todolist-project\src\features\todolists\tasks" />
       <recent name="F:\IT-Incubator\todolist-project\src\features\todolists" />
       <recent name="F:\IT-Incubator\todolist-project\src\app" />
-      <recent name="F:\IT-Incubator\todolist-project\src\components\editableSpan" />
     </key>
   </component>
   <component name="RunManager">
@@ -121,7 +120,10 @@
       <workItem from="1728585278731" duration="3130000" />
       <workItem from="1728724102301" duration="3153000" />
       <workItem from="1728743948239" duration="15000" />
-      <workItem from="1728832598002" duration="1746000" />
+      <workItem from="1728832598002" duration="3028000" />
+      <workItem from="1728842857702" duration="4702000" />
+      <workItem from="1729008088398" duration="5958000" />
+      <workItem from="1729015538686" duration="1304000" />
     </task>
     <task id="LOCAL-00001" summary="new lesson">
       <option name="closed" value="true" />
@@ -363,7 +365,47 @@
       <option name="project" value="LOCAL" />
       <updated>1728588455479</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="refactor">
+      <option name="closed" value="true" />
+      <created>1728834450103</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1728834450103</updated>
+    </task>
+    <task id="LOCAL-00032" summary="added Todolist.styles.ts">
+      <option name="closed" value="true" />
+      <created>1729015196217</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1729015196217</updated>
+    </task>
+    <task id="LOCAL-00033" summary="refactor">
+      <option name="closed" value="true" />
+      <created>1729018939817</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1729018939817</updated>
+    </task>
+    <task id="LOCAL-00034" summary="refactor">
+      <option name="closed" value="true" />
+      <created>1729018949013</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1729018949013</updated>
+    </task>
+    <task id="LOCAL-00035" summary="refactor">
+      <option name="closed" value="true" />
+      <created>1729019323198</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1729019323198</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -392,6 +434,8 @@
     <MESSAGE value="added error handling to thunk tasks" />
     <MESSAGE value="added error handling to thunk todolist and disabled EditableSpan.tsx when go request" />
     <MESSAGE value="added entityStatus for Tasks" />
+    <MESSAGE value="refactor and change styles" />
+    <MESSAGE value="added Todolist.styles.ts" />
     <MESSAGE value="refactor" />
     <option name="LAST_COMMIT_MESSAGE" value="refactor" />
   </component>

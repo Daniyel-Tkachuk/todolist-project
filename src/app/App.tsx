@@ -19,7 +19,6 @@ import {useAppDispatch, useAppSelector} from '../state/store';
 import {TaskStatuses} from '../api/todolists-api'
 import {RequestStatusType} from "../state/reducers/app-reducer";
 import {ErrorSnackbar} from "../components/errorSnackbar/errorSnackbar";
-
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import {Menu} from "@mui/icons-material";

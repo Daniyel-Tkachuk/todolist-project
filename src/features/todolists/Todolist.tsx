@@ -10,7 +10,6 @@ import {FilterValuesType} from '../../state/reducers/todolists-reducer'
 import {useAppDispatch} from "../../state/store";
 import {getTasksTC, TaskDomainType} from "../../state/reducers/tasks-reducer";
 import {RequestStatusType} from "../../state/reducers/app-reducer";
-
 import {filterButtonsContainerSx, getListItemSx} from "./Todolist.styles";
 import Box from '@mui/material/Box';
 import List from '@mui/material/List';
