@@ -2,15 +2,10 @@ import React, {useCallback, useEffect} from 'react'
 import './App.css';
 import {Todolist} from '../features/todolists/Todolist';
 import {AddItemForm} from '../components/addItemForm/AddItemForm';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import LinearProgress from '@mui/material/LinearProgress';
-import {Menu} from '@mui/icons-material';
 import {
    changeTodolistFilterAC,
    FilterValuesType, getTodolistsTC,
@@ -25,16 +20,37 @@ import {TaskStatuses} from '../api/todolists-api'
 import {RequestStatusType} from "../state/reducers/app-reducer";
 import {ErrorSnackbar} from "../components/errorSnackbar/errorSnackbar";
 
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import {Menu} from "@mui/icons-material";
+import {MenuButton} from "../components/menuButton/menuButton";
+import AppBar from "@mui/material/AppBar";
+import {createTheme, ThemeProvider} from "@mui/material/styles";
+import {CssBaseline, Switch} from "@mui/material";
+
+type ThemeMode = "dark" | "light";
+
 function App() {
    const todolists = useAppSelector<Array<TodolistDomainType>>(state => state.todolists)
    const tasks = useAppSelector<TasksStateType>(state => state.tasks)
    const status = useAppSelector<RequestStatusType>(state => state.app.status)
    const dispatch = useAppDispatch();
 
+   const [themeMode, setThemeMode] = React.useState<ThemeMode>("light");
+
 
    useEffect(() => {
       dispatch(getTodolistsTC());
    }, []);
+
+   const theme = createTheme({
+      palette: {
+         primary: {
+            main: "#087EA4"
+         },
+         mode: themeMode === "light" ? "light" : "dark"
+      }
+   });
 
    const removeTask = useCallback((id: string, todolistId: string) => {
       dispatch(removeTaskTC(todolistId, id));
@@ -70,18 +86,25 @@ function App() {
       dispatch(addTodolistTC(title));
    }, [dispatch]);
 
+   const changeModeHandler = () => {
+      setThemeMode(themeMode === "light" ? "dark" : "light");
+   }
+
    return (
-      <div className="App">
-         <ErrorSnackbar />
+      <ThemeProvider theme={theme}>
+         <ErrorSnackbar/>
+         <CssBaseline/>
+
          <AppBar position="static">
             <Toolbar sx={{display: "flex", justifyContent: "space-between"}}>
                <IconButton edge="start" color="inherit" aria-label="menu">
                   <Menu/>
                </IconButton>
                <div>
-                  <Button color="inherit">Login</Button>
-                  <Button color="inherit">Login</Button>
-                  <Button color="inherit">Login</Button>
+                  <MenuButton>Login</MenuButton>
+                  <MenuButton>Logout</MenuButton>
+                  <MenuButton background={theme.palette.primary.dark}>FAQ</MenuButton>
+                  <Switch color="default" onChange={changeModeHandler}/>
                </div>
             </Toolbar>
          </AppBar>
@@ -89,7 +112,7 @@ function App() {
          {status === "loading" && <LinearProgress color="secondary"/>}
 
          <Container fixed maxWidth={false}>
-            <Grid container sx={{ m: '30px 0 50px' }}>
+            <Grid container sx={{m: '30px 0 50px'}}>
                <AddItemForm addItem={addTodolist}/>
             </Grid>
             <Grid container spacing={4}>
@@ -119,7 +142,8 @@ function App() {
                }
             </Grid>
          </Container>
-      </div>
+      </ThemeProvider>
+
    );
 }
 
