@@ -17,39 +17,30 @@ import {
 } from '../state/reducers/tasks-reducer';
 import {useAppDispatch, useAppSelector} from '../state/store';
 import {TaskStatuses} from '../api/todolists-api'
-import {RequestStatusType} from "../state/reducers/app-reducer";
+import {changeThemeAC, RequestStatusType, ThemeMode} from "../state/reducers/app-reducer";
 import {ErrorSnackbar} from "../components/errorSnackbar/errorSnackbar";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import {Menu} from "@mui/icons-material";
 import {MenuButton} from "../components/menuButton/menuButton";
 import AppBar from "@mui/material/AppBar";
-import {createTheme, ThemeProvider} from "@mui/material/styles";
+import {ThemeProvider} from "@mui/material/styles";
 import {CssBaseline, Switch} from "@mui/material";
-
-type ThemeMode = "dark" | "light";
+import {getTheme} from "../common/theme";
 
 function App() {
-   const todolists = useAppSelector<Array<TodolistDomainType>>(state => state.todolists)
-   const tasks = useAppSelector<TasksStateType>(state => state.tasks)
-   const status = useAppSelector<RequestStatusType>(state => state.app.status)
+   const todolists = useAppSelector<Array<TodolistDomainType>>(state => state.todolists);
+   const tasks = useAppSelector<TasksStateType>(state => state.tasks);
+   const status = useAppSelector<RequestStatusType>(state => state.app.status);
+   const themeMode = useAppSelector<ThemeMode>(state => state.app.themeMode);
+
+   const theme = getTheme(themeMode);
+
    const dispatch = useAppDispatch();
-
-   const [themeMode, setThemeMode] = React.useState<ThemeMode>("light");
-
 
    useEffect(() => {
       dispatch(getTodolistsTC());
    }, []);
-
-   const theme = createTheme({
-      palette: {
-         primary: {
-            main: "#087EA4"
-         },
-         mode: themeMode === "light" ? "light" : "dark"
-      }
-   });
 
    const removeTask = useCallback((id: string, todolistId: string) => {
       dispatch(removeTaskTC(todolistId, id));
@@ -86,7 +77,7 @@ function App() {
    }, [dispatch]);
 
    const changeModeHandler = () => {
-      setThemeMode(themeMode === "light" ? "dark" : "light");
+      dispatch(changeThemeAC(themeMode === "light" ? "dark" : "light"));
    }
 
    return (
