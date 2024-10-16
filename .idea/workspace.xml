@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e42fe5d7-ba4f-4725-b2cc-8b96bae3bbbb" name="Changes" comment="refactor">
-      <change afterPath="$PROJECT_DIR$/src/common/theme.ts" afterDir="false" />
+    <list default="true" id="e42fe5d7-ba4f-4725-b2cc-8b96bae3bbbb" name="Changes" comment="added in appReducer functional change theme mode all APP">
+      <change afterPath="$PROJECT_DIR$/src/components/header/Header.style.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/header/Header.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/main/Main.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/state/reducers/app-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/reducers/app-reducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +19,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -124,7 +125,7 @@
       <workItem from="1728842857702" duration="4702000" />
       <workItem from="1729008088398" duration="5958000" />
       <workItem from="1729015538686" duration="1468000" />
-      <workItem from="1729064307085" duration="1689000" />
+      <workItem from="1729064307085" duration="2951000" />
     </task>
     <task id="LOCAL-00001" summary="new lesson">
       <option name="closed" value="true" />
@@ -406,7 +407,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729019323198</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="added in appReducer functional change theme mode all APP">
+      <option name="closed" value="true" />
+      <created>1729066261042</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1729066261042</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -438,6 +447,7 @@
     <MESSAGE value="refactor and change styles" />
     <MESSAGE value="added Todolist.styles.ts" />
     <MESSAGE value="refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor" />
+    <MESSAGE value="added in appReducer functional change theme mode all APP" />
+    <option name="LAST_COMMIT_MESSAGE" value="added in appReducer functional change theme mode all APP" />
   </component>
 </project>
