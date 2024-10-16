@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e42fe5d7-ba4f-4725-b2cc-8b96bae3bbbb" name="Changes" comment="added in appReducer functional change theme mode all APP">
-      <change afterPath="$PROJECT_DIR$/src/components/header/Header.style.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/header/Header.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/main/Main.tsx" afterDir="false" />
+    <list default="true" id="e42fe5d7-ba4f-4725-b2cc-8b96bae3bbbb" name="Changes" comment="refactor code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/main/Main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/main/Main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,11 +60,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\IT-Incubator\todolist-project\src\features\main" />
       <recent name="F:\IT-Incubator\todolist-project\src\components\menuButton" />
       <recent name="F:\IT-Incubator\todolist-project\src\state\reducers" />
       <recent name="F:\IT-Incubator\todolist-project\src\features\todolists\tasks" />
       <recent name="F:\IT-Incubator\todolist-project\src\features\todolists" />
-      <recent name="F:\IT-Incubator\todolist-project\src\app" />
     </key>
   </component>
   <component name="RunManager">
@@ -125,7 +125,7 @@
       <workItem from="1728842857702" duration="4702000" />
       <workItem from="1729008088398" duration="5958000" />
       <workItem from="1729015538686" duration="1468000" />
-      <workItem from="1729064307085" duration="2951000" />
+      <workItem from="1729064307085" duration="5011000" />
     </task>
     <task id="LOCAL-00001" summary="new lesson">
       <option name="closed" value="true" />
@@ -440,7 +440,6 @@
     <MESSAGE value="added component ErrorSnackbar" />
     <MESSAGE value="refactor ErrorSnackbar" />
     <MESSAGE value="added functional disabled todolist (entityStatus: boolean)" />
-    <MESSAGE value="refactor code" />
     <MESSAGE value="added error handling to thunk tasks" />
     <MESSAGE value="added error handling to thunk todolist and disabled EditableSpan.tsx when go request" />
     <MESSAGE value="added entityStatus for Tasks" />
@@ -448,6 +447,55 @@
     <MESSAGE value="added Todolist.styles.ts" />
     <MESSAGE value="refactor" />
     <MESSAGE value="added in appReducer functional change theme mode all APP" />
-    <option name="LAST_COMMIT_MESSAGE" value="added in appReducer functional change theme mode all APP" />
+    <MESSAGE value="refactor code" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor code" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/features/main/Main.tsx</url>
+          <line>58</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/features/main/Main.tsx</url>
+          <line>54</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/features/main/Main.tsx</url>
+          <line>49</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/features/main/Main.tsx</url>
+          <line>44</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/features/main/Main.tsx</url>
+          <line>40</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/features/main/Main.tsx</url>
+          <line>36</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/features/main/Main.tsx</url>
+          <line>32</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

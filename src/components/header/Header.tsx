@@ -6,13 +6,16 @@ import {MenuButton} from "../menuButton/menuButton";
 import {Switch} from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import {useAppDispatch, useAppSelector} from "../../state/store";
-import {changeThemeAC, ThemeMode} from "../../state/reducers/app-reducer";
+import {changeThemeAC, RequestStatusType, ThemeMode} from "../../state/reducers/app-reducer";
 import {getTheme} from "../../common/theme";
 import {headerToolbarSX} from "./Header.style";
+import LinearProgress from "@mui/material/LinearProgress";
 
 export const Header = () => {
    const themeMode = useAppSelector<ThemeMode>(state => state.app.themeMode);
-   const dispatch = useAppDispatch();
+   const status = useAppSelector<RequestStatusType>(state => state.app.status);
+
+   const dispatch = useAppDispatch()
 
    const theme = getTheme(themeMode);
 
@@ -21,7 +24,7 @@ export const Header = () => {
    }
 
    return (
-      <AppBar position="static">
+      <AppBar position="relative">
          <Toolbar sx={headerToolbarSX}>
             <IconButton edge="start" color="inherit" aria-label="menu">
                <Menu/>
@@ -33,6 +36,7 @@ export const Header = () => {
                <Switch color="default" onChange={changeModeHandler}/>
             </div>
          </Toolbar>
+         {status === "loading" && <LinearProgress color="secondary"/>}
       </AppBar>
    );
 };
