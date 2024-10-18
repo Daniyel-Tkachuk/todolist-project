@@ -4,7 +4,7 @@ import Grid from "@mui/material/Grid";
 import {AddItemForm} from "../../components/addItemForm/AddItemForm";
 import {useAppDispatch} from "../../state/store";
 import {addTodolistTC,} from "../../state/reducers/todolists-reducer";
-import {TodolistsList} from "../todolistsList/TodolistsList";
+import {Todolists} from "../Todolists";
 
 
 export const Main = () => {
@@ -21,7 +21,7 @@ export const Main = () => {
             <AddItemForm addItem={addTodolist}/>
          </Grid>
          <Grid container spacing={4}>
-           <TodolistsList/>
+           <Todolists/>
          </Grid>
       </Container>
    );

@@ -41,7 +41,7 @@ export const removeTodolistAC = (todolistId: string) => {
 export const addTodolistAC = (todolist: TodolistType) => {
    return {type: 'ADD-TODOLIST', todolist} as const;
 }
-export const changeTodolistTitleAC = (id: string, title: string) => {
+export const updateTodolistTitleAC = (id: string, title: string) => {
    return {type: 'CHANGE-TODOLIST-TITLE', id: id, title: title} as const;
 }
 export const changeTodolistFilterAC = (id: string, filter: FilterValuesType) => {
@@ -105,13 +105,13 @@ export const removeTodolistTC = (todolistId: string) => {
          })
    }
 }
-export const changeTodolistTitleTC = (todolistId: string, title: string) => {
+export const updateTodolistTitleTC = (todolistId: string, title: string) => {
    return (dispatch: Dispatch) => {
       dispatch(setStatusAC("loading"))
       todolistsAPI.updateTodolist(todolistId, title)
          .then(res => {
             if (res.data.resultCode === RESULT_CODE.SUCCEEDED) {
-               dispatch(changeTodolistTitleAC(todolistId, title));
+               dispatch(updateTodolistTitleAC(todolistId, title));
                dispatch(setStatusAC("succeeded"))
             } else {
                handleServerAppError(dispatch, res.data);
@@ -130,7 +130,7 @@ export type SetTodolistsAT = ReturnType<typeof setTodolistsAC>;
 export type SetEntityStatusAT = ReturnType<typeof setEntityStatusAC>;
 
 type ActionsType = RemoveTodolistAT | AddTodolistAT
-   | ReturnType<typeof changeTodolistTitleAC>
+   | ReturnType<typeof updateTodolistTitleAC>
    | ReturnType<typeof changeTodolistFilterAC>
    | SetTodolistsAT | SetEntityStatusAT
 
