@@ -13,9 +13,9 @@ import Paper from "@mui/material/Paper";
 import {Todolist} from "../todolists/Todolist";
 
 
-type TodolistsListProps = {}
+type Props = {}
 
-export const TodolistsList: FC<TodolistsListProps> = (props) => {
+export const TodolistsList: FC<Props> = (props) => {
    const {} = props;
 
    const todolists = useAppSelector<TodolistDomainType[]>(state => state.todolists);
@@ -67,15 +67,12 @@ export const TodolistsList: FC<TodolistsListProps> = (props) => {
                   <Grid item key={tl.id}>
                      <Paper sx={{p: '5px 20px 20px 20px'}}>
                         <Todolist
-                           id={tl.id}
-                           title={tl.title}
-                           entityStatus={tl.entityStatus}
+                           todolist={tl}
                            tasks={allTodolistTasks}
                            removeTask={removeTask}
                            changeFilter={changeFilter}
                            addTask={addTask}
                            changeTaskStatus={changeStatus}
-                           filter={tl.filter}
                            removeTodolist={removeTodolist}
                            changeTaskTitle={changeTaskTitle}
                            changeTodolistTitle={changeTodolistTitle}
