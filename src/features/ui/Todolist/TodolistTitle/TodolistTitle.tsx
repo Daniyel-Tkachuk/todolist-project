@@ -1,9 +1,9 @@
 import React, {FC} from 'react';
-import {EditableSpan} from "../../../components/editableSpan/EditableSpan";
+import {EditableSpan} from "../../../../components/editableSpan/EditableSpan";
 import IconButton from "@mui/material/IconButton";
 import {Delete} from "@mui/icons-material";
-import {updateTodolistTitleTC, removeTodolistTC, TodolistDomainType} from "../../../state/reducers/todolists-reducer";
-import {useAppDispatch} from "../../../state/store";
+import {updateTodolistTitleTC, removeTodolistTC, TodolistDomainType} from "../../../../state/reducers/todolists-reducer";
+import {useAppDispatch} from "../../../../state/store";
 
 
 type Props = {
