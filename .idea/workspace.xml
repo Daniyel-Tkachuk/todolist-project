@@ -4,53 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e42fe5d7-ba4f-4725-b2cc-8b96bae3bbbb" name="Changes" comment="refactor code">
-      <change afterPath="$PROJECT_DIR$/src/common/enums/enums.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/enums/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/hooks/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/hooks/useAppDispatch.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/hooks/useAppSelector.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/instance/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/instance/instance.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/theme/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/types/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/types/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/api/tasksAPI.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/api/tasksAPI.types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/api/todolistsAPI.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/api/todolistsAPI.types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/model/appSelector.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/ui/Todolists/Todolist/Tasks/Task/Task.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/ui/Todolists/Todolist/Tasks/Tasks.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/ui/Todolists/Todolist/Todolist.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+    <list default="true" id="e42fe5d7-ba4f-4725-b2cc-8b96bae3bbbb" name="Changes" comment="refactor ALL (decomposition of file and folder structure, code cleaning) code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/todolists-api.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/theme/theme.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/addItemForm/AddItemForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/AddItemForm/AddItemForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/editableSpan/EditableSpan.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/EditableSpan/EditableSpan.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/errorSnackbar/errorSnackbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/ErrorSnackbar/ErrorSnackbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/Header.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/Header/Header.style.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/Header/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/menuButton/menuButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/MenuButton/MenuButton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/Todolists.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/ui/Todolists/Todolists.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/main/Main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Main.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/todolists/Todolist.styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/ui/Todolists/Todolist/Todolist.styles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/todolists/Todolist.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/todolists/tasks/Task.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/ui/Todolist/FilterTasksButtons/FilterTasksButtons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/ui/Todolists/Todolist/FilterTasksButtons/FilterTasksButtons.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/ui/Todolist/Tasks/Tasks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/ui/Todolist/TodolistTitle/TodolistTitle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/ui/Todolists/Todolist/TodolistTitle/TodolistTitle.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/tasksSelector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/model/tasksSelector.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/todolistsSelectors.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/model/todolistsSelectors.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/state/reducers/app-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/appReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/state/reducers/tasks-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/tasksReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/state/reducers/todolists-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/todolistsReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/state/store.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/error-utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/utils/error-utils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/components/AddItemForm/AddItemForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/AddItemForm/AddItemForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/ui/Todolists/Todolist/Tasks/Task/Task.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/ui/Todolists/Todolist/Tasks/Task/Task.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,11 +62,11 @@
       <recent name="F:\IT-Incubator\todolist-project\src\features\api" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\IT-Incubator\todolist-project\src\app" />
+      <recent name="F:\IT-Incubator\todolist-project\src\features\model" />
       <recent name="F:\IT-Incubator\todolist-project\src\common" />
       <recent name="F:\IT-Incubator\todolist-project\src\features\ui\Todolists\Todolist" />
       <recent name="F:\IT-Incubator\todolist-project\src\features\ui\Todolists\Todolist\Tasks\Task" />
-      <recent name="F:\IT-Incubator\todolist-project\src\features\ui\Todolists" />
-      <recent name="F:\IT-Incubator\todolist-project\src\features" />
     </key>
   </component>
   <component name="RunManager">
@@ -173,7 +131,7 @@
       <workItem from="1729076413753" duration="192000" />
       <workItem from="1729239158285" duration="5725000" />
       <workItem from="1729270073533" duration="9056000" />
-      <workItem from="1729310272459" duration="4263000" />
+      <workItem from="1729310272459" duration="6307000" />
     </task>
     <task id="LOCAL-00001" summary="new lesson">
       <option name="closed" value="true" />
@@ -489,7 +447,6 @@
     <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="new lesson" />
     <MESSAGE value="added Api" />
     <MESSAGE value="added redux-thunk" />
     <MESSAGE value="added applyMiddleware(thunk) and type for custom dispatch" />
@@ -514,6 +471,7 @@
     <MESSAGE value="added component FilterTasksButtons.tsx" />
     <MESSAGE value="added component TodolistTitle.tsx" />
     <MESSAGE value="refactor code" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor code" />
+    <MESSAGE value="refactor ALL (decomposition of file and folder structure, code cleaning) code" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor ALL (decomposition of file and folder structure, code cleaning) code" />
   </component>
 </project>

@@ -10,7 +10,6 @@ import {useAppDispatch} from "../../../../../../common/hooks";
 import {TaskStatuses} from "../../../../../../common/enums";
 
 
-
 type Props = {
    task: TaskDomainType
    todolist: TodolistDomainType
