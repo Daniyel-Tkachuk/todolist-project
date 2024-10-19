@@ -8,6 +8,7 @@ import {TodolistDomainType} from "../../../../../model/todolistsReducer";
 import ListItem from "@mui/material/ListItem";
 import {useAppDispatch} from "../../../../../../common/hooks";
 import {TaskStatuses} from "../../../../../../common/enums";
+import {RequestStatusType} from "../../../../../../app/appReducer";
 
 
 type Props = {
@@ -32,7 +33,11 @@ export const Task: FC<Props> = ({todolist, task}) => {
       dispatch(removeTaskTC(todolist.id, task.id));
    }
 
-   const disabledTask = task.entityStatus === "loading";
+   const isTaskDisabled = (taskEntityStatus: RequestStatusType, todolistEntityStatus: RequestStatusType): boolean => {
+      return taskEntityStatus === "loading" || todolistEntityStatus === "loading";
+   }
+
+   const disabledTask = isTaskDisabled(task.entityStatus, todolist.entityStatus);
 
    return (
       <ListItem>

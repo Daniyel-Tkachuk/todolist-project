@@ -7,6 +7,7 @@ import {FilterTasksButtons} from "./FilterTasksButtons/FilterTasksButtons";
 import {Tasks} from "./Tasks/Tasks";
 import {useAppDispatch} from "../../../../common/hooks";
 
+
 type Props = {
    todolist: TodolistDomainType
 }
