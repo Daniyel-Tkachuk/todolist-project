@@ -41,13 +41,31 @@ type ActionsType = ReturnType<typeof setIsLoggedInAC>
 // Thunks
 export const loginTC = (arg: LoginArgs) => (dispatch: Dispatch) => {
   dispatch(setAppStatusAC("loading"))
-  return authApi
+  authApi
     .login(arg)
     .then((res) => {
       if (res.data.resultCode === ResultCode.Success) {
         dispatch(setIsLoggedInAC(true))
         dispatch(setAppStatusAC("succeeded"))
         localStorage.setItem("sn-token", res.data.data.token)
+      } else {
+        handleServerAppError(res.data, dispatch)
+      }
+    })
+    .catch((error) => {
+      handleServerNetworkError(error, dispatch)
+    })
+}
+
+export const logoutTC = () => (dispatch: Dispatch) => {
+  dispatch(setAppStatusAC("loading"))
+  authApi
+    .logout()
+    .then((res) => {
+      if (res.data.resultCode === ResultCode.Success) {
+        dispatch(setIsLoggedInAC(false))
+        dispatch(setAppStatusAC("succeeded"))
+        localStorage.removeItem("sn-token")
       } else {
         handleServerAppError(res.data, dispatch)
       }

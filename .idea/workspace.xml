@@ -4,15 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1df7e94f-2bec-4f86-812c-57166e876e66" name="Changes" comment="refactor code">
-      <change afterPath="$PROJECT_DIR$/src/features/auth/ui/Login/Login.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+    <list default="true" id="1df7e94f-2bec-4f86-812c-57166e876e66" name="Changes" comment="added interceptors and refactor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/instance/instance.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/instance/instance.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/route/route.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/route/route.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/auth/api/authApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/api/authApi.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/auth/api/authApi.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/api/authApi.types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/auth/model/auth-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/model/auth-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/auth/ui/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/ui/Login/Login.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +110,7 @@
       <workItem from="1730880369767" duration="118000" />
       <workItem from="1730910909844" duration="141000" />
       <workItem from="1730925779519" duration="1283000" />
-      <workItem from="1730927078166" duration="1257000" />
+      <workItem from="1730927078166" duration="2116000" />
     </task>
     <task id="LOCAL-00001" summary="code replacement">
       <option name="closed" value="true" />
@@ -138,7 +136,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730911002639</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added interceptors and refactor">
+      <option name="closed" value="true" />
+      <created>1730928399452</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1730928399452</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -150,6 +156,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="code replacement" />
     <MESSAGE value="refactor code" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor code" />
+    <MESSAGE value="added interceptors and refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="added interceptors and refactor" />
   </component>
 </project>

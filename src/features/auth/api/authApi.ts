@@ -7,4 +7,7 @@ export const authApi = {
   login(payload: LoginArgs) {
     return instance.post<null, AxiosResponse<BaseResponse<LoginResponse>>, LoginArgs>(`/auth/login`, payload)
   },
+  logout() {
+    return instance.delete<BaseResponse>(`/auth/login`)
+  },
 }
