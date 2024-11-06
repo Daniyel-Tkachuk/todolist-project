@@ -1,1 +1,1 @@
-import {instance} from "./instance";
+export { instance } from "./instance"

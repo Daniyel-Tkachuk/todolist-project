@@ -1,18 +1,25 @@
-import { tasksReducer } from '../features/model/tasksReducer';
-import { todolistsReducer } from '../features/model/todolistsReducer';
-import {applyMiddleware, combineReducers, legacy_createStore} from 'redux';
-import {thunk} from 'redux-thunk';
-import {appReducer} from "./appReducer";
+import { applyMiddleware, combineReducers, legacy_createStore, UnknownAction } from "redux"
+import { thunk, ThunkDispatch } from "redux-thunk"
+import { tasksReducer } from "../features/todolists/model/tasks-reducer"
+import { todolistsReducer } from "../features/todolists/model/todolists-reducer"
+import { appReducer } from "./app-reducer"
+import { authReducer } from "../features/auth/model/auth-reducer"
 
 const rootReducer = combineReducers({
-    app: appReducer,
-    tasks: tasksReducer,
-    todolists: todolistsReducer,
+  tasks: tasksReducer,
+  todolists: todolistsReducer,
+  app: appReducer,
+  auth: authReducer,
 })
 
-export const store = legacy_createStore(rootReducer, applyMiddleware(thunk));
+export const store = legacy_createStore(rootReducer, {}, applyMiddleware(thunk))
 
-export type AppRootStateType = ReturnType<typeof rootReducer>;
+export type RootState = ReturnType<typeof store.getState>
+
+// export type AppDispatch = typeof store.dispatch
+
+// Создаем тип диспатча который принимает как AC так и TC
+export type AppDispatch = ThunkDispatch<RootState, unknown, UnknownAction>
 
 // @ts-ignore
-window.store = store;
+window.store = store

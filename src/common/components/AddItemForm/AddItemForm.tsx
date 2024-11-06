@@ -1,55 +1,53 @@
-import React, {ChangeEvent, FC, KeyboardEvent, useState} from 'react';
-import TextField from '@mui/material/TextField';
-import IconButton from '@mui/material/IconButton';
-import AddBox from '@mui/icons-material/AddBox';
-
+import { ChangeEvent, KeyboardEvent, useState } from "react"
+import TextField from "@mui/material/TextField"
+import AddBoxIcon from "@mui/icons-material/AddBox"
+import IconButton from "@mui/material/IconButton"
 
 type Props = {
-   disabled?: boolean
-   addItem: (title: string) => void
+  addItem: (title: string) => void
+  disabled?: boolean
 }
 
-export const AddItemForm: FC<Props> = (props) => {
-   const {disabled, addItem} = props;
+export const AddItemForm = ({ addItem, disabled }: Props) => {
+  const [title, setTitle] = useState("")
+  const [error, setError] = useState<string | null>(null)
 
-   let [title, setTitle] = useState('')
-   let [error, setError] = useState<string | null>(null)
+  const addItemHandler = () => {
+    if (title.trim() !== "") {
+      addItem(title.trim())
+      setTitle("")
+    } else {
+      setError("Title is required")
+    }
+  }
 
-   const addItemHandler = () => {
-      if (title.trim() !== '') {
-         addItem(title);
-         setTitle('');
-      } else {
-         setError('Title is required');
-      }
-   }
+  const changeItemHandler = (event: ChangeEvent<HTMLInputElement>) => {
+    setTitle(event.currentTarget.value)
+  }
 
-   const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-      setTitle(e.currentTarget.value)
-   }
+  const addItemOnKeyUpHandler = (event: KeyboardEvent<HTMLInputElement>) => {
+    setError(null)
+    if (event.key === "Enter") {
+      addItemHandler()
+    }
+  }
 
-   const onKeyPressHandler = (e: KeyboardEvent<HTMLInputElement>) => {
-      if (error !== null) {
-         setError(null);
-      }
-      if (e.key === "Enter") {
-         addItemHandler();
-      }
-   }
-
-   return (
-      <div style={{display: "flex", alignItems: "center"}}>
-         <TextField variant="outlined"
-                    error={!!error}
-                    value={title}
-                    onChange={onChangeHandler}
-                    onKeyPress={onKeyPressHandler}
-                    label={error ? error : "Title"}
-                    disabled={disabled}
-         />
-         <IconButton color="primary" onClick={addItemHandler} disabled={disabled}>
-            <AddBox fontSize={"large"}/>
-         </IconButton>
-      </div>
-   )
+  return (
+    <div>
+      <TextField
+        label="Enter a title"
+        variant={"outlined"}
+        value={title}
+        size={"small"}
+        error={!!error}
+        helperText={error}
+        onChange={changeItemHandler}
+        onKeyUp={addItemOnKeyUpHandler}
+        disabled={disabled}
+      />
+      <IconButton onClick={addItemHandler} color={"primary"} disabled={disabled}>
+        <AddBoxIcon />
+      </IconButton>
+    </div>
+  )
 }

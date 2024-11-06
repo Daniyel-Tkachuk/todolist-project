@@ -1,32 +1,27 @@
-import React from 'react';
-import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
-import {AddItemForm} from "../common/components";
-import {useAppDispatch} from "../common/hooks";
-import {addTodolistTC,} from "../features/model/todolistsReducer";
-import {Todolists} from "../features/ui/Todolists/Todolists";
-
-
+import Container from "@mui/material/Container"
+import Grid from "@mui/material/Unstable_Grid2"
+import React from "react"
+import { AddItemForm } from "common/components"
+import { useAppDispatch } from "common/hooks"
+import { addTodolistTC } from "../features/todolists/model/todolists-reducer"
+import { Todolists } from "../features/todolists/ui/Todolists/Todolists"
+import { Outlet } from "react-router-dom"
 
 export const Main = () => {
-   const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch()
 
-   const addTodolist = (title: string) => {
-      dispatch(addTodolistTC(title));
-   };
+  const addTodolist = (title: string) => {
+    dispatch(addTodolistTC(title))
+  }
 
-
-   return (
-      <Container fixed maxWidth={false}>
-         <Grid container sx={{m: '30px 0 50px'}}>
-            <AddItemForm addItem={addTodolist}/>
-         </Grid>
-         <Grid container spacing={4}>
-           <Todolists/>
-         </Grid>
-      </Container>
-   );
-};
-
-
-
+  return (
+    <Container fixed>
+      <Grid container sx={{ mb: "30px" }}>
+        <AddItemForm addItem={addTodolist} />
+      </Grid>
+      <Grid container spacing={4}>
+        <Todolists />
+      </Grid>
+    </Container>
+  )
+}

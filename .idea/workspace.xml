@@ -4,8 +4,63 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e42fe5d7-ba4f-4725-b2cc-8b96bae3bbbb" name="Changes" comment="ref">
+    <list default="true" id="1df7e94f-2bec-4f86-812c-57166e876e66" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/appReducer.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/appSelector.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/components/AddItemForm/AddItemForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/AddItemForm/AddItemForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/components/EditableSpan/EditableSpan.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/EditableSpan/EditableSpan.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/components/ErrorSnackbar/ErrorSnackbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/ErrorSnackbar/ErrorSnackbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/components/Header/Header.style.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/components/MenuButton/MenuButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/MenuButton/MenuButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/enums/enums.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/enums/enums.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/enums/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/enums/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/hooks/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/hooks/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/hooks/useAppDispatch.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/hooks/useAppDispatch.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/hooks/useAppSelector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/hooks/useAppSelector.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/instance/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/instance/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/instance/instance.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/instance/instance.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/theme/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/theme/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/theme/theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/theme/theme.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/types/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/types/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/types/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/types/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/utils/error-utils.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/api/tasksAPI.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/api/tasksAPI.types.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/api/todolistsAPI.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/api/todolistsAPI.types.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/model/tasksReducer.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/model/tasksSelector.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/model/todolistsReducer.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/model/todolistsSelectors.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/ui/Todolists/Todolist/FilterTasksButtons/FilterTasksButtons.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/ui/Todolists/Todolist/Tasks/Task/Task.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/ui/Todolists/Todolist/Tasks/Tasks.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/ui/Todolists/Todolist/Todolist.styles.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/ui/Todolists/Todolist/Todolist.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/ui/Todolists/Todolist/TodolistTitle/TodolistTitle.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/ui/Todolists/Todolists.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app-env.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app-env.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reportWebVitals.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/setupTests.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/setupTests.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todolist-wednesday.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +71,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript JSX File" />
+        <option value="CSS File" />
         <option value="TypeScript File" />
       </list>
     </option>
@@ -23,14 +79,28 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Daniyel-Tkachuk"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "git@github.com:Daniyel-Tkachuk/todolist-project.git",
+    "accountId": "9b013ab1-adc4-494a-ba58-3beaf3ddd87b"
+  }
+}]]></component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/features/auth/ui/Login/Login.tsx" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: 4
+  &quot;associatedIndex&quot;: 3
 }</component>
-  <component name="ProjectId" id="2GiRNFwe1qJjkqumy6duc0h5I9F" />
+  <component name="ProjectId" id="2oD1vXCB3sRyi5kA9DWZLVC0sLY" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -41,439 +111,52 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "F:/IT-Incubator/todolist-project/src/features/api",
+    "last_opened_file_path": "F:/IT-Incubator/todolist-project",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs.jest.jest_package": "F:/IT-Incubator/todolist-project/node_modules/react-scripts",
-    "nodejs_package_manager_path": "yarn",
-    "settings.editor.selected.configurable": "settings.javascript.prettier",
+    "nodejs_package_manager_path": "npm",
+    "prettier.import.notification.dismissed": "true",
+    "prettierjs.PrettierConfiguration.Package": "F:\\WEB\\16-todolist\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
     "ts.external.directory.path": "F:\\IT-Incubator\\todolist-project\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\IT-Incubator\todolist-project\src\features\api" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\IT-Incubator\todolist-project\src\app" />
-      <recent name="F:\IT-Incubator\todolist-project\src\features\model" />
-      <recent name="F:\IT-Incubator\todolist-project\src\common" />
-      <recent name="F:\IT-Incubator\todolist-project\src\features\ui\Todolists\Todolist" />
-      <recent name="F:\IT-Incubator\todolist-project\src\features\ui\Todolists\Todolist\Tasks\Task" />
-    </key>
-  </component>
-  <component name="RunManager">
-    <configuration name="test" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/tests/unit.test.ts" />
-      <test-names>
-        <test-name value="test" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Jest.test" />
-      </list>
-    </recent_temporary>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-WS-242.23726.96" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e42fe5d7-ba4f-4725-b2cc-8b96bae3bbbb" name="Changes" comment="" />
-      <created>1666869375921</created>
+      <changelist id="1df7e94f-2bec-4f86-812c-57166e876e66" name="Changes" comment="" />
+      <created>1730389563007</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1666869375921</updated>
-      <workItem from="1666869376975" duration="682000" />
-      <workItem from="1666876753106" duration="674000" />
-      <workItem from="1666896542323" duration="507000" />
-      <workItem from="1666897080066" duration="27000" />
-      <workItem from="1681818788802" duration="1496000" />
-      <workItem from="1725639560219" duration="640000" />
-      <workItem from="1725652316208" duration="885000" />
-      <workItem from="1725696135163" duration="11892000" />
-      <workItem from="1725801327040" duration="9626000" />
-      <workItem from="1725897334025" duration="8778000" />
-      <workItem from="1726077611195" duration="131000" />
-      <workItem from="1726078294146" duration="35000" />
-      <workItem from="1726240749555" duration="1195000" />
-      <workItem from="1726248711614" duration="799000" />
-      <workItem from="1726303540975" duration="29000" />
-      <workItem from="1726303584539" duration="20000" />
-      <workItem from="1726303621837" duration="9000" />
-      <workItem from="1726404843194" duration="6810000" />
-      <workItem from="1726603603246" duration="37000" />
-      <workItem from="1728046095839" duration="6455000" />
-      <workItem from="1728198071352" duration="10079000" />
-      <workItem from="1728281841520" duration="6423000" />
-      <workItem from="1728473023316" duration="13335000" />
-      <workItem from="1728552644068" duration="7985000" />
-      <workItem from="1728585278731" duration="3130000" />
-      <workItem from="1728724102301" duration="3153000" />
-      <workItem from="1728743948239" duration="15000" />
-      <workItem from="1728832598002" duration="3028000" />
-      <workItem from="1728842857702" duration="4702000" />
-      <workItem from="1729008088398" duration="5958000" />
-      <workItem from="1729015538686" duration="1468000" />
-      <workItem from="1729064307085" duration="6880000" />
-      <workItem from="1729076413753" duration="192000" />
-      <workItem from="1729239158285" duration="5725000" />
-      <workItem from="1729270073533" duration="9056000" />
-      <workItem from="1729310272459" duration="9055000" />
-      <workItem from="1729362756856" duration="1456000" />
-      <workItem from="1729432852185" duration="73000" />
-      <workItem from="1729533139745" duration="1803000" />
-      <workItem from="1729600095925" duration="148000" />
-      <workItem from="1729604954011" duration="105000" />
-      <workItem from="1729618654304" duration="141000" />
-      <workItem from="1729618986516" duration="23000" />
-      <workItem from="1729626921316" duration="716000" />
-      <workItem from="1729791135667" duration="127000" />
-      <workItem from="1729838852353" duration="37000" />
-      <workItem from="1729861813578" duration="714000" />
-      <workItem from="1729999681633" duration="879000" />
-      <workItem from="1730011980650" duration="3273000" />
-      <workItem from="1730049719039" duration="2605000" />
+      <updated>1730389563007</updated>
+      <workItem from="1730389564087" duration="1778000" />
+      <workItem from="1730392162657" duration="1125000" />
+      <workItem from="1730430927480" duration="1670000" />
+      <workItem from="1730432653420" duration="1002000" />
+      <workItem from="1730474948251" duration="149000" />
+      <workItem from="1730475103649" duration="1110000" />
+      <workItem from="1730477463527" duration="1805000" />
+      <workItem from="1730479339841" duration="335000" />
+      <workItem from="1730479686579" duration="3151000" />
+      <workItem from="1730570209392" duration="7000" />
+      <workItem from="1730610212485" duration="8547000" />
+      <workItem from="1730645281820" duration="5367000" />
+      <workItem from="1730689554794" duration="3255000" />
+      <workItem from="1730771408037" duration="4707000" />
+      <workItem from="1730865676664" duration="365000" />
+      <workItem from="1730866384176" duration="977000" />
     </task>
-    <task id="LOCAL-00001" summary="new lesson">
-      <option name="closed" value="true" />
-      <created>1725652567485</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1725652567485</updated>
-    </task>
-    <task id="LOCAL-00002" summary="added Api">
-      <option name="closed" value="true" />
-      <created>1725652825216</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1725652825216</updated>
-    </task>
-    <task id="LOCAL-00003" summary="refactor">
-      <option name="closed" value="true" />
-      <created>1725652898878</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1725652898878</updated>
-    </task>
-    <task id="LOCAL-00004" summary="added redux-thunk">
-      <option name="closed" value="true" />
-      <created>1725720175133</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1725720175133</updated>
-    </task>
-    <task id="LOCAL-00005" summary="added applyMiddleware(thunk) and type for custom dispatch">
-      <option name="closed" value="true" />
-      <created>1725720236104</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1725720236104</updated>
-    </task>
-    <task id="LOCAL-00006" summary="added at reducer(tasks, todos) case SET-TODOLISTS and thunk creator">
-      <option name="closed" value="true" />
-      <created>1725720303356</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1725720303356</updated>
-    </task>
-    <task id="LOCAL-00007" summary="refactor">
-      <option name="closed" value="true" />
-      <created>1725720324192</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1725720324192</updated>
-    </task>
-    <task id="LOCAL-00008" summary="added fetch tasks thunk">
-      <option name="closed" value="true" />
-      <created>1725729603896</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1725729603896</updated>
-    </task>
-    <task id="LOCAL-00009" summary="added remove tasks thunk">
-      <option name="closed" value="true" />
-      <created>1725803950018</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1725803950018</updated>
-    </task>
-    <task id="LOCAL-00010" summary="refactor">
-      <option name="closed" value="true" />
-      <created>1725803970411</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1725803970411</updated>
-    </task>
-    <task id="LOCAL-00011" summary="added thunk for create task">
-      <option name="closed" value="true" />
-      <created>1725814183640</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1725814183640</updated>
-    </task>
-    <task id="LOCAL-00012" summary="refactor">
-      <option name="closed" value="true" />
-      <created>1725901355720</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1725901355720</updated>
-    </task>
-    <task id="LOCAL-00013" summary="added thunks for todolist-reducer">
-      <option name="closed" value="true" />
-      <created>1725901384120</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1725901384120</updated>
-    </task>
-    <task id="LOCAL-00014" summary="refactor code">
-      <option name="closed" value="true" />
-      <created>1725908747202</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1725908747202</updated>
-    </task>
-    <task id="LOCAL-00015" summary="refactor code">
-      <option name="closed" value="true" />
-      <created>1725911051591</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1725911051591</updated>
-    </task>
-    <task id="LOCAL-00016" summary="refactor code">
-      <option name="closed" value="true" />
-      <created>1726077724489</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1726077724489</updated>
-    </task>
-    <task id="LOCAL-00017" summary="refactor code">
-      <option name="closed" value="true" />
-      <created>1726250183258</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1726250183258</updated>
-    </task>
-    <task id="LOCAL-00018" summary="added env variable">
-      <option name="closed" value="true" />
-      <created>1728048855127</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1728048855127</updated>
-    </task>
-    <task id="LOCAL-00019" summary="added LinearProgress of material UI and refactor folder">
-      <option name="closed" value="true" />
-      <created>1728050313327</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1728050313327</updated>
-    </task>
-    <task id="LOCAL-00020" summary="added delay animation between requests">
-      <option name="closed" value="true" />
-      <created>1728052709849</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1728052709850</updated>
-    </task>
-    <task id="LOCAL-00021" summary="added component ErrorSnackbar">
-      <option name="closed" value="true" />
-      <created>1728200354619</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1728200354619</updated>
-    </task>
-    <task id="LOCAL-00022" summary="refactor ErrorSnackbar">
-      <option name="closed" value="true" />
-      <created>1728203423928</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1728203423928</updated>
-    </task>
-    <task id="LOCAL-00023" summary="added functional disabled todolist (entityStatus: boolean)">
-      <option name="closed" value="true" />
-      <created>1728209162551</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1728209162551</updated>
-    </task>
-    <task id="LOCAL-00024" summary="refactor code">
-      <option name="closed" value="true" />
-      <created>1728294201018</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1728294201018</updated>
-    </task>
-    <task id="LOCAL-00025" summary="added error handling to thunk tasks">
-      <option name="closed" value="true" />
-      <created>1728484412463</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1728484412463</updated>
-    </task>
-    <task id="LOCAL-00026" summary="added error handling to thunk todolist and disabled EditableSpan.tsx when go request">
-      <option name="closed" value="true" />
-      <created>1728500352714</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1728500352714</updated>
-    </task>
-    <task id="LOCAL-00027" summary="added error handling to thunk todolist and disabled EditableSpan.tsx when go request">
-      <option name="closed" value="true" />
-      <created>1728500501573</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1728500501573</updated>
-    </task>
-    <task id="LOCAL-00028" summary="added entityStatus for Tasks">
-      <option name="closed" value="true" />
-      <created>1728559900690</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1728559900690</updated>
-    </task>
-    <task id="LOCAL-00029" summary="added entityStatus for Tasks">
-      <option name="closed" value="true" />
-      <created>1728562685243</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1728562685243</updated>
-    </task>
-    <task id="LOCAL-00030" summary="refactor">
-      <option name="closed" value="true" />
-      <created>1728588455479</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1728588455479</updated>
-    </task>
-    <task id="LOCAL-00031" summary="refactor">
-      <option name="closed" value="true" />
-      <created>1728834450103</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1728834450103</updated>
-    </task>
-    <task id="LOCAL-00032" summary="added Todolist.styles.ts">
-      <option name="closed" value="true" />
-      <created>1729015196217</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1729015196217</updated>
-    </task>
-    <task id="LOCAL-00033" summary="refactor">
-      <option name="closed" value="true" />
-      <created>1729018939817</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1729018939817</updated>
-    </task>
-    <task id="LOCAL-00034" summary="refactor">
-      <option name="closed" value="true" />
-      <created>1729018949013</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1729018949013</updated>
-    </task>
-    <task id="LOCAL-00035" summary="refactor">
-      <option name="closed" value="true" />
-      <created>1729019323198</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1729019323198</updated>
-    </task>
-    <task id="LOCAL-00036" summary="added in appReducer functional change theme mode all APP">
-      <option name="closed" value="true" />
-      <created>1729066261042</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1729066261042</updated>
-    </task>
-    <task id="LOCAL-00037" summary="added component TodolistTitle.tsx">
-      <option name="closed" value="true" />
-      <created>1729280049316</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1729280049316</updated>
-    </task>
-    <task id="LOCAL-00038" summary="refactor code">
-      <option name="closed" value="true" />
-      <created>1729280082591</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1729280082591</updated>
-    </task>
-    <task id="LOCAL-00039" summary="refactor ALL (decomposition of file and folder structure, code cleaning) code">
-      <option name="closed" value="true" />
-      <created>1729316912343</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1729316912343</updated>
-    </task>
-    <task id="LOCAL-00040" summary="refactor code, added logic for disabled tasks if todolist remove">
-      <option name="closed" value="true" />
-      <created>1729364216862</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1729364216862</updated>
-    </task>
-    <task id="LOCAL-00041" summary="ref">
-      <option name="closed" value="true" />
-      <created>1729619002517</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1729619002517</updated>
-    </task>
-    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -481,33 +164,5 @@
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="added applyMiddleware(thunk) and type for custom dispatch" />
-    <MESSAGE value="added at reducer(tasks, todos) case SET-TODOLISTS and thunk creator" />
-    <MESSAGE value="added fetch tasks thunk" />
-    <MESSAGE value="added remove tasks thunk" />
-    <MESSAGE value="added thunk for create task" />
-    <MESSAGE value="added thunks for todolist-reducer" />
-    <MESSAGE value="added env variable" />
-    <MESSAGE value="added LinearProgress of material UI and refactor folder" />
-    <MESSAGE value="added delay animation between requests" />
-    <MESSAGE value="added component ErrorSnackbar" />
-    <MESSAGE value="refactor ErrorSnackbar" />
-    <MESSAGE value="added functional disabled todolist (entityStatus: boolean)" />
-    <MESSAGE value="added error handling to thunk tasks" />
-    <MESSAGE value="added error handling to thunk todolist and disabled EditableSpan.tsx when go request" />
-    <MESSAGE value="added entityStatus for Tasks" />
-    <MESSAGE value="refactor and change styles" />
-    <MESSAGE value="added Todolist.styles.ts" />
-    <MESSAGE value="refactor" />
-    <MESSAGE value="added in appReducer functional change theme mode all APP" />
-    <MESSAGE value="added component FilterTasksButtons.tsx" />
-    <MESSAGE value="added component TodolistTitle.tsx" />
-    <MESSAGE value="refactor code" />
-    <MESSAGE value="refactor ALL (decomposition of file and folder structure, code cleaning) code" />
-    <MESSAGE value="refactor code, added logic for disabled tasks if todolist remove" />
-    <MESSAGE value="ref" />
-    <option name="LAST_COMMIT_MESSAGE" value="ref" />
   </component>
 </project>

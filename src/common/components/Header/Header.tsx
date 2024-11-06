@@ -1,43 +1,42 @@
-import React from 'react';
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import {Menu} from "@mui/icons-material";
-import {MenuButton} from "../MenuButton/MenuButton";
-import {Switch} from "@mui/material";
-import AppBar from "@mui/material/AppBar";
-import {changeThemeAC, RequestStatusType} from "../../../app/appReducer";
-import {getTheme} from "../../theme";
-import {headerToolbarSX} from "./Header.style";
-import LinearProgress from "@mui/material/LinearProgress";
-import {useAppDispatch, useAppSelector} from "../../hooks";
-import {selectThemeMode} from "../../../app/appSelector";
+import MenuIcon from "@mui/icons-material/Menu"
+import AppBar from "@mui/material/AppBar"
+import IconButton from "@mui/material/IconButton"
+import LinearProgress from "@mui/material/LinearProgress"
+import Switch from "@mui/material/Switch"
+import Toolbar from "@mui/material/Toolbar"
+import React from "react"
+import { changeThemeAC } from "../../../app/app-reducer"
+import { selectAppStatus, selectThemeMode } from "../../../app/appSelectors"
+import { useAppDispatch, useAppSelector } from "common/hooks"
+import { getTheme } from "common/theme"
+import { MenuButton } from "common/components"
 
 export const Header = () => {
-   const themeMode = useAppSelector(selectThemeMode);
-   const status = useAppSelector<RequestStatusType>(state => state.app.status);
+  const dispatch = useAppDispatch()
 
-   const dispatch = useAppDispatch()
+  const themeMode = useAppSelector(selectThemeMode)
+  const status = useAppSelector(selectAppStatus)
 
-   const theme = getTheme(themeMode);
+  const theme = getTheme(themeMode)
 
-   const changeModeHandler = () => {
-      dispatch(changeThemeAC(themeMode === "light" ? "dark" : "light"));
-   }
+  const changeModeHandler = () => {
+    dispatch(changeThemeAC(themeMode === "light" ? "dark" : "light"))
+  }
 
-   return (
-      <AppBar position="relative">
-         <Toolbar sx={headerToolbarSX}>
-            <IconButton edge="start" color="inherit" aria-label="menu">
-               <Menu/>
-            </IconButton>
-            <div>
-               <MenuButton>Login</MenuButton>
-               <MenuButton>Logout</MenuButton>
-               <MenuButton background={theme.palette.primary.dark}>FAQ</MenuButton>
-               <Switch color="default" onChange={changeModeHandler}/>
-            </div>
-         </Toolbar>
-         {status === "loading" && <LinearProgress color="secondary"/>}
-      </AppBar>
-   );
-};
+  return (
+    <AppBar position="static" sx={{ mb: "30px" }}>
+      <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+        <IconButton color="inherit">
+          <MenuIcon />
+        </IconButton>
+        <div>
+          <MenuButton>Login</MenuButton>
+          <MenuButton>Logout</MenuButton>
+          <MenuButton background={theme.palette.primary.dark}>Faq</MenuButton>
+          <Switch color={"default"} onChange={changeModeHandler} />
+        </div>
+      </Toolbar>
+      {status === "loading" && <LinearProgress />}
+    </AppBar>
+  )
+}
