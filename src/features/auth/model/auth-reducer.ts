@@ -1,11 +1,10 @@
 import { Dispatch } from "redux"
-import { setAppErrorAC, setAppStatusAC } from "../../../app/app-reducer"
+import { setAppStatusAC } from "../../../app/app-reducer"
 import { Inputs } from "../ui/Login/Login"
 import { authApi } from "../api/authApi"
 import { ResultCode } from "common/enums"
 import { handleServerAppError } from "common/utils/handleServerAppError"
 import { handleServerNetworkError } from "common/utils/handleServerNetworkError"
-
 
 type InitialStateType = typeof initialState
 
