@@ -1,3 +1,4 @@
+import s from "./Login.module.css"
 import Button from "@mui/material/Button"
 import Checkbox from "@mui/material/Checkbox"
 import FormControl from "@mui/material/FormControl"
@@ -13,13 +14,7 @@ import { Controller, SubmitHandler, useForm } from "react-hook-form"
 import { loginTC } from "../../model/auth-reducer"
 import { selectIsLoggedIn } from "../../model/authSelectors"
 import { Navigate } from "react-router-dom"
-
-export type Inputs = {
-  email: string
-  password: string
-  rememberMe?: boolean
-  captcha?: string
-}
+import { LoginArgs } from "../../api/authApi.types"
 
 export const Login = () => {
   const themeMode = useAppSelector(selectThemeMode)
@@ -33,9 +28,9 @@ export const Login = () => {
     reset,
     control,
     formState: { errors },
-  } = useForm<Inputs>({ defaultValues: { email: "", password: "", rememberMe: false } })
+  } = useForm<LoginArgs>({ defaultValues: { email: "", password: "", rememberMe: false } })
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
+  const onSubmit: SubmitHandler<LoginArgs> = (data) => {
     dispatch(loginTC(data))
     reset()
   }
@@ -85,7 +80,7 @@ export const Login = () => {
                 })}
               />
               {errors.email && (
-                <p role={"alert"} style={{ color: "red" }}>
+                <p role={"alert"} className={s.errorMessage}>
                   {errors.email.message}
                 </p>
               )}

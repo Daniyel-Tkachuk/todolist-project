@@ -1,10 +1,10 @@
 import { Dispatch } from "redux"
 import { setAppStatusAC } from "../../../app/app-reducer"
-import { Inputs } from "../ui/Login/Login"
 import { authApi } from "../api/authApi"
 import { ResultCode } from "common/enums"
 import { handleServerAppError } from "common/utils/handleServerAppError"
 import { handleServerNetworkError } from "common/utils/handleServerNetworkError"
+import { LoginArgs } from "../api/authApi.types"
 
 type InitialStateType = typeof initialState
 
@@ -39,16 +39,15 @@ const setIsLoggedInAC = (isLoggedIn: boolean) => {
 type ActionsType = ReturnType<typeof setIsLoggedInAC>
 
 // Thunks
-export const loginTC = (arg: Inputs) => (dispatch: Dispatch) => {
+export const loginTC = (arg: LoginArgs) => (dispatch: Dispatch) => {
   dispatch(setAppStatusAC("loading"))
   return authApi
     .login(arg)
     .then((res) => {
-      debugger
-      console.log("asdsadasdasd")
       if (res.data.resultCode === ResultCode.Success) {
         dispatch(setIsLoggedInAC(true))
         dispatch(setAppStatusAC("succeeded"))
+        localStorage.setItem("sn-token", res.data.data.token)
       } else {
         handleServerAppError(res.data, dispatch)
       }

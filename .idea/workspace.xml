@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1df7e94f-2bec-4f86-812c-57166e876e66" name="Changes" comment="code replacement">
+    <list default="true" id="1df7e94f-2bec-4f86-812c-57166e876e66" name="Changes" comment="refactor code">
+      <change afterPath="$PROJECT_DIR$/src/features/auth/ui/Login/Login.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/instance/instance.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/instance/instance.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/auth/api/authApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/api/authApi.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/auth/api/authApi.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/api/authApi.types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/auth/model/auth-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/model/auth-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/auth/ui/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/ui/Login/Login.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +23,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript JSX File" />
-        <option value="CSS File" />
         <option value="TypeScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -65,7 +71,7 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;prettier.import.notification.dismissed&quot;: &quot;true&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;F:\\WEB\\16-todolist\\node_modules\\prettier&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;F:\\IT-Incubator\\todolist-project\\node_modules\\prettier&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
     &quot;ts.external.directory.path&quot;: &quot;F:\\IT-Incubator\\todolist-project\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -104,6 +110,9 @@
       <workItem from="1730866384176" duration="977000" />
       <workItem from="1730867926684" duration="180000" />
       <workItem from="1730880369767" duration="118000" />
+      <workItem from="1730910909844" duration="141000" />
+      <workItem from="1730925779519" duration="1283000" />
+      <workItem from="1730927078166" duration="1257000" />
     </task>
     <task id="LOCAL-00001" summary="code replacement">
       <option name="closed" value="true" />
@@ -113,7 +122,23 @@
       <option name="project" value="LOCAL" />
       <updated>1730868082475</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="refactor code">
+      <option name="closed" value="true" />
+      <created>1730910942595</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1730910942595</updated>
+    </task>
+    <task id="LOCAL-00003" summary="refactor code">
+      <option name="closed" value="true" />
+      <created>1730911002639</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1730911002639</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,6 +149,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="code replacement" />
-    <option name="LAST_COMMIT_MESSAGE" value="code replacement" />
+    <MESSAGE value="refactor code" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor code" />
   </component>
 </project>
