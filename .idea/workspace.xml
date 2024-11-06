@@ -4,63 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1df7e94f-2bec-4f86-812c-57166e876e66" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+    <list default="true" id="1df7e94f-2bec-4f86-812c-57166e876e66" name="Changes" comment="code replacement">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Main.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/appReducer.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/appSelector.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/components/AddItemForm/AddItemForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/AddItemForm/AddItemForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/components/EditableSpan/EditableSpan.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/EditableSpan/EditableSpan.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/components/ErrorSnackbar/ErrorSnackbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/ErrorSnackbar/ErrorSnackbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/components/Header/Header.style.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/Header/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/components/MenuButton/MenuButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/MenuButton/MenuButton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/enums/enums.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/enums/enums.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/enums/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/enums/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/hooks/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/hooks/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/hooks/useAppDispatch.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/hooks/useAppDispatch.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/hooks/useAppSelector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/hooks/useAppSelector.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/instance/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/instance/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/instance/instance.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/instance/instance.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/theme/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/theme/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/theme/theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/theme/theme.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/types/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/types/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/types/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/types/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/utils/error-utils.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/api/tasksAPI.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/api/tasksAPI.types.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/api/todolistsAPI.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/api/todolistsAPI.types.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/model/tasksReducer.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/model/tasksSelector.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/model/todolistsReducer.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/model/todolistsSelectors.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/ui/Todolists/Todolist/FilterTasksButtons/FilterTasksButtons.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/ui/Todolists/Todolist/Tasks/Task/Task.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/ui/Todolists/Todolist/Tasks/Tasks.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/ui/Todolists/Todolist/Todolist.styles.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/ui/Todolists/Todolist/Todolist.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/ui/Todolists/Todolist/TodolistTitle/TodolistTitle.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/ui/Todolists/Todolists.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app-env.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app-env.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reportWebVitals.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/setupTests.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/setupTests.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todolist-wednesday.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/auth/model/auth-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/model/auth-reducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,18 +25,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Daniyel-Tkachuk"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Daniyel-Tkachuk&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "git@github.com:Daniyel-Tkachuk/todolist-project.git",
-    "accountId": "9b013ab1-adc4-494a-ba58-3beaf3ddd87b"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:Daniyel-Tkachuk/todolist-project.git&quot;,
+    &quot;accountId&quot;: &quot;9b013ab1-adc4-494a-ba58-3beaf3ddd87b&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/features/auth/ui/Login/Login.tsx" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -105,26 +51,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "F:/IT-Incubator/todolist-project",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "prettier.import.notification.dismissed": "true",
-    "prettierjs.PrettierConfiguration.Package": "F:\\WEB\\16-todolist\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
-    "ts.external.directory.path": "F:\\IT-Incubator\\todolist-project\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/IT-Incubator/todolist-project&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettier.import.notification.dismissed&quot;: &quot;true&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;F:\\WEB\\16-todolist\\node_modules\\prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;F:\\IT-Incubator\\todolist-project\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -156,7 +102,18 @@
       <workItem from="1730771408037" duration="4707000" />
       <workItem from="1730865676664" duration="365000" />
       <workItem from="1730866384176" duration="977000" />
+      <workItem from="1730867926684" duration="180000" />
+      <workItem from="1730880369767" duration="118000" />
     </task>
+    <task id="LOCAL-00001" summary="code replacement">
+      <option name="closed" value="true" />
+      <created>1730868082475</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1730868082475</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -164,5 +121,9 @@
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="code replacement" />
+    <option name="LAST_COMMIT_MESSAGE" value="code replacement" />
   </component>
 </project>

@@ -5,9 +5,7 @@ import { authApi } from "../api/authApi"
 import { ResultCode } from "common/enums"
 import { handleServerAppError } from "common/utils/handleServerAppError"
 import { handleServerNetworkError } from "common/utils/handleServerNetworkError"
-import { isAxiosError } from "axios"
-import { Simulate } from "react-dom/test-utils"
-import error = Simulate.error
+
 
 type InitialStateType = typeof initialState
 
@@ -47,6 +45,8 @@ export const loginTC = (arg: Inputs) => (dispatch: Dispatch) => {
   return authApi
     .login(arg)
     .then((res) => {
+      debugger
+      console.log("asdsadasdasd")
       if (res.data.resultCode === ResultCode.Success) {
         dispatch(setIsLoggedInAC(true))
         dispatch(setAppStatusAC("succeeded"))
