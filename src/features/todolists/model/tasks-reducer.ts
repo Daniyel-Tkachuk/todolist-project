@@ -6,7 +6,7 @@ import { setAppStatusAC } from "../../../app/app-reducer"
 import { RootState } from "../../../app/store"
 import { tasksApi } from "../api/tasksApi"
 import { DomainTask, UpdateTaskDomainModel, UpdateTaskModel } from "../api/tasksApi.types"
-import { AddTodolistActionType, RemoveTodolistActionType } from "./todolists-reducer"
+import { AddTodolistActionType, ClearTodolistsDataAT, RemoveTodolistActionType } from "./todolists-reducer"
 
 export type TasksStateType = {
   [key: string]: DomainTask[]
@@ -57,6 +57,8 @@ export const tasksReducer = (state: TasksStateType = initialState, action: Actio
       return copyState
     }
 
+    case "CLEAR-TODOLISTS-DATA":
+      return {}
     default:
       return state
   }
@@ -186,3 +188,4 @@ type ActionsType =
   | AddTodolistActionType
   | RemoveTodolistActionType
   | SetTasksActionType
+  | ClearTodolistsDataAT

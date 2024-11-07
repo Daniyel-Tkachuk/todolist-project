@@ -95,6 +95,11 @@ export const Login = () => {
                   },
                 })}
               />
+              {errors.password && (
+                <p role={"alert"} className={s.errorMessage}>
+                  {errors.password.message}
+                </p>
+              )}
               <FormControlLabel
                 label={"Remember me"}
                 control={
