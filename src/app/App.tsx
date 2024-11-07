@@ -1,13 +1,32 @@
+import s from "./App.module.css"
 import CssBaseline from "@mui/material/CssBaseline"
 import { ThemeProvider } from "@mui/material/styles"
 import { Header, ErrorSnackbar } from "common/components"
-import { useAppSelector } from "common/hooks"
+import { useAppDispatch, useAppSelector } from "common/hooks"
 import { getTheme } from "common/theme"
 import { selectThemeMode } from "./appSelectors"
 import { Outlet } from "react-router-dom"
+import { useEffect } from "react"
+import { initializeAppTC } from "../features/auth/model/auth-reducer"
+import { selectIsInitialized } from "../features/auth/model/authSelectors"
+import { CircularProgress } from "@mui/material"
 
 export const App = () => {
+  const isInitialized = useAppSelector(selectIsInitialized)
   const themeMode = useAppSelector(selectThemeMode)
+  const dispatch = useAppDispatch()
+
+  useEffect(() => {
+    dispatch(initializeAppTC())
+  }, [])
+
+  if (!isInitialized) {
+    return (
+      <div className={s.circularProgressContainer}>
+        <CircularProgress size={150} thickness={3} />
+      </div>
+    )
+  }
 
   return (
     <ThemeProvider theme={getTheme(themeMode)}>

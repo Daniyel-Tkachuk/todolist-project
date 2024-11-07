@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1df7e94f-2bec-4f86-812c-57166e876e66" name="Changes" comment="added interceptors and refactor">
+    <list default="true" id="1df7e94f-2bec-4f86-812c-57166e876e66" name="Changes" comment="remove token from local storage on logout">
+      <change afterPath="$PROJECT_DIR$/src/app/App.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Main.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/Header/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/route/route.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/route/route.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/auth/api/authApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/api/authApi.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/auth/api/authApi.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/api/authApi.types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/auth/model/auth-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/model/auth-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/auth/model/authSelectors.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/model/authSelectors.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +22,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript JSX File" />
-        <option value="TypeScript File" />
         <option value="CSS File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -47,6 +48,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -70,7 +74,7 @@
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;prettier.import.notification.dismissed&quot;: &quot;true&quot;,
     &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;F:\\IT-Incubator\\todolist-project\\node_modules\\prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.inline.completion&quot;,
     &quot;ts.external.directory.path&quot;: &quot;F:\\IT-Incubator\\todolist-project\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -110,7 +114,10 @@
       <workItem from="1730880369767" duration="118000" />
       <workItem from="1730910909844" duration="141000" />
       <workItem from="1730925779519" duration="1283000" />
-      <workItem from="1730927078166" duration="2116000" />
+      <workItem from="1730927078166" duration="3229000" />
+      <workItem from="1730930357624" duration="117000" />
+      <workItem from="1730930490648" duration="860000" />
+      <workItem from="1730972503821" duration="1576000" />
     </task>
     <task id="LOCAL-00001" summary="code replacement">
       <option name="closed" value="true" />
@@ -144,7 +151,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730928399452</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="remove token from local storage on logout">
+      <option name="closed" value="true" />
+      <created>1730929561951</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1730929561951</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -157,6 +172,7 @@
     <MESSAGE value="code replacement" />
     <MESSAGE value="refactor code" />
     <MESSAGE value="added interceptors and refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="added interceptors and refactor" />
+    <MESSAGE value="remove token from local storage on logout" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove token from local storage on logout" />
   </component>
 </project>

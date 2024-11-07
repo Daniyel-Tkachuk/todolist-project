@@ -9,3 +9,9 @@ export type LoginResponse = {
   userId: number
   token: string
 }
+
+/*export type MeResponse = {
+  id: number
+  email: string
+  login: string
+}*/

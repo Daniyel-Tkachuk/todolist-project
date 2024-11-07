@@ -9,6 +9,7 @@ import { LoginArgs } from "../api/authApi.types"
 type InitialStateType = typeof initialState
 
 const initialState = {
+  isInitialized: false,
   isLoggedIn: false,
 }
 
@@ -20,6 +21,12 @@ export const authReducer = (state: InitialStateType = initialState, action: Acti
         isLoggedIn: action.payload.isLoggedIn,
       }
     }
+    case "AUTH/SET_SET_IS_INITIALIZED": {
+      return {
+        ...state,
+        isInitialized: action.payload.isInitialized,
+      }
+    }
     default: {
       return state
     }
@@ -27,6 +34,15 @@ export const authReducer = (state: InitialStateType = initialState, action: Acti
 }
 
 // Actions
+const setIsInitializedAC = (isInitialized: boolean) => {
+  return {
+    type: "AUTH/SET_SET_IS_INITIALIZED",
+    payload: {
+      isInitialized,
+    },
+  } as const
+}
+
 const setIsLoggedInAC = (isLoggedIn: boolean) => {
   return {
     type: "AUTH/SET_IS_LOGGED_IN",
@@ -36,9 +52,29 @@ const setIsLoggedInAC = (isLoggedIn: boolean) => {
   } as const
 }
 // Actions types
-type ActionsType = ReturnType<typeof setIsLoggedInAC>
+type ActionsType = ReturnType<typeof setIsLoggedInAC> | ReturnType<typeof setIsInitializedAC>
 
 // Thunks
+export const initializeAppTC = () => (dispatch: Dispatch) => {
+  dispatch(setAppStatusAC("loading"))
+  authApi
+    .me()
+    .then((res) => {
+      if (res.data.resultCode === ResultCode.Success) {
+        dispatch(setAppStatusAC("succeeded"))
+        dispatch(setIsLoggedInAC(true))
+      } else {
+        handleServerAppError(res.data, dispatch)
+      }
+    })
+    .catch((error) => {
+      handleServerNetworkError(error, dispatch)
+    })
+    .finally(() => {
+      dispatch(setIsInitializedAC(true))
+    })
+}
+
 export const loginTC = (arg: LoginArgs) => (dispatch: Dispatch) => {
   dispatch(setAppStatusAC("loading"))
   authApi
