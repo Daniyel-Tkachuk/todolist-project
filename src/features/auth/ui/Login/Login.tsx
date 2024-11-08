@@ -28,7 +28,7 @@ export const Login = () => {
     reset,
     control,
     formState: { errors },
-  } = useForm<LoginArgs>({ defaultValues: { email: "", password: "", rememberMe: false } })
+  } = useForm<LoginArgs>()
 
   const onSubmit: SubmitHandler<LoginArgs> = (data) => {
     dispatch(loginTC(data))
@@ -89,9 +89,13 @@ export const Login = () => {
                 label="Password"
                 margin="normal"
                 {...register("password", {
+                  required: {
+                    value: true,
+                    message: "Password is required",
+                  },
                   minLength: {
                     value: 3,
-                    message: "Malo",
+                    message: "Password must be at least 3 characters long",
                   },
                 })}
               />

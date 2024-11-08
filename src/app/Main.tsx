@@ -7,7 +7,7 @@ import { addTodolistTC } from "../features/todolists/model/todolists-reducer"
 import { Todolists } from "../features/todolists/ui/Todolists/Todolists"
 import { Navigate } from "react-router-dom"
 import { selectIsLoggedIn } from "../features/auth/model/authSelectors"
-import { Path } from "common/route/route"
+import { Path } from "common/route/path"
 
 export const Main = () => {
   const isLoggedIn = useAppSelector(selectIsLoggedIn)
